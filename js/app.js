@@ -99,7 +99,6 @@ let history = [];
 let pathLog = [];
 let dark = localStorage.getItem("theme") === "dark" ||
   (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
-let speaking = false;
 let sent = false;
 let expandedEvidence = false;
 let expandedRM = {};
@@ -252,26 +251,6 @@ document.getElementById("back-btn").addEventListener("click", () => {
   renderNode(); updateProgress(); updateUrl();
 });
 
-// ── FONT SIZE ─────────────────────────────────────────────────────────────────
-const SIZES = ["md", "sm", "lg"];
-const SIZE_LABELS = { md: "A", sm: "A", lg: "A" };
-const SIZE_STYLES = { md: "13px", sm: "11px", lg: "15px" };
-let fontSize = localStorage.getItem("fontSize") || "md";
-
-function applyFontSize() {
-  document.documentElement.dataset.size = fontSize === "md" ? "" : fontSize;
-  if (fontSize === "md") delete document.documentElement.dataset.size;
-  const btn = document.getElementById("size-btn");
-  btn.textContent = SIZE_LABELS[fontSize];
-  btn.style.fontSize = SIZE_STYLES[fontSize];
-}
-applyFontSize();
-
-document.getElementById("size-btn").addEventListener("click", () => {
-  fontSize = SIZES[(SIZES.indexOf(fontSize) + 1) % SIZES.length];
-  localStorage.setItem("fontSize", fontSize);
-  applyFontSize();
-});
 
 const SVG_MOON = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
 const SVG_SUN  = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
@@ -289,31 +268,6 @@ document.getElementById("dark-btn").addEventListener("click", () => {
   applyTheme();
 });
 
-document.getElementById("speech-btn").addEventListener("click", () => {
-  if (!window.speechSynthesis) return;
-  if (speaking) {
-    window.speechSynthesis.cancel();
-    speaking = false;
-    updateSpeechBtn();
-    return;
-  }
-  const node = TREE[nodeId];
-  const c = nodeContent(node);
-  const text = c.question || c.message || "";
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = lang === "ar" ? "ar-SA" : "en-US";
-  u.onend = () => { speaking = false; updateSpeechBtn(); };
-  window.speechSynthesis.speak(u);
-  speaking = true;
-  updateSpeechBtn();
-});
-
-// ── SPEECH ────────────────────────────────────────────────────────────────────
-function updateSpeechBtn() {
-  document.getElementById("speech-btn").innerHTML = speaking
-    ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>`
-    : `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>`;
-}
 
 // ── PROGRESS ──────────────────────────────────────────────────────────────────
 function updateProgress() {
@@ -359,7 +313,7 @@ function navigate(nextId, label) {
   nodeId = nextId;
   expandedEvidence = false; expandedRM = {};
   sent = false;
-  window.speechSynthesis?.cancel(); speaking = false; updateSpeechBtn();
+  window.speechSynthesis?.cancel();
   renderNode(); updateProgress(); updateUrl();
 }
 window._navigate = navigate;
