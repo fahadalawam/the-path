@@ -270,6 +270,7 @@ body.dark .prev-evid-link{background:#1e3a5f;}
       <button class="btn btn-sm" onclick="createNewNode()">+ New node</button>
       <button class="btn btn-sm" onclick="importTree()">Import JSON</button>
       <button class="btn btn-sm btn-primary" onclick="exportTree()">Export JSON</button>
+      <button class="btn btn-sm" id="save-to-files-btn" onclick="saveToFiles()" title="Save tree to js/tree/*.js source files (requires save server)" style="background:#2563eb;color:#fff;">💾 Save to Files</button>
       <button class="btn btn-sm btn-danger" onclick="resetToDefaults()" title="Discard all changes and reload original tree">Reset</button>
       <button class="btn btn-sm" id="dark-toggle" onclick="toggleDark()" title="Toggle dark mode" style="padding:6px 9px;display:flex;align-items:center;">
         <svg id="dark-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -407,6 +408,6 @@ body.dark .prev-evid-link{background:#1e3a5f;}
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
 <script async src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
-<script type="module" src="js/admin.js"></script>
+<script type="module" src="js/admin.js?v=2"></script>
 </body>
 </html>

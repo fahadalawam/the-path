@@ -5,9 +5,7 @@ const ADMIN_PASSWORD = "admin1234";
 const CLAUDE_MODEL = "claude-sonnet-4-6";
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
-const TREE_STORAGE_KEY = "thepath_tree";
-const savedTree = localStorage.getItem(TREE_STORAGE_KEY);
-let tree = savedTree ? JSON.parse(savedTree) : JSON.parse(JSON.stringify(TREE));
+let tree = JSON.parse(JSON.stringify(TREE));
 let selectedId = null;
 let editorLang = "en";
 let previewLang = "en";
@@ -82,13 +80,11 @@ function autoSave() {
 }
 
 function persistTree() {
-  localStorage.setItem(TREE_STORAGE_KEY, JSON.stringify(tree));
   graphTreeVersion++;
 }
 
 window.resetToDefaults = function () {
   if (!confirm("Reset tree to original defaults? All your edits will be lost.")) return;
-  localStorage.removeItem(TREE_STORAGE_KEY);
   tree = JSON.parse(JSON.stringify(TREE));
   graphTreeVersion++;
   selectedId = null;
@@ -1086,6 +1082,43 @@ window.exportTree = function () {
   const a = document.createElement("a");
   a.href = url; a.download = "the-path-data.json"; a.click();
   URL.revokeObjectURL(url);
+};
+
+const SAVE_SERVER_URL = "http://localhost:3456/save";
+
+window.saveToFiles = async function () {
+  const btn = document.getElementById("save-to-files-btn");
+  if (!btn) { alert("Save button not found"); return; }
+  const origText = btn.innerHTML;
+  btn.textContent = "Saving…";
+  btn.disabled = true;
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 3000);
+    const res = await fetch(SAVE_SERVER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(tree),
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
+    const data = await res.json();
+    if (data.ok) {
+      const gitMsg = data.git === "pushed" ? " & pushed" : data.git === "no_changes" ? " (no changes)" : "";
+      btn.textContent = "✓ Saved " + data.totalNodes + " nodes" + gitMsg;
+      setTimeout(() => { btn.innerHTML = origText; btn.disabled = false; }, 3000);
+    } else {
+      throw new Error(data.error || "Unknown error");
+    }
+  } catch (err) {
+    btn.innerHTML = origText;
+    btn.disabled = false;
+    if (err.name === "AbortError" || err.message.includes("Failed to fetch") || err.message.includes("NetworkError") || err.message.includes("Load failed")) {
+      alert("Save server not running.\n\nStart it with:\n  node scripts/save-server.js");
+    } else {
+      alert("Save failed: " + err.message);
+    }
+  }
 };
 
 window.importTree = function () {
