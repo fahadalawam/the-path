@@ -265,6 +265,14 @@ export const atheistNodes = {
               },
               "url": "https://science.nasa.gov/universe/overview/",
               "linkType": "article"
+            },
+            {
+              "type": "image",
+              "url": "https://cdn2.hubspot.net/hubfs/53/image8-2.jpg",
+              "caption": {
+                "en": "google",
+                "ar": ""
+              }
             }
           ],
           "readMore": {
@@ -289,7 +297,10 @@ export const atheistNodes = {
           }
         }
       ]
-    }
+    },
+    "steps": [],
+    "showContact": false,
+    "notes": ""
   },
   "atheist_eternal_rebuttal": {
     "id": "atheist_eternal_rebuttal",
