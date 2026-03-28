@@ -58,7 +58,7 @@ export const rootNodes = {
   "muslim_doubts": {
     "id": "muslim_doubts",
     "type": "question",
-    "status": "live",
+    "status": "draft",
     "content": {
       "en": {
         "question": "What area do your questions relate to?",
@@ -99,6 +99,9 @@ export const rootNodes = {
         "next": "muslim_law"
       }
     ],
-    "evidence": null
+    "evidence": null,
+    "steps": [],
+    "showContact": false,
+    "notes": ""
   }
 };
