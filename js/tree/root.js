@@ -5,7 +5,7 @@ export const rootNodes = {
     "status": "live",
     "content": {
       "en": {
-        "question": "Before we begin, how would you describe yourself?",
+        "question": "Before we begin, how would you describe yourself? test1",
         "subtitle": "This helps us tailor the journey to where you are right now."
       },
       "ar": {
@@ -50,7 +50,10 @@ export const rootNodes = {
         "next": "muslim_doubts"
       }
     ],
-    "evidence": null
+    "evidence": null,
+    "steps": [],
+    "showContact": false,
+    "notes": ""
   },
   "muslim_doubts": {
     "id": "muslim_doubts",
