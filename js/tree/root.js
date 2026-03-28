@@ -5,7 +5,7 @@ export const rootNodes = {
     "status": "live",
     "content": {
       "en": {
-        "question": "Before we begin, how would you describe yourself? test1",
+        "question": "Before we begin, how would you describe yourself? test2",
         "subtitle": "This helps us tailor the journey to where you are right now."
       },
       "ar": {
