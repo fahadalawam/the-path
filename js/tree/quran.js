@@ -272,10 +272,10 @@ export const quranNodes = {
     "options": [
       {
         "label": {
-          "en": "That's remarkable — I want to learn more",
-          "ar": "هذا رائع — أريد أن أتعلم المزيد"
+          "en": "That's remarkable — show me more",
+          "ar": "هذا رائع — أرني المزيد"
         },
-        "next": "purpose_of_life"
+        "next": "quran_scientific_more"
       },
       {
         "label": {
@@ -309,13 +309,21 @@ export const quranNodes = {
               }
             },
             {
+              "type": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Gray20.png",
+              "caption": {
+                "en": "Human embryo at ~day 22 (Carnegie stage 10). The segmented bumps (somites) along the back match the Quranic term 'mudghah' — resembling a chewed piece of gum. The curved, elongated body matches 'alaqah' — leech-like. Illustration from Gray's Anatomy (public domain).",
+                "ar": "جنين بشري في اليوم ~22 (المرحلة 10 من كارنيغي). تتطابق النتوءات المقطّعة (الفقرات البدائية) على الظهر مع المصطلح القرآني 'مضغة' — إذ تشبه قطعة اللحم الممضوغة. ويتطابق الجسم المنحني المستطيل مع 'علقة' — شبيهًا بالعلقة. رسم توضيحي من كتاب Gray's Anatomy (ملكية عامة)."
+              }
+            },
+            {
               "type": "link",
               "label": {
-                "en": "Embryology in the Quran",
-                "ar": "علم الأجنة في القرآن"
+                "en": "Peer-reviewed: Human Embryology and the Holy Quran (PMC)",
+                "ar": "دراسة محكّمة: علم الأجنة البشرية والقرآن الكريم (PMC)"
               },
-              "url": "https://www.islamreligion.com/articles/204/",
-              "linkType": "article"
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3068791/",
+              "linkType": "study"
             }
           ],
           "readMore": {
@@ -324,7 +332,84 @@ export const quranNodes = {
           }
         }
       ]
-    }
+    },
+    "steps": [],
+    "showContact": false,
+    "notes": ""
+  },
+  "quran_scientific_more": {
+    "id": "quran_scientific_more",
+    "type": "question",
+    "status": "live",
+    "content": {
+      "en": {
+        "question": "Embryology isn't the only example.",
+        "subtitle": "The Quran contains several other statements that align with discoveries made centuries later."
+      },
+      "ar": {
+        "question": "علم الأجنة ليس المثال الوحيد.",
+        "subtitle": "يتضمن القرآن الكريم عدة إشارات أخرى تتوافق مع اكتشافات أُجريت بعد قرون."
+      }
+    },
+    "options": [
+      {
+        "label": {
+          "en": "This is compelling — what does it all mean?",
+          "ar": "هذا مقنع — ماذا يعني كل هذا؟"
+        },
+        "next": "purpose_of_life"
+      },
+      {
+        "label": {
+          "en": "I'm still not convinced",
+          "ar": "ما زلت غير مقتنع"
+        },
+        "next": "quran_vs_others"
+      }
+    ],
+    "evidence": {
+      "title": {
+        "en": "More scientific references in the Quran",
+        "ar": "مزيد من الإشارات العلمية في القرآن"
+      },
+      "points": [
+        {
+          "id": "qsm1",
+          "blocks": [
+            {
+              "type": "text",
+              "content": {
+                "en": "The Quran states: 'And the heaven We constructed with strength, and indeed, We are its expander.' (51:47). The Arabic word 'mūsiʿūn' means 'we are expanding it' — a direct statement of an expanding universe, 1,300 years before Hubble's 1929 discovery.",
+                "ar": "يقول القرآن الكريم: «وَالسَّمَاءَ بَنَيْنَاهَا بِأَيْدٍ وَإِنَّا لَمُوسِعُونَ» (51:47). كلمة 'لَمُوسِعُونَ' تعني 'نحن نوسّعها' — إشارة صريحة إلى تمدد الكون، قبل اكتشاف هابل عام 1929 بـ1300 عام."
+              }
+            }
+          ],
+          "readMore": {
+            "en": "Georges Lemaître proposed the expanding universe in 1927, and Edwin Hubble confirmed it observationally in 1929. The Quran made this statement in 610 AD. No ancient text — Greek, Roman, Persian, or otherwise — contains a comparable claim.",
+            "ar": "اقترح جورج لوميتر نظرية تمدد الكون عام 1927، وأكّدها إدوين هابل رصديًا عام 1929. أما القرآن فقد أشار إلى ذلك عام 610 م. ولا يوجد في أي نص قديم — يوناني أو روماني أو فارسي أو غيره — ادعاء مماثل."
+          }
+        },
+        {
+          "id": "qsm2",
+          "blocks": [
+            {
+              "type": "text",
+              "content": {
+                "en": "The Quran describes iron as having been 'sent down': 'We sent down iron, in which there is great might.' (57:25). Modern science confirms that iron is not native to Earth — it was forged in dying stars and delivered by meteorite impacts billions of years ago.",
+                "ar": "يصف القرآن الحديدَ بأنه 'أُنزِل': «وَأَنزَلْنَا الْحَدِيدَ فِيهِ بَأْسٌ شَدِيدٌ» (57:25). يؤكد العلم الحديث أن الحديد لم يتكوّن أصلًا على الأرض — بل نشأ في النجوم المحتضرة ووصل إليها عبر النيازك منذ مليارات السنين."
+              }
+            }
+          ],
+          "readMore": {
+            "en": "Earth's core is rich in iron, but iron cannot form on a planet — it requires the extreme pressures and temperatures of a supernova. The word 'anzalnā' (sent down) in Arabic is the same word used for rain and other things that come from outside. This was not known until the 20th century.",
+            "ar": "نواة الأرض غنية بالحديد، لكن الحديد لا يمكن أن يتكوّن على كوكب — إذ يستلزم الضغوط ودرجات الحرارة الهائلة الناجمة عن انفجار المستعر الأعظم. وكلمة 'أنزلنا' في العربية هي ذاتها المستخدمة للمطر وغيره مما يأتي من خارج الأرض. ولم يُعرف هذا إلا في القرن العشرين."
+          }
+        }
+      ]
+    },
+    "steps": [],
+    "showContact": false,
+    "notes": ""
   },
   "embryo_rebuttal": {
     "id": "embryo_rebuttal",

@@ -81,6 +81,14 @@ body.dark .node-item.active{background:#2a3142;border-color:#3b5080;}
 .node-status-chip.draft{background:#fef3c7;color:#92400e;}
 .missing-lang-badge{font-size:9px;padding:2px 5px;border-radius:10px;background:#fee2e2;color:#b91c1c;font-weight:700;letter-spacing:.03em;}
 body.dark .missing-lang-badge{background:#3b1515;color:#f87171;}
+.ai-marker-badge{font-size:9px;padding:2px 5px;border-radius:10px;background:#f3e8ff;color:#7c3aed;font-weight:700;letter-spacing:.03em;}
+body.dark .ai-marker-badge{background:#2d1b4e;color:#c084fc;}
+.ai-marker-badge.all-lang{background:#fff7ed;color:#c2410c;}
+body.dark .ai-marker-badge.all-lang{background:#431407;color:#fb923c;}
+.field-input.has-ai-marker{border-color:#7c3aed!important;background:#fdf4ff!important;}
+body.dark .field-input.has-ai-marker{background:#1e1232!important;border-color:#9f67e8!important;}
+.field-input.has-all-marker{border-color:#f97316!important;background:#fff7ed!important;}
+body.dark .field-input.has-all-marker{background:#2d1505!important;border-color:#fb923c!important;}
 .search-highlight{background:#fef08a;color:#1a1a1a;border-radius:2px;padding:0 1px;}
 body.dark .search-highlight{background:#854d0e;color:#fef9c3;}
 .node-item-id{font-size:11px;color:var(--muted);font-family:monospace;margin-bottom:2px;}
@@ -125,6 +133,10 @@ select.field-input{cursor:pointer;}
 .point-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
 .blocks-container{display:flex;flex-direction:column;gap:8px;margin-bottom:8px;}
 .block-row{display:flex;align-items:flex-start;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:10px;}
+.block-reorder{display:flex;flex-direction:column;gap:2px;flex-shrink:0;}
+.btn-reorder{padding:0 4px;font-size:10px;line-height:1;background:var(--border);border:none;border-radius:3px;color:var(--muted);cursor:pointer;opacity:0.7;}
+.btn-reorder:hover:not(:disabled){opacity:1;color:var(--text);}
+.btn-reorder:disabled{opacity:0.25;cursor:default;}
 .block-type-tag{font-size:10px;background:var(--border);padding:2px 7px;border-radius:10px;color:var(--muted);flex-shrink:0;margin-top:4px;white-space:nowrap;}
 .block-fields{flex:1;display:flex;flex-direction:column;gap:6px;}
 .block-add-row{display:flex;gap:6px;flex-wrap:wrap;}
@@ -205,7 +217,7 @@ body.dark .link-chip:hover{background:#253559;}
 .right-tab{flex:1;padding:9px 6px;font-size:12px;font-weight:600;text-align:center;cursor:pointer;color:var(--muted);border:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s,border-color .15s;background:none;font-family:inherit;}
 .right-tab.active{color:var(--accent);border-bottom-color:var(--accent);}
 .right-tab:hover:not(.active){color:var(--text);}
-#preview-panel{display:block;flex:1;overflow-y:auto;padding:16px;}
+#preview-panel{display:block;flex:1;overflow-y:auto;padding:0;}
 #notes-panel{display:none;flex:1;overflow-y:auto;flex-direction:column;}
 .right-panel-toggle-btn{position:absolute;right:0;top:50%;transform:translateY(-50%);width:24px;height:48px;background:var(--surface);border:1px solid var(--border);border-right:none;border-radius:6px 0 0 6px;cursor:pointer;display:none;align-items:center;justify-content:center;color:var(--muted);z-index:2;padding:0;}
 .right-panel-toggle-btn:hover{background:var(--surface2);color:var(--text);}
@@ -270,8 +282,10 @@ body.dark .prev-evid-link{background:#1e3a5f;}
       <button class="btn btn-sm" onclick="createNewNode()">+ New node</button>
       <button class="btn btn-sm" onclick="importTree()">Import JSON</button>
       <button class="btn btn-sm btn-primary" onclick="exportTree()">Export JSON</button>
-      <button class="btn btn-sm" id="save-to-files-btn" onclick="saveToFiles()" title="Save tree to js/tree/*.js source files (requires save server)" style="background:#2563eb;color:#fff;">💾 Save to Files</button>
-      <button class="btn btn-sm btn-danger" onclick="resetToDefaults()" title="Discard all changes and reload original tree">Reset</button>
+      <button class="btn btn-sm" id="save-to-files-btn" onclick="saveToFiles()" title="Save tree to js/tree/*.js source files (requires save server)" style="background:#2563eb;color:#fff;">💾 Save</button>
+      <button class="btn btn-sm" id="push-to-github-btn" onclick="pushToGithub()" title="Commit and push tree changes to GitHub" style="background:#238636;color:#fff;">⬆ Push</button>
+      <button class="btn btn-sm btn-danger" onclick="resetToDefaults()" title="Discard all changes and revert to the tree as it was when the page loaded">Reset</button>
+      <button class="btn btn-sm" onclick="location.reload()" title="Reload the page and re-read all tree files from disk">↺ Reload</button>
       <button class="btn btn-sm" id="dark-toggle" onclick="toggleDark()" title="Toggle dark mode" style="padding:6px 9px;display:flex;align-items:center;">
         <svg id="dark-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
@@ -309,6 +323,10 @@ body.dark .prev-evid-link{background:#1e3a5f;}
             <option value="en">Missing English</option>
             <option value="ar">Missing Arabic</option>
           </select>
+          <select id="filter-has-ai" class="filter-select">
+            <option value="">All nodes</option>
+            <option value="1">Needs AI writing</option>
+          </select>
         </div>
         <div id="node-list"></div>
       </div>
@@ -332,8 +350,8 @@ body.dark .prev-evid-link{background:#1e3a5f;}
     </div>
 
     <!-- RIGHT PANEL (Preview & Notes) -->
-    <div class="resize-handle" id="right-resize-handle"></div>
-    <div id="right-panel" class="right-panel">
+    <div class="resize-handle" id="right-resize-handle" style="display:none"></div>
+    <div id="right-panel" class="right-panel" style="display:none">
       <div class="right-panel-header">
         <div class="right-panel-tabs">
           <button class="right-tab active" id="rtab-preview" onclick="switchRightTab('preview')">Preview</button>
@@ -357,7 +375,7 @@ body.dark .prev-evid-link{background:#1e3a5f;}
     </div>
 
     <!-- Right panel reopen button (visible when collapsed) -->
-    <button id="right-panel-toggle" class="right-panel-toggle-btn" onclick="toggleRightPanel()" title="Open panel">
+    <button id="right-panel-toggle" class="right-panel-toggle-btn visible" onclick="toggleRightPanel()" title="Open panel">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
 
@@ -405,9 +423,9 @@ body.dark .prev-evid-link{background:#1e3a5f;}
 <!-- TOAST -->
 <div id="toast"></div>
 
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
-<script async src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
 <script type="module" src="js/admin.js?v=2"></script>
 </body>
 </html>

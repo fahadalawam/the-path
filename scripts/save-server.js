@@ -91,29 +91,8 @@ const server = createServer((req, res) => {
       try {
         const tree = JSON.parse(body);
         const result = saveTree(tree);
-
-        // Git commit and push
-        let gitResult = null;
-        try {
-          execSync("git add js/tree/", { cwd: ROOT, stdio: "pipe" });
-          const status = execSync("git diff --cached --name-only", { cwd: ROOT, encoding: "utf-8" }).trim();
-          if (status) {
-            const timestamp = new Date().toLocaleString();
-            execSync(`git commit -m "Update tree content — ${timestamp}"`, { cwd: ROOT, stdio: "pipe" });
-            execSync("git push", { cwd: ROOT, stdio: "pipe" });
-            gitResult = "pushed";
-            console.log(`  Git: committed and pushed.`);
-          } else {
-            gitResult = "no_changes";
-            console.log(`  Git: no changes to commit.`);
-          }
-        } catch (gitErr) {
-          gitResult = "error: " + gitErr.message;
-          console.error("  Git error:", gitErr.message);
-        }
-
         res.writeHead(200, { "Content-Type": "application/json" });
-        res.end(JSON.stringify({ ok: true, ...result, git: gitResult }));
+        res.end(JSON.stringify({ ok: true, ...result }));
         console.log(`Saved ${result.totalNodes} nodes to ${branches.length} files.`);
       } catch (err) {
         res.writeHead(400, { "Content-Type": "application/json" });
@@ -121,6 +100,30 @@ const server = createServer((req, res) => {
         console.error("Save error:", err.message);
       }
     });
+    return;
+  }
+
+  if (req.method === "POST" && req.url === "/push") {
+    try {
+      execSync("git add js/tree/", { cwd: ROOT, stdio: "pipe" });
+      const status = execSync("git diff --cached --name-only", { cwd: ROOT, encoding: "utf-8" }).trim();
+      if (status) {
+        const timestamp = new Date().toLocaleString();
+        execSync(`git commit -m "Update tree content — ${timestamp}"`, { cwd: ROOT, stdio: "pipe" });
+        execSync("git push", { cwd: ROOT, stdio: "pipe" });
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ ok: true, status: "pushed" }));
+        console.log("  Git: committed and pushed.");
+      } else {
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ ok: true, status: "no_changes" }));
+        console.log("  Git: no changes to push.");
+      }
+    } catch (gitErr) {
+      res.writeHead(500, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ ok: false, error: gitErr.message }));
+      console.error("  Git error:", gitErr.message);
+    }
     return;
   }
 

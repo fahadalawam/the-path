@@ -36,7 +36,10 @@ export const polytheistNodes = {
         "next": "atheist_one_or_many"
       }
     ],
-    "evidence": null
+    "evidence": null,
+    "steps": [],
+    "showContact": false,
+    "notes": ""
   },
   "polytheist_rebuttal": {
     "id": "polytheist_rebuttal",

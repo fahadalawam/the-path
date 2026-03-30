@@ -58,20 +58,5 @@ export const deadEndNodes = {
     },
     "options": [],
     "evidence": null
-  },
-  "none_of_these": {
-    "id": "none_of_these",
-    "type": "dead_end",
-    "status": "live",
-    "content": {
-      "en": {
-        "message": "That's completely fine — your view deserves a real conversation, not just predefined options. Tell us what you think and where you're coming from. We'd love to continue this with you directly."
-      },
-      "ar": {
-        "message": "لا بأس في ذلك تمامًا — رأيك يستحق حوارًا حقيقيًا، لا مجرد خيارات محددة مسبقًا. أخبرنا بما تفكر فيه ومن أين تنطلق. يسعدنا مواصلة هذا الحوار معك مباشرة."
-      }
-    },
-    "options": [],
-    "evidence": null
   }
 };

@@ -256,7 +256,7 @@ Feels like reading something important and true. No hype. Just clarity.
 
 ## Deployment
 
-- **Target host**: Any static host (Netlify, Cloudflare Pages, Vercel, or custom domain)
+- **Target host**: GitHub Pages (already configured)
 - **No build step required** — plain HTML/CSS/JS
 - **No server required** — fully static
 - **Formspree** handles form submission (ID: `mdapnwgd`)
@@ -289,6 +289,17 @@ Feels like reading something important and true. No hype. Just clarity.
 - [ ] Add more branches and deeper content (50–100+ nodes planned)
 - [ ] Add image support to evidence blocks
 - [ ] Add analytics (privacy-friendly, e.g. Plausible or Fathom)
+
+---
+
+## AI Marker Workflow
+
+### Markers
+- `@@` — flag a **specific language field** for AI generation/improvement (e.g. `"en": "@@ write this"` → only fill the `en` field, leave `ar` untouched)
+- `!!` — flag a field to be **applied to ALL languages** (e.g. `"en": "!! rephrase this"` → generate and apply to both `en` and `ar`)
+
+### Trigger
+- When the user says **`@@fill`** or **`!!fill`** (they are identical triggers), grep all `js/tree/*.js` files for both `@@` and `!!`, read the context, generate content for each marked field respecting the marker rules above, and show a diff for review before applying anything
 
 ---
 

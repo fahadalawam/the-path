@@ -1,0 +1,12 @@
+{
+  "name": "the-path",
+  "version": "1.0.0",
+  "description": "The Path — Admin",
+  "main": "electron/main.js",
+  "scripts": {
+    "admin": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^33.0.0"
+  }
+}

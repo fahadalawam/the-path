@@ -11,11 +11,12 @@ let editorLang = "en";
 let previewLang = "en";
 let sidebarTab = "nodes";
 let rightTab = "preview";
-let rightPanelOpen = true;
+let rightPanelOpen = false;
 let searchQuery = "";
 let filterType = "";   // "" = all types
 let filterStatus = ""; // "" = all statuses
 let filterMissingLang = ""; // "" = off, "ar"/"en" = show nodes missing that language
+let filterHasAi = false;   // true = show only nodes with @@ or !! markers
 let claudeApiKey = localStorage.getItem("claude_api_key") || "";
 
 // ── AUTOSAVE ───────────────────────────────────────────────────────────────────
@@ -183,6 +184,50 @@ function isMissingLang(node, lang) {
   return false;
 }
 
+function hasAiMarker(node) {
+  const check = v => typeof v === "string" && (v.includes("@@") || v.includes("!!"));
+  for (const c of Object.values(node.content || {})) {
+    if (check(c.question) || check(c.subtitle) || check(c.message)) return true;
+  }
+  if ((node.options || []).some(o => Object.values(o.label || {}).some(check))) return true;
+  if (node.evidence) {
+    if (Object.values(node.evidence.title || {}).some(check)) return true;
+    for (const pt of node.evidence.points || []) {
+      if (check(pt.readMore)) return true;
+      for (const b of pt.blocks || []) {
+        if (check(b.content) || check(b.label) || check(b.source) || check(b.caption)) return true;
+      }
+    }
+  }
+  if ((node.steps || []).some(s => check(s.label))) return true;
+  if (check(node.notes)) return true;
+  return false;
+}
+function markerBadges(node) {
+  const checkAt = v => typeof v === "string" && v.includes("@@");
+  const checkBang = v => typeof v === "string" && v.includes("!!");
+  const scan = fn => {
+    for (const c of Object.values(node.content || {}))
+      if (fn(c.question) || fn(c.subtitle) || fn(c.message)) return true;
+    if ((node.options || []).some(o => Object.values(o.label || {}).some(fn))) return true;
+    if (node.evidence) {
+      if (Object.values(node.evidence.title || {}).some(fn)) return true;
+      for (const pt of node.evidence.points || []) {
+        if (fn(pt.readMore)) return true;
+        for (const b of pt.blocks || [])
+          if (fn(b.content) || fn(b.label) || fn(b.source) || fn(b.caption)) return true;
+      }
+    }
+    if ((node.steps || []).some(s => fn(s.label))) return true;
+    if (fn(node.notes)) return true;
+    return false;
+  };
+  return [
+    scan(checkAt)   ? `<span class="ai-marker-badge">@@</span>` : "",
+    scan(checkBang) ? `<span class="ai-marker-badge all-lang">!!</span>` : "",
+  ].join("");
+}
+
 // ── SIDEBAR TABS ──────────────────────────────────────────────────────────────
 window.switchSidebarTab = function(tab) {
   sidebarTab = tab;
@@ -191,14 +236,16 @@ window.switchSidebarTab = function(tab) {
   document.getElementById("nodes-panel").style.display = tab === "nodes" ? "flex" : "none";
   document.getElementById("graph-panel").style.display = tab === "graph" ? "flex" : "none";
 
-  // When graph is active, hide editor + resize handle so graph gets full width
+  // When graph is active and no node selected, expand graph to fill space
   const editorPanel = document.querySelector(".editor-panel");
-  const resizeHandle = document.getElementById("resize-handle");
-  if (editorPanel) editorPanel.style.display = tab === "graph" ? "none" : "";
-  if (resizeHandle) resizeHandle.style.display = tab === "graph" ? "none" : "";
-  // Expand sidebar to fill space when graph is shown
   const sidebar = document.getElementById("sidebar");
-  if (sidebar) sidebar.style.flex = tab === "graph" ? "1" : "";
+  if (tab === "graph" && !selectedId) {
+    if (editorPanel) editorPanel.style.display = "none";
+    if (sidebar) sidebar.style.flex = "1";
+  } else {
+    if (editorPanel) editorPanel.style.display = "";
+    if (sidebar) sidebar.style.flex = "";
+  }
 
   if (tab === "graph") requestAnimationFrame(() => renderGraph());
 };
@@ -298,73 +345,99 @@ function renderPreview() {
   const node = tree[selectedId];
   const c = node.content?.[previewLang] || node.content?.en || {};
   const loc = v => locLang(v, previewLang);
+  const isDark = document.body.classList.contains("dark");
+  const dir = previewLang === "ar" ? "rtl" : "ltr";
 
-  const typeLabels = {
-    question: "Question",
-    rebuttal: "Let's look at this together",
-    dead_end: "Continue the conversation",
-    conclusion: "You've reached the end of this path",
-  };
-
-  let html = ``;
-
-  // Type tag
-  html += `<div class="prev-tag">${typeLabels[node.type] || node.type}</div>`;
-
-  // Heading
-  if (c.question) html += `<div class="prev-question">${escHtml(c.question)}</div>`;
-  if (c.subtitle) html += `<div class="prev-subtitle">${escHtml(c.subtitle)}</div>`;
-  if (c.message)  html += `<div class="prev-subtitle">${escHtml(c.message)}</div>`;
-
-  // Evidence
-  if (node.evidence) {
-    const evTitle = loc(node.evidence.title) || "See what the evidence says";
-    html += `<button class="prev-evid-toggle" onclick="togglePrevEvidence(this)">
-      <span class="prev-evid-arrow">▶</span> <span>${escHtml(evTitle)}</span>
-    </button>
-    <div class="prev-evid-box" style="display:none">`;
-    for (const pt of node.evidence.points || []) {
-      html += `<div class="prev-evid-pt">`;
-      for (const b of pt.blocks || []) {
-        if (b.type === "text")  html += `<p class="prev-evid-text">${escHtml(loc(b.content))}</p>`;
-        if (b.type === "quote") html += `<blockquote class="prev-evid-quote">${escHtml(loc(b.content))}<cite>${escHtml(loc(b.source))}</cite></blockquote>`;
-        if (b.type === "link")  html += `<a class="prev-evid-link" href="${escHtml(b.url)}" target="_blank" rel="noopener noreferrer">↗ ${escHtml(loc(b.label))}</a>`;
-        if (b.type === "image" && b.url) html += `<figure style="margin:6px 0"><img src="${escHtml(b.url)}" alt="${escHtml(loc(b.caption))}" style="width:100%;border-radius:6px;display:block">${loc(b.caption) ? `<figcaption style="font-size:11px;color:var(--muted);margin-top:4px">${escHtml(loc(b.caption))}</figcaption>` : ""}</figure>`;
-      }
+  // Render evidence points the same way as app.js
+  function renderPoints(points) {
+    if (!points?.length) return "";
+    return points.map(pt => {
+      let blocksHtml = (pt.blocks || []).map(b => {
+        if (b.type === "text") return `<p class="evid-txt">${escHtml(loc(b.content))}</p>`;
+        if (b.type === "quote") return `<blockquote style="margin:8px 0;padding:8px 14px;border-left:3px solid var(--accent);font-style:italic;font-size:13px;line-height:1.7;color:var(--muted);">${escHtml(loc(b.content))}<br><cite style="font-size:11px;font-style:normal;color:var(--muted);">— ${escHtml(loc(b.source))}</cite></blockquote>`;
+        if (b.type === "link") return `<a class="chip" href="${escHtml(b.url)}" target="_blank" rel="noopener noreferrer">${b.linkType === "video" ? "▶" : "↗"} ${escHtml(loc(b.label))}</a>`;
+        if (b.type === "image" && b.url) return `<figure style="margin:6px 0"><img src="${escHtml(b.url)}" alt="${escHtml(loc(b.caption))}" style="width:100%;border-radius:6px;display:block">${loc(b.caption) ? `<figcaption style="font-size:11px;color:var(--muted);margin-top:4px">${escHtml(loc(b.caption))}</figcaption>` : ""}</figure>`;
+        return "";
+      }).join("");
       const rm = loc(pt.readMore);
-      if (rm) html += `<div class="prev-evid-readmore">${escHtml(rm)}</div>`;
-      html += `</div>`;
-    }
-    html += `</div>`;
+      if (rm) blocksHtml += `<button class="rm-btn" onclick="this.nextElementSibling.classList.toggle('hidden')">Read more ▼</button><div class="rm-text hidden">${escHtml(rm)}</div>`;
+      return `<div class="evid-pt">${blocksHtml}</div>`;
+    }).join("");
   }
 
-  // Options
-  const opts = node.options || [];
-  if (opts.length) {
-    html += `<div class="prev-opts">`;
-    for (const opt of opts) {
-      const label = loc(opt.label) || opt.next;
-      const valid = !!tree[opt.next];
-      const arrow = valid
-        ? `<span class="prev-opt-arrow">${escHtml(opt.next)}</span>`
-        : `<span class="prev-opt-arrow broken" title="Broken link">⚠ ${escHtml(opt.next)}</span>`;
-      html += `<div class="prev-opt">${escHtml(label)}${arrow}</div>`;
-    }
-    if (node.type === "question") {
-      html += `<div class="prev-none">None of these represent my view</div>`;
-    }
-    html += `</div>`;
+  let nodeHtml = "";
+
+  if (node.type === "question") {
+    const evidHtml = node.evidence ? `
+      <button class="evid-toggle" onclick="this.nextElementSibling.classList.toggle('hidden')">
+        <span style="color:#16a34a">●</span>
+        <span>See what the evidence says</span>
+        <span style="margin-left:auto">▼</span>
+      </button>
+      <div class="evid-box hidden">
+        <p class="evid-title">${escHtml(loc(node.evidence.title))}</p>
+        ${renderPoints(node.evidence.points)}
+      </div>` : "";
+
+    const optsHtml = (node.options || []).filter(opt => {
+      const target = tree[opt.next];
+      return !target || target.status !== "draft";
+    }).map(opt =>
+      `<button class="opt-btn" style="pointer-events:none">${escHtml(loc(opt.label))}</button>`
+    ).join("");
+
+    nodeHtml = `
+      <p class="node-tag">Question</p>
+      <h1 class="node-q">${escHtml(c.question || "")}</h1>
+      ${c.subtitle ? `<p class="node-sub">${escHtml(c.subtitle)}</p>` : ""}
+      ${evidHtml}
+      <div class="opts">${optsHtml}</div>
+      <button class="none-btn" style="pointer-events:none">None of these represent my view</button>`;
   }
 
-  // Conclusion steps
-  if (node.type === "conclusion" && node.steps?.length) {
-    html += `<div class="prev-steps-title">Next steps</div>`;
-    for (const st of node.steps) {
-      html += `<div class="prev-step">↗ ${escHtml(loc(st.label))}</div>`;
-    }
+  else if (node.type === "rebuttal") {
+    const optsHtml = (node.options || []).map(opt =>
+      `<button class="next-btn" style="pointer-events:none">${escHtml(loc(opt.label))}</button>`
+    ).join("");
+    nodeHtml = `
+      <p class="node-tag">Let's look at this together</p>
+      <h2 class="node-q" style="font-size:clamp(1.1rem,3.5vw,1.5rem)">${escHtml(c.question || "")}</h2>
+      ${node.evidence ? `<div class="evid-box"><p class="evid-title">${escHtml(loc(node.evidence.title))}</p>${renderPoints(node.evidence.points)}</div>` : ""}
+      ${optsHtml}`;
   }
 
-  panel.innerHTML = html;
+  else if (node.type === "dead_end") {
+    nodeHtml = `
+      <div class="dead-box">
+        <p class="node-tag" style="text-align:center">Continue the conversation</p>
+        <p class="dead-txt">${escHtml(c.message || "")}</p>
+        <p style="font-size:12px;color:var(--muted);text-align:center;">[Contact form appears here]</p>
+      </div>`;
+  }
+
+  else if (node.type === "conclusion") {
+    const stepsHtml = (node.steps || []).map(st =>
+      `<a class="step-link" href="#" onclick="return false">
+        ${st.type === "video" ? "▶" : "📄"} ${escHtml(loc(st.label))} <span style="margin-left:auto">↗</span>
+      </a>`
+    ).join("");
+    nodeHtml = `
+      <p class="node-tag">You've reached the end of this path</p>
+      <h1 class="conc-h">${escHtml(c.question || "")}</h1>
+      <p class="conc-msg">${escHtml(c.subtitle || "")}</p>
+      ${stepsHtml.length ? `<p class="steps-ttl">Next steps</p>${stepsHtml}` : ""}
+      ${node.showContact ? `<p style="font-size:12px;color:var(--muted);text-align:center;margin-top:14px;">[Contact form appears here]</p>` : ""}
+      <button class="restart-btn" style="pointer-events:none">↻ Start over</button>`;
+  }
+
+  // Wrap in an iframe-like container using the real CSS
+  panel.innerHTML = `
+    <div class="prev-live" dir="${dir}" style="background:var(--bg);padding:24px 18px;min-height:100%;${isDark ? "" : ""}">
+      <link rel="stylesheet" href="css/style.css">
+      <div style="max-width:660px;margin:0 auto;">
+        ${nodeHtml}
+      </div>
+    </div>`;
 }
 
 // ── NODE LIST ─────────────────────────────────────────────────────────────────
@@ -381,6 +454,7 @@ function renderNodeList() {
     if (filterType && n.type !== filterType) return false;
     if (filterStatus && (n.status || "live") !== filterStatus) return false;
     if (filterMissingLang && !isMissingLang(n, filterMissingLang)) return false;
+    if (filterHasAi && !hasAiMarker(n)) return false;
     if (!searchQuery) return true;
     const words = searchQuery.toLowerCase().split(/\s+/).filter(Boolean);
     const text = [
@@ -412,6 +486,7 @@ function renderNodeList() {
     const langBadges = [
       missingEn ? `<span class="missing-lang-badge">EN</span>` : "",
       missingAr ? `<span class="missing-lang-badge">AR</span>` : "",
+      markerBadges(n),
     ].join("");
     return `<div class="node-item${active}" onclick="selectNode('${n.id}')">
       <div class="node-item-header">
@@ -593,7 +668,7 @@ function renderEditor() {
       </div>
     </div>
   `;
-  requestAnimationFrame(autoResizeAll);
+  requestAnimationFrame(() => { autoResizeAll(); highlightAiFields(); });
 }
 
 // ── OPTIONS EDITOR ────────────────────────────────────────────────────────────
@@ -694,6 +769,10 @@ function renderEvidencePoints(points) {
 function renderBlocks(blocks, pi) {
   return blocks.map((b, bi) => `
     <div class="block-row" data-block="${bi}" data-point="${pi}">
+      <div class="block-reorder">
+        <button class="btn btn-icon btn-reorder" onclick="moveBlock(${pi}, ${bi}, -1)" ${bi === 0 ? "disabled" : ""} title="Move up">▲</button>
+        <button class="btn btn-icon btn-reorder" onclick="moveBlock(${pi}, ${bi}, 1)" ${bi === blocks.length - 1 ? "disabled" : ""} title="Move down">▼</button>
+      </div>
       <div class="block-type-tag">${b.type}</div>
       <div class="block-fields">
         ${renderBlockFields(b, pi, bi)}
@@ -743,6 +822,18 @@ window.addBlock = function (pi, type) {
   pts[pi].blocks = pts[pi].blocks || [];
   pts[pi].blocks.push(block);
   document.getElementById(`blocks-${pi}`).innerHTML = renderBlocks(pts[pi].blocks, pi);
+  requestAnimationFrame(autoResizeAll);
+};
+
+window.moveBlock = function (pi, bi, dir) {
+  const node = tree[selectedId];
+  const blocks = node.evidence.points[pi].blocks;
+  const newIndex = bi + dir;
+  if (newIndex < 0 || newIndex >= blocks.length) return;
+  const temp = blocks[bi];
+  blocks[bi] = blocks[newIndex];
+  blocks[newIndex] = temp;
+  document.getElementById(`blocks-${pi}`).innerHTML = renderBlocks(blocks, pi);
   requestAnimationFrame(autoResizeAll);
 };
 
@@ -1084,40 +1175,71 @@ window.exportTree = function () {
   URL.revokeObjectURL(url);
 };
 
-const SAVE_SERVER_URL = "http://localhost:3456/save";
+const SAVE_SERVER = "http://localhost:3456";
+
+async function serverFetch(path, body) {
+  if (window.electronAPI) {
+    if (path === "/save") return window.electronAPI.save(body);
+    if (path === "/push") return window.electronAPI.push();
+  }
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
+  const res = await fetch(SAVE_SERVER + path, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    ...(body ? { body: JSON.stringify(body) } : {}),
+    signal: controller.signal,
+  });
+  clearTimeout(timeout);
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error(text || `HTTP ${res.status}`);
+  }
+}
+
+function isServerDown(err) {
+  return err.name === "AbortError" || err.message.includes("Failed to fetch") || err.message.includes("NetworkError") || err.message.includes("Load failed");
+}
 
 window.saveToFiles = async function () {
   const btn = document.getElementById("save-to-files-btn");
-  if (!btn) { alert("Save button not found"); return; }
   const origText = btn.innerHTML;
   btn.textContent = "Saving…";
   btn.disabled = true;
   try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 3000);
-    const res = await fetch(SAVE_SERVER_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(tree),
-      signal: controller.signal,
-    });
-    clearTimeout(timeout);
-    const data = await res.json();
+    const data = await serverFetch("/save", tree);
     if (data.ok) {
-      const gitMsg = data.git === "pushed" ? " & pushed" : data.git === "no_changes" ? " (no changes)" : "";
-      btn.textContent = "✓ Saved " + data.totalNodes + " nodes" + gitMsg;
-      setTimeout(() => { btn.innerHTML = origText; btn.disabled = false; }, 3000);
+      btn.textContent = "✓ Saved " + data.totalNodes + " nodes";
+      setTimeout(() => { btn.innerHTML = origText; btn.disabled = false; }, 2000);
     } else {
       throw new Error(data.error || "Unknown error");
     }
   } catch (err) {
     btn.innerHTML = origText;
     btn.disabled = false;
-    if (err.name === "AbortError" || err.message.includes("Failed to fetch") || err.message.includes("NetworkError") || err.message.includes("Load failed")) {
-      alert("Save server not running.\n\nStart it with:\n  node scripts/save-server.js");
+    alert(isServerDown(err) ? "Save server not running.\n\nStart it with:\n  node scripts/save-server.js" : "Save failed: " + err.message);
+  }
+};
+
+window.pushToGithub = async function () {
+  const btn = document.getElementById("push-to-github-btn");
+  const origText = btn.innerHTML;
+  btn.textContent = "Pushing…";
+  btn.disabled = true;
+  try {
+    const data = await serverFetch("/push");
+    if (data.ok) {
+      btn.textContent = data.status === "pushed" ? "✓ Pushed" : "✓ No changes";
+      setTimeout(() => { btn.innerHTML = origText; btn.disabled = false; }, 2000);
     } else {
-      alert("Save failed: " + err.message);
+      throw new Error(data.error || "Unknown error");
     }
+  } catch (err) {
+    btn.innerHTML = origText;
+    btn.disabled = false;
+    alert(isServerDown(err) ? "Save server not running.\n\nStart it with:\n  node scripts/save-server.js" : "Push failed: " + err.message);
   }
 };
 
@@ -1187,6 +1309,21 @@ document.querySelector(".editor-panel").addEventListener("blur", e => {
   if (el) { el.textContent = "Saved"; el.style.opacity = "1"; setTimeout(() => { el.style.opacity = "0"; }, 1200); }
 }, true); // capture phase so blur fires on child elements
 
+// ── AI MARKER HIGHLIGHTING ────────────────────────────────────────────────────
+function highlightAiFields() {
+  document.querySelectorAll("#editor .field-input, #editor .node-notes-textarea").forEach(el => {
+    el.classList.toggle("has-ai-marker", el.value.includes("@@"));
+    el.classList.toggle("has-all-marker", el.value.includes("!!"));
+  });
+}
+
+document.getElementById("editor").addEventListener("input", e => {
+  if (e.target.classList.contains("field-input") || e.target.classList.contains("node-notes-textarea")) {
+    e.target.classList.toggle("has-ai-marker", e.target.value.includes("@@"));
+    e.target.classList.toggle("has-all-marker", e.target.value.includes("!!"));
+  }
+});
+
 // ── SEARCH ────────────────────────────────────────────────────────────────────
 document.getElementById("search-input").addEventListener("input", e => {
   searchQuery = e.target.value;
@@ -1206,6 +1343,11 @@ document.getElementById("filter-status").addEventListener("change", e => {
 
 document.getElementById("filter-missing-lang").addEventListener("change", e => {
   filterMissingLang = e.target.value;
+  renderNodeList();
+});
+
+document.getElementById("filter-has-ai").addEventListener("change", e => {
+  filterHasAi = !!e.target.value;
   renderNodeList();
 });
 
@@ -1374,6 +1516,13 @@ function renderGraph(forceRebuild) {
 
   cyInstance.on("tap", "node", function (evt) {
     const nodeId = evt.target.id();
+    // Show editor panel alongside graph when a node is tapped
+    const editorPanel = document.querySelector(".editor-panel");
+    const resizeHandle = document.getElementById("resize-handle");
+    const sidebar = document.getElementById("sidebar");
+    if (editorPanel) editorPanel.style.display = "";
+    if (resizeHandle) resizeHandle.style.display = "";
+    if (sidebar) sidebar.style.flex = "";
     selectNode(nodeId);
   });
 

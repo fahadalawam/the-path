@@ -23,13 +23,16 @@ export const atheistNodes = {
       },
       {
         "label": {
-          "en": "I'm not sure reality is real",
+          "en": "Reality itself might not exist",
           "ar": "لست متأكدًا من أن الواقع حقيقي"
         },
         "next": "atheist_reality_doubt"
       }
     ],
-    "evidence": null
+    "evidence": null,
+    "steps": [],
+    "showContact": false,
+    "notes": ""
   },
   "atheist_reality_doubt": {
     "id": "atheist_reality_doubt",
@@ -295,6 +298,22 @@ export const atheistNodes = {
             "en": "This is known as the thermodynamic argument against an eternal universe. Even atheist cosmologists like Stephen Hawking acknowledged that the universe had a beginning.",
             "ar": "يُعرف هذا بالحجة الديناميكية الحرارية ضد الكون الأزلي. حتى علماء الكونيات الملحدون أمثال ستيفن هوكينج اعترفوا بأن للكون بداية."
           }
+        },
+        {
+          "id": "e3",
+          "blocks": [
+            {
+              "type": "text",
+              "content": {
+                "en": "The Borde-Guth-Vilenkin theorem (2003) proves that any universe which has been expanding on average — including proposed 'eternal inflation' models — must have had a beginning. This applies even to multiverse scenarios.",
+                "ar": "تُثبت مبرهنة بورد-غوث-فيلنكين (2003) أن أي كون كان يتمدد في المتوسط — بما في ذلك نماذج 'التضخم الأزلي' المقترحة — لا بد أن يكون قد كانت له بداية. وينطبق ذلك حتى على سيناريوهات الأكوان المتعددة."
+              }
+            }
+          ],
+          "readMore": {
+            "en": "Alexander Vilenkin, one of the theorem's authors, stated: 'It is said that an argument is what convinces reasonable men, and a proof is what it takes to convince even an unreasonable man. With the proof now in place, cosmologists can no longer hide behind the possibility of a past-eternal universe.'",
+            "ar": "قال ألكسندر فيلنكين، أحد مؤلفي المبرهنة: 'يقال إن الحجة هي ما يقنع العقلاء، أما البرهان فهو ما يلزم حتى غير المعقول. ومع توافر البرهان الآن، لم يعد بإمكان علماء الكونيات الاحتماء وراء احتمالية كون أزلي الماضي.'"
+          }
         }
       ]
     },
@@ -456,7 +475,10 @@ export const atheistNodes = {
         "next": "atheist_self_cause_rebuttal"
       }
     ],
-    "evidence": null
+    "evidence": null,
+    "steps": [],
+    "showContact": false,
+    "notes": ""
   },
   "atheist_quantum_rebuttal": {
     "id": "atheist_quantum_rebuttal",
@@ -610,6 +632,12 @@ export const atheistNodes = {
           "ar": "نحن ببساطة لا نعرف"
         },
         "next": "atheist_we_dont_know"
+      },
+      {
+        "label": {
+          "en": "Maybe it's all a simulation"
+        },
+        "next": "atheist_simulation"
       }
     ],
     "evidence": {
@@ -635,7 +663,75 @@ export const atheistNodes = {
           }
         }
       ]
-    }
+    },
+    "steps": [],
+    "showContact": false,
+    "notes": ""
+  },
+  "atheist_simulation": {
+    "id": "atheist_simulation",
+    "type": "rebuttal",
+    "status": "live",
+    "content": {
+      "en": {
+        "question": "A simulation still needs a simulator."
+      },
+      "ar": {
+        "question": "المحاكاة لا تزال تحتاج إلى من يُحاكي."
+      }
+    },
+    "options": [
+      {
+        "label": {
+          "en": "That makes sense — let's continue",
+          "ar": "هذا منطقي — لنكمل"
+        },
+        "next": "atheist_one_or_many"
+      }
+    ],
+    "evidence": {
+      "title": {
+        "en": "The simulation doesn't escape the question",
+        "ar": "المحاكاة لا تهرب من السؤال"
+      },
+      "points": [
+        {
+          "id": "sim1",
+          "blocks": [
+            {
+              "type": "text",
+              "content": {
+                "en": "Even if our universe is a simulation, something had to run it. That simulator exists outside our space, time, and matter — and chose to create our universe at a specific moment. That's exactly the description of what we call a Creator.",
+                "ar": "حتى لو كان كوننا محاكاةً، فلا بد من شيء يُشغّلها. ذلك المحاكي موجود خارج زماننا ومكاننا ومادتنا — واختار إيجاد كوننا في لحظة بعينها. هذا بالضبط ما نُسميه الخالق."
+              }
+            }
+          ],
+          "readMore": {
+            "en": "The simulation hypothesis, popularized by philosopher Nick Bostrom, doesn't solve the problem of first cause — it pushes it one level up. Whatever runs the simulation must itself exist, have power to create, and have made a choice. Those attributes map directly onto what every major religion has called God.",
+            "ar": "فرضية المحاكاة، التي روّج لها الفيلسوف نيك بوسترام، لا تحل مشكلة السبب الأول — بل ترفعها درجةً واحدة. فما يُشغّل المحاكاة يجب أن يوجد هو نفسه، وأن تكون لديه القدرة على الخلق، وأن يكون قد اتخذ قراراً. هذه الصفات تُقابل مباشرةً ما وصفته الأديان الكبرى بالله."
+          }
+        },
+        {
+          "id": "sim2",
+          "blocks": [
+            {
+              "type": "text",
+              "content": {
+                "en": "You can keep asking 'who simulated the simulator?' — but at some point, there must be a first, uncaused cause. Something that exists by its own nature, with no need for a prior cause. That's the very definition of God.",
+                "ar": "يمكنك الاستمرار في السؤال 'من حاكى المحاكي؟' — لكن في نقطة ما، لا بد من سبب أول غير مُسبَّب. شيء يوجد بطبيعته ذاتها، دون الحاجة إلى سبب سابق. وهذا بالذات تعريف الله."
+              }
+            }
+          ],
+          "readMore": {
+            "en": "",
+            "ar": ""
+          }
+        }
+      ]
+    },
+    "steps": [],
+    "showContact": false,
+    "notes": ""
   },
   "atheist_infinite_regress": {
     "id": "atheist_infinite_regress",
