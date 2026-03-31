@@ -312,8 +312,8 @@ export const quranNodes = {
               "type": "image",
               "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Gray20.png",
               "caption": {
-                "en": "Human embryo at ~day 22 (Carnegie stage 10). The segmented bumps (somites) along the back match the Quranic term 'mudghah' — resembling a chewed piece of gum. The curved, elongated body matches 'alaqah' — leech-like. Illustration from Gray's Anatomy (public domain).",
-                "ar": "جنين بشري في اليوم ~22 (المرحلة 10 من كارنيغي). تتطابق النتوءات المقطّعة (الفقرات البدائية) على الظهر مع المصطلح القرآني 'مضغة' — إذ تشبه قطعة اللحم الممضوغة. ويتطابق الجسم المنحني المستطيل مع 'علقة' — شبيهًا بالعلقة. رسم توضيحي من كتاب Gray's Anatomy (ملكية عامة)."
+                "en": "Human embryo at ~days 28–30 (Carnegie stage 10). The segmented bumps (somites) along the back match the Quranic term 'mudghah' — resembling a chewed piece of gum. The curved, elongated body matches 'alaqah' — leech-like. Illustration from Gray's Anatomy (public domain).",
+                "ar": "جنين بشري في الأيام ~28–30 (المرحلة 10 من كارنيغي). تتطابق النتوءات المقطّعة (الفقرات البدائية) على الظهر مع المصطلح القرآني 'مضغة' — إذ تشبه قطعة اللحم الممضوغة. ويتطابق الجسم المنحني المستطيل مع 'علقة' — شبيهًا بالعلقة. رسم توضيحي من كتاب Gray's Anatomy (ملكية عامة)."
               }
             },
             {

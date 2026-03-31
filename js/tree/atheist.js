@@ -269,14 +269,7 @@ export const atheistNodes = {
               "url": "https://science.nasa.gov/universe/overview/",
               "linkType": "article"
             },
-            {
-              "type": "image",
-              "url": "https://cdn2.hubspot.net/hubfs/53/image8-2.jpg",
-              "caption": {
-                "en": "google",
-                "ar": ""
-              }
-            }
+
           ],
           "readMore": {
             "en": "Edwin Hubble's 1929 discovery that galaxies are moving away from us, combined with the detection of Cosmic Microwave Background radiation in 1965, confirmed that the universe is expanding — and therefore had a definite beginning.",

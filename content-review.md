@@ -28,6 +28,7 @@ Evidence points that cite specific studies, people, or claims but have no link a
 | `messenger` | pc1 | readMore references Abu Jahl's testimony about Muhammad's ﷺ truthfulness — important claim, needs a hadith or sira source link. |
 | `atheist_beginning` | e2 | Mentions Hawking acknowledging the beginning — no link. Link to *A Brief History of Time* or a sourced quote. |
 | `atheist_one_or_many` | om1 | Argument from Unity / fine-tuning — no link to any cosmological source. |
+| `quran_preservation_evidence` | qpe1/qpe2 | The Quran's preservation through memorization is a strong and uniquely verifiable claim — no evidence or source currently attached. Needs: (1) a stat on the number of Huffaz (memorizers) today (~10 million+), (2) how oral transmission was standardized under Abu Bakr and Uthman, (3) a comparison — no other religious text has a comparable living oral tradition. Link to an academic or reputable source documenting the Hafiz tradition. |
 
 ---
 
