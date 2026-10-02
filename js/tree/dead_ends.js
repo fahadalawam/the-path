@@ -58,5 +58,20 @@ export const deadEndNodes = {
     },
     "options": [],
     "evidence": null
+  },
+  "none_of_these": {
+    "id": "none_of_these",
+    "type": "dead_end",
+    "status": "live",
+    "content": {
+      "en": {
+        "message": "None of the answers fit your view, and that matters to us. Tell us in your own words what you think, and a real person will reply."
+      },
+      "ar": {
+        "message": "لم تعبّر أيٌّ من الإجابات عن رأيك، وهذا يهمّنا. أخبرنا بكلماتك ما الذي تراه، وسيردّ عليك شخص حقيقي."
+      }
+    },
+    "options": [],
+    "evidence": null
   }
 };
