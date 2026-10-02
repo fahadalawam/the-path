@@ -22,6 +22,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Build question library
+        run: node scripts/build-library.mjs
+
       - name: Remove admin files
         run: rm -f admin.html js/admin.js
 

@@ -31,6 +31,7 @@ const UI = {
     finePrint: "No account needed. No pressure. You can go back at any step.\nIf your view is not represented, you can always reach us directly.",
     beginBtn: "Begin the journey",
     back: "Back",
+    allQuestions: "All questions",
     noneOfThese: "None of these represent my view",
     questionTag: "Question",
     rebuttalTag: "Let's look at this together",
@@ -64,6 +65,7 @@ const UI = {
     finePrint: "لا حاجة إلى حساب. لا ضغط. يمكنك العودة في أي خطوة.\nإن لم يكن رأيك ممثلًا، يمكنك التواصل معنا مباشرة في أي وقت.",
     beginBtn: "ابدأ الرحلة",
     back: "رجوع",
+    allQuestions: "كل الأسئلة",
     noneOfThese: "لا يمثّل أيٌّ من هذه الخيارات وجهة نظري",
     questionTag: "سؤال",
     rebuttalTag: "دعنا ننظر في هذا معًا",
@@ -129,6 +131,9 @@ function setLang(newLang) {
   // Update lang button
   const btn = document.getElementById("lang-btn");
   if (btn) btn.textContent = lang === "ar" ? "EN" : "AR";
+  const libLink = document.getElementById("lib-link");
+  libLink.href = lang === "ar" ? "ar/" : "./";
+  libLink.textContent = ui("allQuestions");
 
   // Re-render landing topics if visible
   const landingVisible = document.getElementById("landing").style.display !== "none";
@@ -190,6 +195,7 @@ function renderLanding() {
 })();
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
+if (new URLSearchParams(location.search).get("lang") === "ar" && lang !== "ar") setLang("ar");
 renderLanding();
 
 // ── RESTORE FROM URL ──────────────────────────────────────────────────────────
@@ -437,8 +443,8 @@ window._submitForm = submitForm;
 
 // ── RENDER NODE ───────────────────────────────────────────────────────────────
 function renderNode() {
+  if (!TREE[nodeId]) nodeId = "none_of_these";
   const node = TREE[nodeId];
-  if (!node) return;
   const c = nodeContent(node);
   const el = document.getElementById("node-content");
   el.className = "anim";
