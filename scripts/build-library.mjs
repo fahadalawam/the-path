@@ -28,6 +28,7 @@ import { resolve, dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { TREE } from "../js/tree/index.js";
 import { SECTIONS, TOPICS } from "../js/topics.js";
+import { heroArt, bannerArt, topicIcon, starOrnament, TOPICS_WITH_ICONS } from "./illustrations.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -116,6 +117,7 @@ for (const [slug, t] of Object.entries(TOPICS)) {
   for (const id of [...t.main, ...t.objections, t.contactNode, t.stepsFrom].filter(Boolean)) {
     if (!TREE[id]) problems.push(`topic "${slug}" uses missing node "${id}"`);
   }
+  if (!TOPICS_WITH_ICONS.includes(slug)) problems.push(`topic "${slug}" has no icon in scripts/illustrations.mjs`);
 }
 if (problems.length) {
   console.error("Library build failed:\n  " + problems.join("\n  "));
@@ -286,17 +288,21 @@ function homePage(lang) {
     const items = s.topics.map((slug) => {
       const t = TOPICS[slug];
       return `<li><a class="lib-card" href="${pageHref(root, lang, slug)}">
-        <span class="lib-card-t">${esc(loc(t.title, lang))}</span>
-        <span class="lib-card-s">${esc(loc(t.summary, lang))}</span>
+        <span class="lib-card-icon">${topicIcon(slug)}</span>
+        <span class="lib-card-body">
+          <span class="lib-card-t">${esc(loc(t.title, lang))}</span>
+          <span class="lib-card-s">${esc(loc(t.summary, lang))}</span>
+        </span>
       </a></li>`;
     }).join("");
     return `<section class="lib-section">
-      <h2 class="lib-h">${esc(loc(s.title, lang))}</h2>
+      <h2 class="lib-h lib-h-section">${starOrnament()}${esc(loc(s.title, lang))}</h2>
       <ul class="lib-list">${items}</ul>
     </section>`;
   }).join("");
 
-  const body = `<p class="eyebrow">${esc(u.eyebrow)}</p>
+  const body = `<div class="lib-hero">${heroArt()}</div>
+<p class="eyebrow">${esc(u.eyebrow)}</p>
 <h1 class="lib-title">The Path</h1>
 <p class="lib-lead">${esc(u.homeLead)}</p>
 ${sections}
@@ -325,6 +331,7 @@ function topicPage(lang, slug, nextSlug) {
   const next = TOPICS[nextSlug];
 
   const body = `<nav class="lib-crumb"><a href="${pageHref(root, lang, "")}">${esc(u.allQuestions)}</a></nav>
+<div class="lib-banner">${bannerArt(slug)}</div>
 <h1 class="lib-title lib-title-q">${esc(loc(t.title, lang))}</h1>
 <p class="lib-lead">${esc(loc(t.summary, lang))}</p>
 ${main.length ? `${main.length > 1 || objections.length ? `<h2 class="lib-h">${esc(u.theCase)}</h2>` : ""}${main.map((id) => renderMain(id, lang)).join("")}` : ""}
