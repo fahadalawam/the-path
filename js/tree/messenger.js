@@ -216,10 +216,10 @@ export const messengerNodes = {
             {
               "type": "link",
               "label": {
-                "en": "The Unlettered Prophet",
-                "ar": "النبي الأمّي"
+                "en": "Quran 7:157: “the unlettered Prophet”",
+                "ar": "سورة الأعراف 157: «النبي الأمّي»"
               },
-              "url": "https://www.islamreligion.com/articles/395/",
+              "url": "https://quran.com/7/157",
               "linkType": "article"
             }
           ],
