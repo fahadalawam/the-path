@@ -21,7 +21,7 @@ export const conclusionNodes = {
           "en": "Learn the basics of Islam",
           "ar": "تعلّم أساسيات الإسلام"
         },
-        "url": "https://www.islamreligion.com/category/5/",
+        "url": "https://www.islamreligion.com/islam-at-a-glance",
         "type": "article"
       },
       {
@@ -29,7 +29,7 @@ export const conclusionNodes = {
           "en": "Watch: Islam's core beliefs explained",
           "ar": "شاهد: شرح العقائد الأساسية في الإسلام"
         },
-        "url": "https://www.youtube.com/watch?v=Oo1mDFnxRSs",
+        "url": "https://www.youtube.com/watch?v=76vanFKw664",
         "type": "video"
       },
       {
@@ -37,7 +37,7 @@ export const conclusionNodes = {
           "en": "Find a mosque near you",
           "ar": "ابحث عن مسجد قريب منك"
         },
-        "url": "https://www.islamicfinder.org/",
+        "url": "https://www.google.com/maps/search/mosque",
         "type": "article"
       }
     ],
