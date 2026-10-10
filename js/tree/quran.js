@@ -203,7 +203,7 @@ export const quranNodes = {
                 "en": "Sana'a Manuscripts — Wikipedia",
                 "ar": "مخطوطات صنعاء — ويكيبيديا"
               },
-              "url": "https://en.wikipedia.org/wiki/Sana%27a_manuscript",
+              "url": "https://en.wikipedia.org/wiki/Sanaa_manuscript",
               "linkType": "article"
             }
           ],
