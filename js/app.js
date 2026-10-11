@@ -25,12 +25,15 @@ const TOPICS = {
 // Static UI strings
 const UI = {
   en: {
-    eyebrow: "A journey of reason",
-    tagline: "A rational, evidence-based journey through the biggest questions a human being can ask — starting from the universe itself, and following the logic wherever it leads.",
+    siteName: "The Only True Religion",
+    eyebrow: "A claim we can back up",
+    tagline: "We say Islam is the only true religion. Follow the reasoning one question at a time, starting from the universe itself, and see whether it holds.",
     topicsLabel: "What you will explore",
     finePrint: "No account needed. No pressure. You can go back at any step.\nIf your view is not represented, you can always reach us directly.",
     beginBtn: "Begin the journey",
+    journeyTitle: "Guided journey",
     back: "Back",
+    allQuestions: "All questions",
     noneOfThese: "None of these represent my view",
     questionTag: "Question",
     rebuttalTag: "Let's look at this together",
@@ -58,12 +61,15 @@ const UI = {
     networkErr: "Network error. Please try again.",
   },
   ar: {
-    eyebrow: "رحلة في العقل",
-    tagline: "رحلة عقلانية قائمة على الأدلة عبر أكبر الأسئلة التي يمكن للإنسان أن يطرحها — تبدأ من الكون نفسه، وتتبع المنطق أينما قاد.",
+    siteName: "الدين الحق",
+    eyebrow: "ادّعاءٌ نملك دليله",
+    tagline: "نقول إن الإسلام هو الدين الحق. تتبّع الاستدلال سؤالًا تلو الآخر، بدءًا من الكون نفسه، وانظر هل يصمد.",
     topicsLabel: "ما ستستكشفه",
     finePrint: "لا حاجة إلى حساب. لا ضغط. يمكنك العودة في أي خطوة.\nإن لم يكن رأيك ممثلًا، يمكنك التواصل معنا مباشرة في أي وقت.",
     beginBtn: "ابدأ الرحلة",
+    journeyTitle: "الرحلة الموجَّهة",
     back: "رجوع",
+    allQuestions: "كل الأسئلة",
     noneOfThese: "لا يمثّل أيٌّ من هذه الخيارات وجهة نظري",
     questionTag: "سؤال",
     rebuttalTag: "دعنا ننظر في هذا معًا",
@@ -129,6 +135,9 @@ function setLang(newLang) {
   // Update lang button
   const btn = document.getElementById("lang-btn");
   if (btn) btn.textContent = lang === "ar" ? "EN" : "AR";
+  const libLink = document.getElementById("lib-link");
+  libLink.href = lang === "ar" ? "ar/" : "./";
+  libLink.textContent = ui("allQuestions");
 
   // Re-render landing topics if visible
   const landingVisible = document.getElementById("landing").style.display !== "none";
@@ -142,6 +151,9 @@ window._setLang = setLang;
 
 // ── RENDER LANDING ────────────────────────────────────────────────────────────
 function renderLanding() {
+  document.title = `${ui("journeyTitle")} — ${ui("siteName")}`;
+  document.getElementById("logo").textContent = ui("siteName");
+  document.querySelector("#landing h1").textContent = ui("siteName");
   document.querySelector(".eyebrow").textContent = ui("eyebrow");
   document.querySelector(".tagline").textContent = ui("tagline");
   document.querySelector(".topics-label").textContent = ui("topicsLabel");
@@ -190,6 +202,7 @@ function renderLanding() {
 })();
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
+if (new URLSearchParams(location.search).get("lang") === "ar" && lang !== "ar") setLang("ar");
 renderLanding();
 
 // ── RESTORE FROM URL ──────────────────────────────────────────────────────────
@@ -437,8 +450,8 @@ window._submitForm = submitForm;
 
 // ── RENDER NODE ───────────────────────────────────────────────────────────────
 function renderNode() {
+  if (!TREE[nodeId]) nodeId = "none_of_these";
   const node = TREE[nodeId];
-  if (!node) return;
   const c = nodeContent(node);
   const el = document.getElementById("node-content");
   el.className = "anim";

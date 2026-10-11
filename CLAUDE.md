@@ -8,6 +8,16 @@ The site is NOT preachy. It does NOT lecture. It asks questions, presents concre
 
 ---
 
+## Site Layout (Question Library)
+
+The public site is a **question library**: `index.html` lists topics and each topic has its own page at `q/<slug>/` (Arabic under `ar/`). Each page shows the evidence, then the common objections, then a contact form. The original step-by-step flow lives on at `journey.html`.
+
+- Topic pages are **generated**: edit `js/topics.js` (which nodes belong to which topic) or `js/tree/*.js`, then run `node scripts/build-library.mjs`. Never edit `index.html`, `ar/` or `q/` by hand.
+- The build also validates the tree and fails on broken links; the deploy workflow runs it before publishing.
+- Illustrations (home hero, topic banners, topic icons, section star) are original inline SVGs in `scripts/illustrations.mjs`, coloured by the `--ill-*` variables in `css/style.css`. Every topic needs an icon there or the build fails. Never depict the Prophet ﷺ or any person; use objects and landscapes.
+
+---
+
 ## Current State
 
 A working single-file prototype exists: `the-path-v2.html`
