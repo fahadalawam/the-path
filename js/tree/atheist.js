@@ -523,7 +523,7 @@ export const atheistNodes = {
                 "en": "David Albert's critique — NY Times",
                 "ar": "نقد ديفيد ألبرت — نيويورك تايمز"
               },
-              "url": "https://www.nytimes.com/2012/03/25/books/review/a-universe-from-nothing-by-lawrence-krauss.html",
+              "url": "https://www.nytimes.com/2012/03/25/books/review/a-universe-from-nothing-by-lawrence-m-krauss.html",
               "linkType": "article"
             }
           ],

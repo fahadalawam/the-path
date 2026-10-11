@@ -10,11 +10,14 @@ The site is NOT preachy. It does NOT lecture. It asks questions, presents concre
 
 ## Site Layout (Question Library)
 
-The public site is a **question library**: `index.html` lists topics and each topic has its own page at `q/<slug>/` (Arabic under `ar/`). Each page shows the evidence, then the common objections, then a contact form. The original step-by-step flow lives on at `journey.html`.
+The public site is a **question library**. `index.html` is a data story: the "I was raised ___, and today I ___" sentence, a field of 1,000 dots (Pew Research Center 2025 figures), then four facts and every question. Each topic has its own page at `q/<slug>/`, and the Arabic site mirrors it under `ar/`. Each page shows the case, then the strongest objections with answers, then a contact form. The original step-by-step flow lives on at `journey.html`.
 
 - Topic pages are **generated**: edit `js/topics.js` (which nodes belong to which topic) or `js/tree/*.js`, then run `node scripts/build-library.mjs`. Never edit `index.html`, `ar/` or `q/` by hand.
+- Home page copy (both languages), the Pew figures and the first-question choices live in `scripts/build-library.mjs` (`HOME`, `UI`, `FIRST_TOPICS`, `FACT_TOPICS`). The sentence-to-first-question mapping and the dot field live in `js/site.js`.
+- Generated pages use `css/site.css` and `js/site.js`. `journey.html` and `admin.html` keep using `css/style.css`.
+- The pages work without JavaScript. `js/site.js` only adds the dot field, the sentence, the dark-mode toggle and sending the contact form to Formspree.
 - The build also validates the tree and fails on broken links; the deploy workflow runs it before publishing.
-- Illustrations (home hero, topic banners, topic icons, section star) are original inline SVGs in `scripts/illustrations.mjs`, coloured by the `--ill-*` variables in `css/style.css`. Every topic needs an icon there or the build fails. Never depict the Prophet ﷺ or any person; use objects and landscapes.
+- Every number on the home page must cite its source in the footer list. Never depict the Prophet ﷺ or any person.
 
 ---
 
