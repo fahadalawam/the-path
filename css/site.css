@@ -191,6 +191,7 @@ html[lang="ar"] .step h3{line-height:1.7}
 .pt p{font-size:17px}
 .pt p+p{margin-top:10px}
 .pt blockquote{margin-top:12px;padding-inline-start:16px;border-inline-start:3px solid var(--lapis)}
+.pt blockquote+p{margin-top:12px}
 .pt blockquote p{font:italic 400 19px/1.5 var(--f-serif)}
 .pt blockquote p.q-ar{font:400 24px/1.9 var(--f-ar)}
 html[lang="ar"] .pt blockquote p{font-style:normal}

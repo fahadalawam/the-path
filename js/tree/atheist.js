@@ -58,8 +58,8 @@ export const atheistNodes = {
             {
               "type": "text",
               "content": {
-                "en": "René Descartes tried to doubt everything — his senses, the physical world, even mathematics. But he hit a wall: to doubt, you must be thinking. To be thinking, you must exist. \"I think, therefore I am\" (Cogito ergo sum) is the one statement that survives total skepticism. The experience of uncertainty is itself undeniably real.",
-                "ar": "حاول رينيه ديكارت أن يشكك في كل شيء — حواسه، والعالم المادي، وحتى الرياضيات. لكنه اصطدم بجدار: للشك، لا بد أن تفكر. وللتفكير، لا بد أن توجد. «أنا أفكر، إذن أنا موجود» (Cogito ergo sum) هي العبارة الوحيدة التي تصمد أمام الشك المطلق. إن تجربة الشك ذاتها حقيقية لا يمكن إنكارها."
+                "en": "René Descartes tried to doubt everything he could: his senses, the physical world, even simple sums like two plus three. One thing survived the doubt. While he was thinking, he had to exist. It is usually summed up as “I think, therefore I am.”",
+                "ar": "حاول رينيه ديكارت أن يشكّ في كل ما استطاع: حواسه، والعالم المادي، وحتى أبسط العمليات الحسابية كجمع اثنين وثلاثة. وبقي شيء واحد صامدًا أمام الشك: ما دام يفكّر فلا بد أنه موجود. وتُلخَّص الفكرة عادةً في عبارة «أنا أفكر، إذن أنا موجود»."
               }
             },
             {
@@ -68,11 +68,20 @@ export const atheistNodes = {
                 "en": "This doesn't mean we have perfect knowledge of reality. It means that something exists — including you, your experience, and the act of questioning. That's enough to build on.",
                 "ar": "هذا لا يعني أن لدينا معرفة كاملة بالواقع. بل يعني أن شيئًا ما موجود — بما فيه أنت، وتجربتك، وفعل التساؤل ذاته. وهذا يكفي كأساس نبني عليه."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Stanford Encyclopedia of Philosophy: Descartes’ Epistemology",
+                "ar": "موسوعة ستانفورد للفلسفة: نظرية المعرفة عند ديكارت"
+              },
+              "url": "https://plato.stanford.edu/entries/descartes-epistemology/",
+              "linkType": "article"
             }
           ],
           "readMore": {
-            "en": "The philosophical position that nothing can be known is called Pyrrhonian skepticism. Its ancient critics pointed out a fatal flaw: the claim \"nothing can be known\" is itself a knowledge claim. If it's true, we know it — which contradicts it. Complete skepticism collapses under its own weight.",
-            "ar": "الموقف الفلسفي القائل بأنه لا يمكن معرفة أي شيء يُعرف بالشكية البيرونية. وقد أشار منتقدوها القدامى إلى خلل قاتل: الادعاء «لا يمكن معرفة أي شيء» هو نفسه ادعاء معرفي. إن صح، فنحن نعرفه — وهذا يناقضه. الشك المطلق ينهار تحت ثقله."
+            "en": "",
+            "ar": ""
           }
         }
       ]
@@ -125,8 +134,8 @@ export const atheistNodes = {
             {
               "type": "text",
               "content": {
-                "en": "Philosopher Nick Bostrom's simulation argument (2003) suggests that if advanced civilisations can run simulations of minds, we are probably in one. But notice what this implies: the simulation had to be designed by someone. That designer is real, exists outside our reality, and brought our reality into being. The simulation hypothesis doesn't eliminate God — it describes God.",
-                "ar": "يقترح حجة المحاكاة للفيلسوف نيك بوستروم (2003) أنه إذا كانت الحضارات المتقدمة قادرة على تشغيل محاكاة للعقول، فنحن على الأرجح نعيش داخل إحداها. لكن لاحظ ما تعنيه هذه الفكرة: المحاكاة لا بد أن يكون قد صممها أحد ما. ذلك المصمم حقيقي، موجود خارج واقعنا، وأوجد واقعنا. لا تلغي فرضية المحاكاة الله — بل تصفه."
+                "en": "In 2003 the philosopher Nick Bostrom argued that at least one of three things is true, and one of them is that “we are almost certainly living in a computer simulation.” But notice what that would mean: the simulation had to be designed by someone. That designer is real, exists outside our reality, and brought our reality into being. The simulation idea doesn’t remove a Creator. It describes one.",
+                "ar": "في عام 2003 جادل الفيلسوف نيك بوستروم بأن واحدًا على الأقل من ثلاثة احتمالات صحيح، أحدها أنه «من شبه المؤكد أننا نعيش داخل محاكاة حاسوبية». لكن لاحظ ما يعنيه ذلك: المحاكاة لا بد أن يكون قد صممها أحد. ذلك المصمم حقيقي، وموجود خارج واقعنا، وهو الذي أوجد واقعنا. ففكرة المحاكاة لا تلغي الخالق، بل تصفه."
               }
             },
             {
@@ -135,11 +144,20 @@ export const atheistNodes = {
                 "en": "The simulation hypothesis also pushes the question back rather than answering it. Who created the civilisation that runs the simulation? What are the physical laws of their reality? You still need a first cause — an uncaused originator — at some level. Moving the origin of our universe one level up doesn't escape the need for an ultimate beginning.",
                 "ar": "كما أن فرضية المحاكاة تؤجل السؤال بدلاً من الإجابة عليه. من أوجد الحضارة التي تُشغّل المحاكاة؟ ما قوانين الفيزياء في واقعهم؟ لا تزال بحاجة إلى سبب أول — مُوجِد غير مُوجَد — في مستوى ما. إن نقل أصل كوننا مستوى واحداً للأعلى لا يُعفينا من الحاجة إلى بداية مطلقة."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Nick Bostrom, Philosophical Quarterly (2003)",
+                "ar": "نيك بوستروم، مجلة Philosophical Quarterly ‏(2003)"
+              },
+              "url": "https://simulation-argument.com/simulation.html",
+              "linkType": "study"
             }
           ],
           "readMore": {
-            "en": "Interestingly, many Muslim thinkers note that the Quran already describes existence as something created, sustained, and perceived through faculties given to us by a Creator — not as independently self-existing. In that sense, Islam has always held that the reality we experience is contingent on a higher reality. Whether that's called \"the base reality\" or \"the simulation's host universe\" doesn't change the fundamental question: what caused it?",
-            "ar": "ومن المثير للاهتمام أن كثيرًا من المفكرين المسلمين يلاحظون أن القرآن الكريم يصف الوجود بوصفه شيئًا مخلوقًا، مستمرًا بإرادة خالقه، وندركه من خلال ملكات منحها لنا الخالق — لا بوصفه وجودًا قائمًا بذاته. بهذا المعنى، قرر الإسلام دائمًا أن الواقع الذي ندركه مرهون بواقع أعلى. سواء أُطلق عليه «الواقع الأساسي» أم «الكون المضيف للمحاكاة»، لا يتغير السؤال الجوهري: ما الذي أوجده؟"
+            "en": "",
+            "ar": ""
           }
         }
       ]
@@ -178,8 +196,26 @@ export const atheistNodes = {
             {
               "type": "text",
               "content": {
-                "en": "The ancient Pyrrhonian skeptics were criticized for leading to apraxia — the inability to act. If you genuinely can't know whether fire burns, you can't decide not to touch it. The philosopher David Hume, one of history's greatest skeptics, acknowledged this himself: after an afternoon of radical philosophy, he would go play backgammon and forget his doubts. Nature, he said, forces us back to common life.",
-                "ar": "واجه الشكاك البيرونيون القدامى انتقادًا يتعلق بـ«انعدام الفعل» — أي العجز عن التصرف. فإن كنت حقًا لا تستطيع معرفة ما إذا كانت النار تحرق، لا يمكنك أن تقرر عدم لمسها. والفيلسوف ديفيد هيوم، أحد أعظم الشكاك في التاريخ، اعترف بذلك بنفسه: بعد بعد ساعات من الفلسفة الراديكالية، كان يذهب للعب النرد وينسى شكوكه. الطبيعة، كما قال، تُعيدنا قسرًا إلى الحياة الاعتيادية."
+                "en": "The ancient skeptics faced a famous objection, known as the apraxia charge: without beliefs, how can anyone act? If you truly can’t know whether fire burns, why not touch it?",
+                "ar": "واجه الشكّاك القدامى اعتراضًا مشهورًا يُعرف بـ«تهمة انعدام الفعل»: كيف يتصرف الإنسان من غير أن يعتقد شيئًا؟ فإن كنت لا تستطيع حقًا أن تعرف هل تحرق النار، فلماذا لا تلمسها؟"
+              }
+            },
+            {
+              "type": "text",
+              "content": {
+                "en": "The philosopher David Hume admitted that his own doubts did not survive ordinary life:",
+                "ar": "واعترف الفيلسوف ديفيد هيوم بأن شكوكه هو نفسه لم تصمد أمام الحياة اليومية:"
+              }
+            },
+            {
+              "type": "quote",
+              "content": {
+                "en": "I dine, I play a game of back-gammon, I converse, and am merry with my friends; and when after three or four hour's amusement, I wou'd return to these speculations, they appear so cold, and strain'd, and ridiculous, that I cannot find in my heart to enter into them any farther.",
+                "ar": "أتناول العشاء، وألعب الطاولة، وأتحدث وأمرح مع أصدقائي؛ وحين أعود إلى هذه التأملات بعد ثلاث ساعات أو أربع من التسلية، تبدو لي باردة ومتكلَّفة ومضحكة، حتى إنني لا أجد في نفسي رغبة في الخوض فيها أكثر."
+              },
+              "source": {
+                "en": "David Hume, A Treatise of Human Nature (1739), 1.4.7",
+                "ar": "ديفيد هيوم، رسالة في الطبيعة البشرية (1739)، 1.4.7"
               }
             },
             {
@@ -188,11 +224,29 @@ export const atheistNodes = {
                 "en": "You avoid cars, trust floors to hold you, expect the sun to rise. These aren't leaps of faith — they're rational inferences from consistent experience. The consistency of reality is itself evidence worth examining. A reality that behaves according to stable, mathematical laws points to something deeper than randomness.",
                 "ar": "أنت تتجنب السيارات، وتثق بأن الأرضية ستحملك، وتتوقع شروق الشمس. هذه ليست قفزات إيمانية — بل استنتاجات عقلانية من تجربة متسقة. إن اتساق الواقع ذاته دليل يستحق التأمل. فواقع يسير وفق قوانين ثابتة رياضية يُشير إلى شيء أعمق من العشوائية."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Stanford Encyclopedia of Philosophy: Ancient Skepticism",
+                "ar": "موسوعة ستانفورد للفلسفة: الشكّ في الفلسفة القديمة"
+              },
+              "url": "https://plato.stanford.edu/entries/skepticism-ancient/",
+              "linkType": "article"
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "David Hume, A Treatise of Human Nature, 1.4.7",
+                "ar": "ديفيد هيوم، رسالة في الطبيعة البشرية، 1.4.7"
+              },
+              "url": "https://davidhume.org/texts/t/1/4/7",
+              "linkType": "book"
             }
           ],
           "readMore": {
-            "en": "Certainty is not the standard required for rational belief. We don't need absolute proof that the sun will rise tomorrow — overwhelming consistent evidence is sufficient. The same standard applies to the question of whether a Creator exists. We're not looking for mathematical proof; we're weighing evidence. And the evidence — the existence of the universe, its fine-tuning, its rational order — is substantial.",
-            "ar": "اليقين ليس المعيار المطلوب للاعتقاد العقلاني. لا نحتاج دليلاً مطلقًا على أن الشمس ستشرق غدًا — فالأدلة المتسقة الساحقة كافية. وينطبق المعيار ذاته على سؤال وجود الخالق. لسنا نبحث عن إثبات رياضي؛ بل نزن الأدلة. والأدلة — وجود الكون، وضبطه الدقيق، ونظامه العقلاني — جوهرية وذات ثقل."
+            "en": "",
+            "ar": ""
           }
         }
       ]
@@ -256,40 +310,32 @@ export const atheistNodes = {
             {
               "type": "text",
               "content": {
-                "en": "The Big Bang model, supported by overwhelming scientific consensus, tells us the universe began approximately 13.8 billion years ago from an infinitely dense point.",
-                "ar": "يخبرنا نموذج الانفجار العظيم، الذي يحظى بتأييد الإجماع العلمي الساحق، بأن الكون بدأ منذ نحو 13.8 مليار سنة من نقطة ذات كثافة لانهائية."
+                "en": "ESA’s Planck mission measured the age of the universe at about 13.8 billion years.",
+                "ar": "قاست بعثة بلانك التابعة لوكالة الفضاء الأوروبية عمر الكون بنحو 13.8 مليار سنة."
               }
             },
             {
               "type": "link",
               "label": {
-                "en": "NASA: Big Bang Overview",
-                "ar": "ناسا: نظرة عامة على الانفجار العظيم"
+                "en": "ESA: Planck reveals an almost perfect Universe (2013)",
+                "ar": "وكالة الفضاء الأوروبية: بلانك يكشف كونًا شبه مثالي (2013)"
+              },
+              "url": "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_reveals_an_almost_perfect_Universe",
+              "linkType": "article"
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "NASA: Universe overview",
+                "ar": "ناسا: نظرة عامة على الكون"
               },
               "url": "https://science.nasa.gov/universe/overview/",
               "linkType": "article"
-            },
-
-          ],
-          "readMore": {
-            "en": "Edwin Hubble's 1929 discovery that galaxies are moving away from us, combined with the detection of Cosmic Microwave Background radiation in 1965, confirmed that the universe is expanding — and therefore had a definite beginning.",
-            "ar": "أكّد اكتشاف إدوين هابل عام 1929 أن المجرات تبتعد عنا، إلى جانب رصد إشعاع الخلفية الكونية الميكروي عام 1965، أن الكون في حالة توسع مستمر — وبالتالي كان له بداية محددة."
-          }
-        },
-        {
-          "id": "e2",
-          "blocks": [
-            {
-              "type": "text",
-              "content": {
-                "en": "The Second Law of Thermodynamics states that the universe is running down. If eternal, it would have already reached heat death. It hasn't — so it can't be eternal.",
-                "ar": "تنص القانون الثاني للديناميكا الحرارية على أن الكون يتجه نحو التحلل التدريجي. لو كان أزليًا لكان قد بلغ الموت الحراري بالفعل. لكنه لم يبلغه — وهذا يعني أنه لا يمكن أن يكون أزليًا."
-              }
             }
           ],
           "readMore": {
-            "en": "This is known as the thermodynamic argument against an eternal universe. Even atheist cosmologists like Stephen Hawking acknowledged that the universe had a beginning.",
-            "ar": "يُعرف هذا بالحجة الديناميكية الحرارية ضد الكون الأزلي. حتى علماء الكونيات الملحدون أمثال ستيفن هوكينج اعترفوا بأن للكون بداية."
+            "en": "",
+            "ar": ""
           }
         },
         {
@@ -298,14 +344,23 @@ export const atheistNodes = {
             {
               "type": "text",
               "content": {
-                "en": "The Borde-Guth-Vilenkin theorem (2003) proves that any universe which has been expanding on average — including proposed 'eternal inflation' models — must have had a beginning. This applies even to multiverse scenarios.",
-                "ar": "تُثبت مبرهنة بورد-غوث-فيلنكين (2003) أن أي كون كان يتمدد في المتوسط — بما في ذلك نماذج 'التضخم الأزلي' المقترحة — لا بد أن يكون قد كانت له بداية. وينطبق ذلك حتى على سيناريوهات الأكوان المتعددة."
+                "en": "In 2003 the physicists Arvind Borde, Alan Guth and Alexander Vilenkin showed that a universe which is inflating, or “just expanding sufficiently fast,” “must be incomplete in null and timelike past directions.” In plain words: its history cannot run back forever.",
+                "ar": "في عام 2003 بيّن الفيزيائيون أرفيند بورد وآلان غوث وألكسندر فيلنكين أن الكون الذي يتضخم، أو الذي «يتمدد بسرعة كافية فحسب»، لا بد أن يكون «غير مكتمل في الاتجاهات الماضية». وبعبارة بسيطة: لا يمكن أن يمتد تاريخه إلى الوراء بلا نهاية."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Borde, Guth and Vilenkin, “Inflationary spacetimes are not past-complete”",
+                "ar": "بورد وغوث وفيلنكين: «الأزمنة-المكانية التضخمية ليست مكتملة في الماضي»"
+              },
+              "url": "https://arxiv.org/abs/gr-qc/0110012",
+              "linkType": "study"
             }
           ],
           "readMore": {
-            "en": "Alexander Vilenkin, one of the theorem's authors, stated: 'It is said that an argument is what convinces reasonable men, and a proof is what it takes to convince even an unreasonable man. With the proof now in place, cosmologists can no longer hide behind the possibility of a past-eternal universe.'",
-            "ar": "قال ألكسندر فيلنكين، أحد مؤلفي المبرهنة: 'يقال إن الحجة هي ما يقنع العقلاء، أما البرهان فهو ما يلزم حتى غير المعقول. ومع توافر البرهان الآن، لم يعد بإمكان علماء الكونيات الاحتماء وراء احتمالية كون أزلي الماضي.'"
+            "en": "",
+            "ar": ""
           }
         }
       ]
@@ -338,9 +393,18 @@ export const atheistNodes = {
             {
               "type": "text",
               "content": {
-                "en": "The Big Bang model shows the universe — including space and time itself — had a definite beginning. An eternal universe contradicts both observational evidence and the laws of thermodynamics.",
-                "ar": "يُثبت نموذج الانفجار العظيم أن الكون — بما فيه الزمان والمكان — كانت له بداية محددة. الكون الأزلي يتناقض مع الأدلة الرصدية وقوانين الديناميكا الحرارية على حدٍّ سواء."
+                "en": "An eternal universe would have no age. Yet ESA’s Planck mission measured the universe’s age at about 13.8 billion years.",
+                "ar": "الكون الأزلي لا عمر له. لكن بعثة بلانك التابعة لوكالة الفضاء الأوروبية قاست عمر الكون بنحو 13.8 مليار سنة."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "ESA: Planck reveals an almost perfect Universe (2013)",
+                "ar": "وكالة الفضاء الأوروبية: بلانك يكشف كونًا شبه مثالي (2013)"
+              },
+              "url": "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_reveals_an_almost_perfect_Universe",
+              "linkType": "article"
             }
           ],
           "readMore": {
@@ -354,9 +418,18 @@ export const atheistNodes = {
             {
               "type": "text",
               "content": {
-                "en": "Even models that attempt to avoid a beginning — like the oscillating universe or eternal inflation — still require a beginning point according to the Borde-Guth-Vilenkin theorem (2003).",
-                "ar": "حتى النماذج التي تحاول تفادي فكرة البداية — كالكون التذبذبي والتضخم الأزلي — لا تزال تستلزم نقطة بداية وفقًا لمبرهنة بورد-غوث-فيلنكين (2003)."
+                "en": "What about models in which the universe has been inflating forever? Borde, Guth and Vilenkin showed that a universe which is inflating, or just expanding fast enough, cannot run back into the past forever.",
+                "ar": "وماذا عن النماذج التي يتضخم فيها الكون منذ الأزل؟ بيّن بورد وغوث وفيلنكين أن الكون الذي يتضخم، أو يتمدد بسرعة كافية فحسب، لا يمكن أن يمتد إلى الماضي بلا نهاية."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Borde, Guth and Vilenkin, “Inflationary spacetimes are not past-complete”",
+                "ar": "بورد وغوث وفيلنكين: «الأزمنة-المكانية التضخمية ليست مكتملة في الماضي»"
+              },
+              "url": "https://arxiv.org/abs/gr-qc/0110012",
+              "linkType": "study"
             }
           ],
           "readMore": {
@@ -400,15 +473,33 @@ export const atheistNodes = {
             {
               "type": "text",
               "content": {
-                "en": "The scientific consensus from cosmology, physics and astronomy points clearly to the universe having a beginning. The Big Bang model is the most tested and confirmed theory in modern science.",
-                "ar": "يشير الإجماع العلمي في علم الكونيات والفيزياء وعلم الفلك بوضوح إلى أن الكون كانت له بداية. ويُعدّ نموذج الانفجار العظيم أكثر نظرية مختبرة ومؤكدة في العلم الحديث."
+                "en": "ESA’s Planck mission measured the universe’s age at about 13.8 billion years, and Borde, Guth and Vilenkin showed that a universe expanding fast enough cannot run back into the past forever.",
+                "ar": "قاست بعثة بلانك التابعة لوكالة الفضاء الأوروبية عمر الكون بنحو 13.8 مليار سنة، وبيّن بورد وغوث وفيلنكين أن الكون الذي يتمدد بسرعة كافية لا يمكن أن يمتد إلى الماضي بلا نهاية."
               }
             },
             {
               "type": "link",
               "label": {
-                "en": "Stanford: Cosmology and Theology",
-                "ar": "ستانفورد: علم الكونيات واللاهوت"
+                "en": "ESA: Planck reveals an almost perfect Universe (2013)",
+                "ar": "وكالة الفضاء الأوروبية: بلانك يكشف كونًا شبه مثالي (2013)"
+              },
+              "url": "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_reveals_an_almost_perfect_Universe",
+              "linkType": "article"
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Borde, Guth and Vilenkin, “Inflationary spacetimes are not past-complete”",
+                "ar": "بورد وغوث وفيلنكين: «الأزمنة-المكانية التضخمية ليست مكتملة في الماضي»"
+              },
+              "url": "https://arxiv.org/abs/gr-qc/0110012",
+              "linkType": "study"
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Stanford Encyclopedia of Philosophy: Cosmology and Theology",
+                "ar": "موسوعة ستانفورد للفلسفة: علم الكونيات واللاهوت"
               },
               "url": "https://plato.stanford.edu/entries/cosmology-theology/",
               "linkType": "article"
@@ -497,31 +588,33 @@ export const atheistNodes = {
             {
               "type": "text",
               "content": {
-                "en": "Virtual particles don't appear from 'nothing' — they appear from a quantum vacuum, a sea of energy governed by physical laws. Nothing means: no space, no time, no energy, no laws.",
-                "ar": "الجسيمات الافتراضية لا تظهر من 'العدم' — بل تظهر من الفراغ الكمي، وهو بحر من الطاقة تحكمه قوانين فيزيائية. العدم الحقيقي يعني: لا مكان، ولا زمان، ولا طاقة، ولا قوانين."
+                "en": "Virtual particles don’t come from “nothing.” They come from a quantum vacuum, a state of physical fields that follows physical laws. Nothing means no space, no time, no energy and no laws.",
+                "ar": "الجسيمات الافتراضية لا تأتي من «العدم»، بل من الفراغ الكمي، وهو حالة من الحقول الفيزيائية تخضع لقوانين فيزيائية. أما العدم فيعني: لا مكان، ولا زمان، ولا طاقة، ولا قوانين."
               }
-            }
-          ],
-          "readMore": {
-            "en": "",
-            "ar": ""
-          }
-        },
-        {
-          "id": "q2",
-          "blocks": [
+            },
             {
               "type": "text",
               "content": {
-                "en": "Even physicist Lawrence Krauss, who wrote 'A Universe from Nothing', was challenged by scientists who pointed out his 'nothing' still contained quantum fields — which is something.",
-                "ar": "حتى الفيزيائي لورانس كراوس، مؤلف كتاب 'كون من لا شيء'، واجه انتقادات من علماء أشاروا إلى أن 'لا شيء' عنده لا يزال يحتوي على حقول كمية — وهذا شيء بالفعل."
+                "en": "When the physicist Lawrence Krauss wrote A Universe from Nothing, the philosopher of physics David Albert, of Columbia University, made this point in his review in The New York Times:",
+                "ar": "حين ألّف الفيزيائي لورانس كراوس كتابه «كون من لا شيء»، كتب الفيلسوف ديفيد ألبرت، أستاذ الفلسفة في جامعة كولومبيا، في مراجعته للكتاب في صحيفة نيويورك تايمز:"
+              }
+            },
+            {
+              "type": "quote",
+              "content": {
+                "en": "Relativistic-quantum-field-theoretical vacuum states — no less than giraffes or refrigerators or solar systems — are particular arrangements of elementary physical stuff.",
+                "ar": "حالات الفراغ في نظرية الحقول الكمومية النسبية، شأنها شأن الزرافات والثلاجات والمجموعات الشمسية، ترتيبات معيّنة لمادة فيزيائية أولية."
+              },
+              "source": {
+                "en": "David Albert, The New York Times, 2012",
+                "ar": "ديفيد ألبرت، نيويورك تايمز، 2012"
               }
             },
             {
               "type": "link",
               "label": {
-                "en": "David Albert's critique — NY Times",
-                "ar": "نقد ديفيد ألبرت — نيويورك تايمز"
+                "en": "David Albert’s review of the book, The New York Times (2012)",
+                "ar": "مراجعة ديفيد ألبرت للكتاب، نيويورك تايمز (2012)"
               },
               "url": "https://www.nytimes.com/2012/03/25/books/review/a-universe-from-nothing-by-lawrence-m-krauss.html",
               "linkType": "article"
@@ -651,8 +744,8 @@ export const atheistNodes = {
             }
           ],
           "readMore": {
-            "en": "This is what philosophers call a 'Necessary Being' — something that exists by necessity. All major philosophical traditions converge on this description.",
-            "ar": "هذا ما يسميه الفلاسفة 'الواجب الوجود' — الكائن الذي يوجد بالضرورة. وتتقاطع جميع التقاليد الفلسفية الكبرى في هذا الوصف."
+            "en": "",
+            "ar": ""
           }
         }
       ]
@@ -700,8 +793,8 @@ export const atheistNodes = {
             }
           ],
           "readMore": {
-            "en": "The simulation hypothesis, popularized by philosopher Nick Bostrom, doesn't solve the problem of first cause — it pushes it one level up. Whatever runs the simulation must itself exist, have power to create, and have made a choice. Those attributes map directly onto what every major religion has called God.",
-            "ar": "فرضية المحاكاة، التي روّج لها الفيلسوف نيك بوسترام، لا تحل مشكلة السبب الأول — بل ترفعها درجةً واحدة. فما يُشغّل المحاكاة يجب أن يوجد هو نفسه، وأن تكون لديه القدرة على الخلق، وأن يكون قد اتخذ قراراً. هذه الصفات تُقابل مباشرةً ما وصفته الأديان الكبرى بالله."
+            "en": "",
+            "ar": ""
           }
         },
         {
@@ -759,22 +852,6 @@ export const atheistNodes = {
             "en": "",
             "ar": ""
           }
-        },
-        {
-          "id": "ir2",
-          "blocks": [
-            {
-              "type": "text",
-              "content": {
-                "en": "We now know time itself began with the universe. So an infinite past chain of causes is physically impossible — there was no 'before' the universe.",
-                "ar": "نعلم الآن أن الزمان نفسه بدأ مع الكون. لذا فإن سلسلة الأسباب الماضية اللانهائية مستحيلة فيزيائيًا — لم يكن ثمة 'قبل' الكون."
-              }
-            }
-          ],
-          "readMore": {
-            "en": "",
-            "ar": ""
-          }
         }
       ]
     },
@@ -812,8 +889,8 @@ export const atheistNodes = {
             {
               "type": "text",
               "content": {
-                "en": "'We don't know' is different from 'there is no answer.' The evidence points strongly toward a cause that is timeless, spaceless, and enormously powerful — matching what every major tradition calls God.",
-                "ar": "'لا نعرف' يختلف عن 'لا توجد إجابة.' تشير الأدلة بقوة نحو سبب خارج الزمان، خارج المكان، وبالغ القدرة — وهو ما تسميه كل التقاليد الكبرى بالله."
+                "en": "“We don’t know” is different from “there is no answer.” The evidence points toward a cause that is timeless, spaceless and enormously powerful, which is what believers mean by God.",
+                "ar": "«لا نعرف» تختلف عن «لا توجد إجابة». تشير الأدلة إلى سبب خارج الزمان والمكان، بالغ القدرة، وهذا ما يعنيه المؤمنون بالله."
               }
             }
           ],
@@ -879,6 +956,26 @@ export const atheistNodes = {
                 "en": "Multiple competing creators would logically produce inconsistency and conflict. The unity of natural law — gravity works the same everywhere, light travels at the same speed — points to a single unified source.",
                 "ar": "الخالقون المتعددون المتنافسون سيُفضون منطقيًا إلى تناقض وتعارض. إن وحدة القانون الطبيعي — الجاذبية تعمل بنفس الطريقة في كل مكان، والضوء يسير بنفس السرعة — تشير إلى مصدر واحد موحّد."
               }
+            },
+            {
+              "type": "quote",
+              "content": {
+                "en": "لَوْ كَانَ فِيهِمَا آلِهَةٌ إِلَّا اللَّهُ لَفَسَدَتَا\n\n“Had there been other gods besides Allah in the heavens or the earth, both ˹realms˺ would have surely been corrupted…”",
+                "ar": "لَوْ كَانَ فِيهِمَا آلِهَةٌ إِلَّا اللَّهُ لَفَسَدَتَا"
+              },
+              "source": {
+                "en": "Quran 21:22",
+                "ar": "سورة الأنبياء 22"
+              }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Quran 21:22",
+                "ar": "سورة الأنبياء 22"
+              },
+              "url": "https://quran.com/21/22",
+              "linkType": "source"
             }
           ],
           "readMore": {

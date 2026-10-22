@@ -23,9 +23,29 @@ export const quranNodes = {
             {
               "type": "text",
               "content": {
-                "en": "The scientific knowledge in the Quran — embryology, cosmology, oceanography — wasn't available in any text of the 7th century, in any language. Greek texts of the time actually contained errors the Quran doesn't share.",
-                "ar": "المعرفة العلمية في القرآن — علم الأجنة، وعلم الكونيات، وعلم المحيطات — لم تكن متاحة في أي نص من نصوص القرن السابع الميلادي، بأي لغة. بل إن النصوص اليونانية في ذلك العصر احتوت على أخطاء لا يُشاركها القرآن."
+                "en": "People made this charge in his own lifetime, and the Quran answered it:",
+                "ar": "قيل هذا في حياته، وردّ عليه القرآن:"
               }
+            },
+            {
+              "type": "quote",
+              "content": {
+                "en": "وَلَقَدْ نَعْلَمُ أَنَّهُمْ يَقُولُونَ إِنَّمَا يُعَلِّمُهُ بَشَرٌ ۗ لِّسَانُ الَّذِي يُلْحِدُونَ إِلَيْهِ أَعْجَمِيٌّ وَهَٰذَا لِسَانٌ عَرَبِيٌّ مُّبِينٌ\n\n“And We surely know that they say, ‘No one is teaching him except a human.’ But the man they refer to speaks a foreign tongue, whereas this ˹Quran˺ is ˹in˺ eloquent Arabic.”",
+                "ar": "وَلَقَدْ نَعْلَمُ أَنَّهُمْ يَقُولُونَ إِنَّمَا يُعَلِّمُهُ بَشَرٌ ۗ لِّسَانُ الَّذِي يُلْحِدُونَ إِلَيْهِ أَعْجَمِيٌّ وَهَٰذَا لِسَانٌ عَرَبِيٌّ مُّبِينٌ"
+              },
+              "source": {
+                "en": "Quran 16:103",
+                "ar": "سورة النحل 103"
+              }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Quran 16:103",
+                "ar": "سورة النحل 103"
+              },
+              "url": "https://quran.com/16/103",
+              "linkType": "source"
             }
           ],
           "readMore": {
@@ -39,9 +59,18 @@ export const quranNodes = {
             {
               "type": "text",
               "content": {
-                "en": "Muhammad ﷺ had no contact with scientists, no access to libraries, and lived in a region with no tradition of scientific inquiry.",
-                "ar": "لم يكن لمحمد ﷺ أي تواصل مع علماء، ولا إمكانية الوصول إلى مكتبات، وعاش في منطقة لا تقليد علمي فيها."
+                "en": "And he could not read, so he could not have copied from books (29:48).",
+                "ar": "ثم إنه لم يكن يقرأ، فلم يكن بوسعه أن ينقل من الكتب (العنكبوت 48)."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Quran 29:48",
+                "ar": "سورة العنكبوت 48"
+              },
+              "url": "https://quran.com/29/48",
+              "linkType": "source"
             }
           ],
           "readMore": {
@@ -85,8 +114,8 @@ export const quranNodes = {
             {
               "type": "text",
               "content": {
-                "en": "A single accurate statement could be coincidence. But the Quran contains dozens of precise statements across astronomy, embryology, geology, and oceanography — none contradicted by modern science, all recorded 1400 years ago.",
-                "ar": "تصريح صحيح واحد قد يكون مصادفة. لكن القرآن يحتوي على عشرات التصريحات الدقيقة في الفلك وعلم الأجنة والجيولوجيا وعلم المحيطات — لم يتناقض أي منها مع العلم الحديث، وجميعها دُوِّنت منذ 1400 عام."
+                "en": "One accurate statement could be a lucky guess. The question is whether a man in 7th-century Arabia could keep guessing right about things no one then could check. Look at the verses and decide for yourself.",
+                "ar": "قد تكون عبارة صحيحة واحدة تخمينًا موفّقًا. لكن السؤال: هل يمكن لرجل في جزيرة العرب في القرن السابع أن يصيب مرة بعد مرة في أمور لم يكن أحد آنذاك قادرًا على التحقق منها؟ انظر في الآيات واحكم بنفسك."
               }
             }
           ],
@@ -114,11 +143,11 @@ export const quranNodes = {
     "content": {
       "en": {
         "question": "Is the Quran preserved and authentic?",
-        "subtitle": "Unlike other scriptures, the Quran claims to be unchanged since its revelation. Can that be verified?"
+        "subtitle": "Is the text we read today the one that was first recited?"
       },
       "ar": {
         "question": "هل القرآن محفوظ وأصيل؟",
-        "subtitle": "خلافًا للكتب المقدسة الأخرى، يدّعي القرآن أنه لم يتغير منذ نزوله. هل يمكن التحقق من ذلك؟"
+        "subtitle": "هل النص الذي نقرؤه اليوم هو نفسه الذي تُلي أول مرة؟"
       }
     },
     "options": [
@@ -156,14 +185,23 @@ export const quranNodes = {
             {
               "type": "text",
               "content": {
-                "en": "The Quran is the only religious text memorized completely by millions of people across every generation. Any copy can be verified against any memorizer anywhere on earth.",
-                "ar": "القرآن هو النص الديني الوحيد الذي يحفظه كاملًا الملايين من الناس عبر كل الأجيال. يمكن التحقق من أي نسخة بمقارنتها مع أي حافظ في أي مكان على وجه الأرض."
+                "en": "Many Muslims learn the Quran by heart. Someone who has memorised it is called a hafiz, and thousands of students memorise it every year. So the text is kept in people’s memories as well as on paper, and any printed copy can be checked against them.",
+                "ar": "يحفظ كثير من المسلمين القرآن عن ظهر قلب، ويُسمّى من حفظه «حافظًا»، ويحفظه آلاف الطلاب كل عام. فالنص محفوظ في الصدور كما هو محفوظ في السطور، ويمكن مقابلة أي نسخة مطبوعة بما يحفظه الحفّاظ."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Wikipedia: Hafiz (Quran)",
+                "ar": "ويكيبيديا: حافظ القرآن"
+              },
+              "url": "https://en.wikipedia.org/wiki/Hafiz_(Quran)",
+              "linkType": "article"
             }
           ],
           "readMore": {
-            "en": "The oldest Quran manuscripts — like the Sana'a manuscript discovered in Yemen in 1972 — align perfectly with the Quran used today.",
-            "ar": "أقدم مخطوطات القرآن — كمخطوطة صنعاء المكتشفة في اليمن عام 1972 — تتطابق تمامًا مع القرآن المستخدم اليوم."
+            "en": "",
+            "ar": ""
           }
         }
       ]
@@ -175,10 +213,10 @@ export const quranNodes = {
     "status": "live",
     "content": {
       "en": {
-        "question": "The Quran has uniquely verifiable preservation."
+        "question": "Its oldest manuscripts can be checked against today’s text."
       },
       "ar": {
-        "question": "حفظ القرآن قابل للتحقق بصورة فريدة."
+        "question": "يمكن مقارنة أقدم مخطوطاته بالنص الذي نقرؤه اليوم."
       }
     },
     "evidence": {
@@ -193,34 +231,18 @@ export const quranNodes = {
             {
               "type": "text",
               "content": {
-                "en": "The Sana'a manuscripts date to within decades of the Prophet's ﷺ death and match the Quran used today with no substantive differences.",
-                "ar": "تعود مخطوطات صنعاء إلى ما يقل عن عقود بعد وفاة النبي ﷺ، وتتطابق مع القرآن المستخدم اليوم دون أي اختلافات جوهرية."
+                "en": "In 2015 the University of Birmingham had the parchment of its Quran manuscript radiocarbon-dated to between 568 and 645, close to the Prophet’s ﷺ lifetime. According to the university, these portions are “very close to the form of the Qur’an read today.”",
+                "ar": "في عام 2015 أرّخت جامعة برمنغهام رقوق مخطوطتها القرآنية بالكربون المشع إلى ما بين عامي 568 و645 للميلاد، أي قريبًا من زمن النبي ﷺ. وبحسب الجامعة، فإن هذه الأجزاء «قريبة جدًا من صورة القرآن الذي يُقرأ اليوم»."
               }
             },
             {
               "type": "link",
               "label": {
-                "en": "Sana'a Manuscripts — Wikipedia",
-                "ar": "مخطوطات صنعاء — ويكيبيديا"
+                "en": "University of Birmingham (2015): one of the oldest Quran manuscripts",
+                "ar": "جامعة برمنغهام (2015): من أقدم مخطوطات القرآن"
               },
-              "url": "https://en.wikipedia.org/wiki/Sanaa_manuscript",
-              "linkType": "article"
-            }
-          ],
-          "readMore": {
-            "en": "",
-            "ar": ""
-          }
-        },
-        {
-          "id": "qpe2",
-          "blocks": [
-            {
-              "type": "text",
-              "content": {
-                "en": "No other religious text has this dual preservation: written manuscripts AND millions of human memorizers across 1400 years, in the original language, word for word.",
-                "ar": "لا يمتلك أي نص ديني آخر هذا الحفظ المزدوج: مخطوطات مكتوبة وملايين الحفّاظ البشريين عبر 1400 عام، بالّلغة الأصلية، كلمة بكلمة."
-              }
+              "url": "https://www.birmingham.ac.uk/news/2015/birmingham-quran-manuscript-dated-among-the-oldest-in-the-world",
+              "linkType": "study"
             }
           ],
           "readMore": {
@@ -261,12 +283,12 @@ export const quranNodes = {
     "status": "live",
     "content": {
       "en": {
-        "question": "The Quran describes the embryo's development in stages — confirmed by modern embryology only in the 20th century. What do you make of that?",
-        "subtitle": "\"We created man from an extract of clay, then made him a drop in a firm resting place, then We made the drop into a clinging form...\" — Quran 23:12-14"
+        "question": "The Quran describes the embryo developing in stages. What do you make of that?",
+        "subtitle": "“…then We developed the drop into a clinging clot, then developed the clot into a lump ˹of flesh˺, then developed the lump into bones, then clothed the bones with flesh…” — Quran 23:14"
       },
       "ar": {
-        "question": "يصف القرآن تطور الجنين على مراحل — وهو ما أكّده علم الأجنة الحديث فحسب في القرن العشرين. ما رأيك في ذلك؟",
-        "subtitle": "«وَلَقَدْ خَلَقْنَا الإِنسَانَ مِن سُلالَةٍ مِّن طِينٍ ثُمَّ جَعَلْنَاهُ نُطْفَةً فِي قَرَارٍ مَّكِينٍ ثُمَّ خَلَقْنَا النُّطْفَةَ عَلَقَةً...» — القرآن 23:12-14"
+        "question": "يصف القرآن نموّ الجنين على مراحل. ما رأيك في ذلك؟",
+        "subtitle": "«ثُمَّ خَلَقْنَا النُّطْفَةَ عَلَقَةً فَخَلَقْنَا الْعَلَقَةَ مُضْغَةً فَخَلَقْنَا الْمُضْغَةَ عِظَامًا فَكَسَوْنَا الْعِظَامَ لَحْمًا» — سورة المؤمنون 14"
       }
     },
     "options": [
@@ -294,8 +316,8 @@ export const quranNodes = {
     ],
     "evidence": {
       "title": {
-        "en": "What does modern science say?",
-        "ar": "ماذا يقول العلم الحديث؟"
+        "en": "What the verses say",
+        "ar": "ما تقوله الآيات"
       },
       "points": [
         {
@@ -304,31 +326,23 @@ export const quranNodes = {
             {
               "type": "text",
               "content": {
-                "en": "Professor Keith Moore, one of the world's leading embryologists, stated that the Quran's description of embryonic development could not have been known in the 7th century and aligns remarkably with modern findings.",
-                "ar": "صرّح البروفيسور كيث مور، أحد أبرز علماء الأجنة في العالم، بأن وصف القرآن لتطور الجنين لم يكن يمكن معرفته في القرن السابع الميلادي، وأنه يتوافق توافقًا لافتًا مع الاكتشافات الحديثة."
-              }
-            },
-            {
-              "type": "image",
-              "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Gray20.png",
-              "caption": {
-                "en": "Human embryo at ~days 28–30 (Carnegie stage 10). The segmented bumps (somites) along the back match the Quranic term 'mudghah' — resembling a chewed piece of gum. The curved, elongated body matches 'alaqah' — leech-like. Illustration from Gray's Anatomy (public domain).",
-                "ar": "جنين بشري في الأيام ~28–30 (المرحلة 10 من كارنيغي). تتطابق النتوءات المقطّعة (الفقرات البدائية) على الظهر مع المصطلح القرآني 'مضغة' — إذ تشبه قطعة اللحم الممضوغة. ويتطابق الجسم المنحني المستطيل مع 'علقة' — شبيهًا بالعلقة. رسم توضيحي من كتاب Gray's Anatomy (ملكية عامة)."
+                "en": "The verses describe a sequence: a drop, then a clinging clot, then a lump of flesh, then bones, then the bones clothed with flesh. They were recited in 7th-century Arabia. Read them in full and judge for yourself whether anyone then could have known this.",
+                "ar": "تصف الآيات تسلسلًا: نطفة، ثم علقة، ثم مضغة، ثم عظامًا، ثم كسوة العظام لحمًا. وقد تُليت في جزيرة العرب في القرن السابع الميلادي. اقرأها كاملة واحكم بنفسك: هل كان أحد في ذلك الزمان يعرف هذا؟"
               }
             },
             {
               "type": "link",
               "label": {
-                "en": "Peer-reviewed: Human Embryology and the Holy Quran (PMC)",
-                "ar": "دراسة محكّمة: علم الأجنة البشرية والقرآن الكريم (PMC)"
+                "en": "Quran 23:12–14",
+                "ar": "سورة المؤمنون 12–14"
               },
-              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3068791/",
-              "linkType": "study"
+              "url": "https://quran.com/23/12-14",
+              "linkType": "source"
             }
           ],
           "readMore": {
-            "en": "The Quran uses 'Alaqah' to describe the early embryo — meaning both 'clinging thing' and 'leech-like'. Under a microscope, the early embryo appears leech-like and clings to the uterine wall. This wasn't in any prior text.",
-            "ar": "يستخدم القرآن كلمة 'علقة' لوصف الجنين المبكر — والتي تعني 'الشيء المتعلق' و'الشبيه بالعلقة'. تحت المجهر، يبدو الجنين المبكر شبيهًا بالعلقة ويتعلق بجدار الرحم. لم يرد هذا في أي نص سابق."
+            "en": "",
+            "ar": ""
           }
         }
       ]
@@ -343,12 +357,12 @@ export const quranNodes = {
     "status": "live",
     "content": {
       "en": {
-        "question": "Embryology isn't the only example.",
-        "subtitle": "The Quran contains several other statements that align with discoveries made centuries later."
+        "question": "Embryology isn’t the only example.",
+        "subtitle": "The Quran also speaks of the universe expanding."
       },
       "ar": {
         "question": "علم الأجنة ليس المثال الوحيد.",
-        "subtitle": "يتضمن القرآن الكريم عدة إشارات أخرى تتوافق مع اكتشافات أُجريت بعد قرون."
+        "subtitle": "ويتحدث القرآن أيضًا عن توسّع الكون."
       }
     },
     "options": [
@@ -369,40 +383,53 @@ export const quranNodes = {
     ],
     "evidence": {
       "title": {
-        "en": "More scientific references in the Quran",
-        "ar": "مزيد من الإشارات العلمية في القرآن"
+        "en": "The expanding universe",
+        "ar": "توسّع الكون"
       },
       "points": [
         {
           "id": "qsm1",
           "blocks": [
             {
-              "type": "text",
+              "type": "quote",
               "content": {
-                "en": "The Quran states: 'And the heaven We constructed with strength, and indeed, We are its expander.' (51:47). The Arabic word 'mūsiʿūn' means 'we are expanding it' — a direct statement of an expanding universe, 1,300 years before Hubble's 1929 discovery.",
-                "ar": "يقول القرآن الكريم: «وَالسَّمَاءَ بَنَيْنَاهَا بِأَيْدٍ وَإِنَّا لَمُوسِعُونَ» (51:47). كلمة 'لَمُوسِعُونَ' تعني 'نحن نوسّعها' — إشارة صريحة إلى تمدد الكون، قبل اكتشاف هابل عام 1929 بـ1300 عام."
+                "en": "وَالسَّمَاءَ بَنَيْنَاهَا بِأَيْدٍ وَإِنَّا لَمُوسِعُونَ\n\n“We built the universe with ˹great˺ might, and We are certainly expanding ˹it˺.”",
+                "ar": "وَالسَّمَاءَ بَنَيْنَاهَا بِأَيْدٍ وَإِنَّا لَمُوسِعُونَ"
+              },
+              "source": {
+                "en": "Quran 51:47",
+                "ar": "سورة الذاريات 47"
               }
-            }
-          ],
-          "readMore": {
-            "en": "Georges Lemaître proposed the expanding universe in 1927, and Edwin Hubble confirmed it observationally in 1929. The Quran made this statement in 610 AD. No ancient text — Greek, Roman, Persian, or otherwise — contains a comparable claim.",
-            "ar": "اقترح جورج لوميتر نظرية تمدد الكون عام 1927، وأكّدها إدوين هابل رصديًا عام 1929. أما القرآن فقد أشار إلى ذلك عام 610 م. ولا يوجد في أي نص قديم — يوناني أو روماني أو فارسي أو غيره — ادعاء مماثل."
-          }
-        },
-        {
-          "id": "qsm2",
-          "blocks": [
+            },
             {
               "type": "text",
               "content": {
-                "en": "The Quran describes iron as having been 'sent down': 'We sent down iron, in which there is great might.' (57:25). Modern science confirms that iron is not native to Earth — it was forged in dying stars and delivered by meteorite impacts billions of years ago.",
-                "ar": "يصف القرآن الحديدَ بأنه 'أُنزِل': «وَأَنزَلْنَا الْحَدِيدَ فِيهِ بَأْسٌ شَدِيدٌ» (57:25). يؤكد العلم الحديث أن الحديد لم يتكوّن أصلًا على الأرض — بل نشأ في النجوم المحتضرة ووصل إليها عبر النيازك منذ مليارات السنين."
+                "en": "Today astronomers measure how fast the universe is expanding. They call the rate the Hubble constant.",
+                "ar": "واليوم يقيس علماء الفلك سرعة توسّع الكون، ويسمّون هذا المعدّل «ثابت هابل»."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Quran 51:47",
+                "ar": "سورة الذاريات 47"
+              },
+              "url": "https://quran.com/51/47",
+              "linkType": "source"
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "ESA: Planck reveals an almost perfect Universe (2013)",
+                "ar": "وكالة الفضاء الأوروبية: بلانك يكشف كونًا شبه مثالي (2013)"
+              },
+              "url": "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_reveals_an_almost_perfect_Universe",
+              "linkType": "article"
             }
           ],
           "readMore": {
-            "en": "Earth's core is rich in iron, but iron cannot form on a planet — it requires the extreme pressures and temperatures of a supernova. The word 'anzalnā' (sent down) in Arabic is the same word used for rain and other things that come from outside. This was not known until the 20th century.",
-            "ar": "نواة الأرض غنية بالحديد، لكن الحديد لا يمكن أن يتكوّن على كوكب — إذ يستلزم الضغوط ودرجات الحرارة الهائلة الناجمة عن انفجار المستعر الأعظم. وكلمة 'أنزلنا' في العربية هي ذاتها المستخدمة للمطر وغيره مما يأتي من خارج الأرض. ولم يُعرف هذا إلا في القرن العشرين."
+            "en": "",
+            "ar": ""
           }
         }
       ]
@@ -435,9 +462,18 @@ export const quranNodes = {
             {
               "type": "text",
               "content": {
-                "en": "The Quran uses specific Arabic terms — 'Alaqah' (leech-like clinging form) and 'Mudghah' (chewed-like substance) — matching the exact appearance of the embryo under a microscope at specific stages. These are precise descriptions confirmed 1300 years later.",
-                "ar": "يستخدم القرآن مصطلحات عربية دقيقة — 'علقة' (الشكل المتعلق الشبيه بالعلقة) و'مضغة' (المادة الشبيهة بالمضغة) — تطابق المظهر الفعلي للجنين تحت المجهر في مراحل محددة. وهذه أوصاف دقيقة أُكِّدت بعد 1300 عام."
+                "en": "The verses don’t just say that a baby grows. They name five stages in order: a drop, “a clinging clot,” “a lump ˹of flesh˺,” bones, and then bones “clothed … with flesh.”",
+                "ar": "الآيات لا تقول فحسب إن الجنين ينمو، بل تسمّي خمس مراحل بالترتيب: نطفة، ثم علقة، ثم مضغة، ثم عظامًا، ثم كسوة العظام لحمًا."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Quran 23:12–14",
+                "ar": "سورة المؤمنون 12–14"
+              },
+              "url": "https://quran.com/23/12-14",
+              "linkType": "source"
             }
           ],
           "readMore": {
@@ -463,12 +499,12 @@ export const quranNodes = {
     "status": "live",
     "content": {
       "en": {
-        "question": "The Quran challenged all of Arabia — masters of the Arabic language — to produce even one chapter like it. 1400 years later, no one has.",
-        "subtitle": "This challenge, called the 'Tahaddi', is still open."
+        "question": "The Quran challenges anyone who doubts it to produce one chapter like it.",
+        "subtitle": "The challenge is still open."
       },
       "ar": {
-        "question": "تحدّى القرآن جزيرة العرب بأكملها — وهم أساتذة اللغة العربية — لإنتاج سورة واحدة تماثله. بعد 1400 عام، لم يستطع أحد.",
-        "subtitle": "هذا التحدي، المعروف بـ'التحدي'، لا يزال قائمًا."
+        "question": "يتحدّى القرآن كل من يشكّ فيه أن يأتي بسورة مثله.",
+        "subtitle": "ولا يزال التحدي قائمًا."
       }
     },
     "options": [
@@ -499,14 +535,50 @@ export const quranNodes = {
             {
               "type": "text",
               "content": {
-                "en": "7th-century Arabs were masters of poetry and rhetoric. The Quran was revealed in their own language, and they were unable to match it despite every motivation to do so.",
-                "ar": "كان عرب القرن السابع أساتذة الشعر والبلاغة. نزل القرآن بلغتهم، ولم يستطيعوا مجاراته رغم كل الدوافع التي كانت لديهم للقيام بذلك."
+                "en": "Poetry was part of public life in pre-Islamic Arabia. In Britannica’s words, the poet was “a major verbal weapon.” The Quran was revealed in that setting, in their own language, and it challenged them directly:",
+                "ar": "كان الشعر جزءًا من الحياة العامة في جزيرة العرب قبل الإسلام، وكان الشاعر، كما تقول موسوعة بريتانيكا، «سلاحًا لفظيًا رئيسيًا». وفي هذه البيئة نزل القرآن بلسانهم، وتحدّاهم مباشرة:"
               }
+            },
+            {
+              "type": "quote",
+              "content": {
+                "en": "وَإِن كُنتُمْ فِي رَيْبٍ مِّمَّا نَزَّلْنَا عَلَىٰ عَبْدِنَا فَأْتُوا بِسُورَةٍ مِّن مِّثْلِهِ وَادْعُوا شُهَدَاءَكُم مِّن دُونِ اللَّهِ إِن كُنتُمْ صَادِقِينَ\n\n“And if you are in doubt about what We have revealed to Our servant, then produce a sûrah like it and call your helpers other than Allah, if what you say is true.”",
+                "ar": "وَإِن كُنتُمْ فِي رَيْبٍ مِّمَّا نَزَّلْنَا عَلَىٰ عَبْدِنَا فَأْتُوا بِسُورَةٍ مِّن مِّثْلِهِ وَادْعُوا شُهَدَاءَكُم مِّن دُونِ اللَّهِ إِن كُنتُمْ صَادِقِينَ"
+              },
+              "source": {
+                "en": "Quran 2:23",
+                "ar": "سورة البقرة 23"
+              }
+            },
+            {
+              "type": "text",
+              "content": {
+                "en": "If anyone had met it, the challenge would have ended there.",
+                "ar": "ولو استطاع أحد أن يأتي بها لانتهى التحدي عندها."
+              }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Britannica: Arabic literature, Poetry",
+                "ar": "بريتانيكا: الأدب العربي، الشعر"
+              },
+              "url": "https://www.britannica.com/art/Arabic-literature/Poetry",
+              "linkType": "article"
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Quran 2:23",
+                "ar": "سورة البقرة 23"
+              },
+              "url": "https://quran.com/2/23",
+              "linkType": "source"
             }
           ],
           "readMore": {
-            "en": "Arab linguists who opposed Islam admitted they had never heard anything like the Quran. It defied all known categories of Arabic speech.",
-            "ar": "أقرّ علماء اللغة العرب المعارضون للإسلام بأنهم لم يسمعوا شيئًا يشبه القرآن قط. لقد تخطّى جميع الأصناف المعروفة للكلام العربي."
+            "en": "",
+            "ar": ""
           }
         }
       ]
@@ -536,9 +608,18 @@ export const quranNodes = {
             {
               "type": "text",
               "content": {
-                "en": "The challenge combines linguistic precision, internal consistency, depth of meaning, and predictive accuracy. The 7th-century Arabs chose war over producing a counter-text. That itself is telling.",
-                "ar": "يجمع التحدي بين الدقة اللغوية، والاتساق الداخلي، وعمق المعنى، والدقة التنبؤية. اختار عرب القرن السابع الحرب على إنتاج نص مضادّ. هذا في حد ذاته أمر بالغ الدلالة."
+                "en": "The challenge is to produce one chapter like the Quran’s. Its shortest chapter, Al-Kawthar, has just three verses. If this were only a matter of style, one short chapter should be easy to match.",
+                "ar": "التحدي أن يُؤتى بسورة مثل سور القرآن، وأقصر سوره، سورة الكوثر، ثلاث آيات فقط. لو كان الأمر مجرد أسلوب، لكانت مجاراة سورة قصيرة كهذه أمرًا يسيرًا."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Quran 108 (Al-Kawthar)",
+                "ar": "سورة الكوثر"
+              },
+              "url": "https://quran.com/108",
+              "linkType": "source"
             }
           ],
           "readMore": {

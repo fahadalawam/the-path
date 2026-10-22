@@ -796,6 +796,7 @@ function renderBlockFields(b, pi, bi) {
         <option value="video" ${b.linkType === "video" ? "selected" : ""}>Video</option>
         <option value="book" ${b.linkType === "book" ? "selected" : ""}>Book</option>
         <option value="study" ${b.linkType === "study" ? "selected" : ""}>Study</option>
+        <option value="source" ${b.linkType === "source" ? "selected" : ""}>Source (Quran, hadith)</option>
       </select>`;
   }
   if (b.type === "quote") {

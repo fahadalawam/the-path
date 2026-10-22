@@ -106,7 +106,7 @@ Every node in the content tree has one of four types:
         id: "unique_point_id",
         blocks: [                 // Freeform content blocks, any combination
           { type: "text", content: "..." },
-          { type: "link", label: "...", url: "...", linkType: "article|video|book|study" },
+          { type: "link", label: "...", url: "...", linkType: "article|video|book|study|source" },  // source = Quran or hadith
           { type: "image", url: "...", caption: "..." },
           { type: "quote", content: "...", source: "..." },
         ],
