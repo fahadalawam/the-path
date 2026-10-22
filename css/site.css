@@ -1,0 +1,265 @@
+/* Question library styles (index.html, ar/, q/). Generated pages link this file;
+   journey.html and admin.html keep using style.css.
+
+   Plain and to the point: one narrow column. The home page is the claim, the
+   "I was raised ___, and today I ___" sentence that picks a first question, and
+   the eleven questions, each with a one-line answer and its sources. Each
+   question has its own page at q/<slug>/, built by scripts/build-library.mjs:
+   short answer, evidence, objections, next question.
+   Every claim carries a source link (.cite). White page, lapis blue accent.
+   Arabic flips the page right-to-left; all spacing uses logical properties. */
+:root{
+  --bg:#ffffff;
+  --ink:#0d0f14;
+  --ink-2:#454b57;
+  --ink-3:#646c7b;
+  --line:#e4e6eb;
+  --field:#c9ced7;
+  --panel:#f3f4f7;
+  --panel-line:#e0e3e9;
+  --lapis:#2438c5;
+  --lapis-deep:#1a2994;
+  --lapis-wash:#e8ebfb;
+  --on-lapis:#ffffff;
+  --warn:#c23a22;
+  --f-sans:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-display:var(--f-sans);
+  --f-serif:Georgia,"Times New Roman",serif;
+  --f-ar:"Amiri","Noto Naskh Arabic","Geeza Pro","Traditional Arabic",serif;
+  --f-kufi:"Reem Kufi","Noto Kufi Arabic","Geeza Pro",sans-serif;
+  --dir:1;
+}
+html.dark{
+  --bg:#0b0c10;--ink:#eceef3;--ink-2:#b0b6c2;--ink-3:#8f96a5;--line:#23262e;--field:#353a46;
+  --panel:#15171d;--panel-line:#272b34;
+  --lapis:#7686ff;--lapis-deep:#9ba6ff;--lapis-wash:#1c2244;--on-lapis:#0b0c10;--warn:#f26a50;
+  color-scheme:dark;
+}
+/* Arabic: Plex for reading, Noto Kufi for headings, Amiri for scripture */
+html[lang="ar"]{
+  --f-sans:"IBM Plex Sans Arabic","Schibsted Grotesk",system-ui,sans-serif;
+  --f-display:"Noto Kufi Arabic","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --f-serif:"Amiri","Noto Naskh Arabic",serif;
+  --dir:-1;
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 var(--f-sans);-webkit-font-smoothing:antialiased}
+html[lang="ar"] body{line-height:1.85}
+html[lang="ar"] body *{letter-spacing:0!important}
+p,h1,h2,h3,figure,blockquote{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lapis);outline-offset:3px;border-radius:4px}
+.wrap{max-width:780px;margin-inline:auto;padding-inline:20px}
+h1,h2{text-wrap:balance}
+p{text-wrap:pretty}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.arr{display:inline-block;transform:scaleX(var(--dir));transition:transform .15s}
+.saw{font-family:var(--f-ar);font-weight:400;font-size:1.05em;line-height:1}
+
+/* Source links: small, underlined, always present next to a claim */
+.cite{display:inline-block;font-size:.8em;font-weight:600;color:var(--lapis);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap}
+.cite::after{content:"↗";display:inline-block;margin-inline-start:2px;text-decoration:none;transform:scaleX(var(--dir))}
+.cite:hover{color:var(--lapis-deep)}
+.cite+.cite{margin-inline-start:8px}
+
+/* ── Header ── */
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.seal{flex:none;width:38px;height:38px;border-radius:9px;background:var(--lapis);color:var(--on-lapis);display:grid;place-items:center;font:600 20px/1 var(--f-kufi);padding-bottom:5px}
+.wm{display:flex;flex-direction:column;font-weight:800;font-size:16px;line-height:1.15;letter-spacing:-.01em}
+.wm small{font:400 14px/1.35 var(--f-ar);color:var(--ink-3);letter-spacing:0}
+html[lang="ar"] .wm{font:700 18px/1.3 var(--f-display)}
+html[lang="ar"] .wm small{font:500 12px/1.4 "Schibsted Grotesk",system-ui,sans-serif}
+.top nav{display:flex;gap:2px;flex:none}
+.top nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:10px;text-decoration:none;color:var(--ink-2);font:500 15px/1 var(--f-sans)}
+.top nav a:hover{background:var(--panel);color:var(--ink)}
+.langbtn:lang(ar){font:400 18px/1 var(--f-ar)!important}
+.langbtn:lang(en){font:600 15px/1 "Schibsted Grotesk",system-ui,sans-serif!important}
+.themebtn{display:inline-grid;place-items:center;width:44px;height:44px;border:0;border-radius:10px;background:transparent;color:var(--ink-2);cursor:pointer}
+.themebtn:hover{background:var(--panel);color:var(--ink)}
+@media (max-width:520px){.top nav a.nav-wide{display:none}}
+
+/* ── Home: the claim and the sentence ── */
+.hero{padding-block:clamp(40px,7vw,80px) clamp(48px,7vw,72px)}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(38px,7vw,64px);line-height:1.02;letter-spacing:-.03em}
+#h1 span{display:block;color:var(--lapis)}
+html[lang="ar"] h1{font-size:clamp(32px,6vw,54px);line-height:1.4}
+.lead{margin-top:20px;font-size:clamp(18px,2.2vw,21px);line-height:1.5;color:var(--ink-2)}
+html[lang="ar"] .lead{line-height:1.8}
+
+.start{margin-top:clamp(28px,4vw,40px);background:var(--panel);border-radius:18px;padding:clamp(20px,4vw,32px)}
+.sentence{font-family:var(--f-display);font-weight:600;font-size:clamp(22px,3.4vw,30px);line-height:1.45;letter-spacing:-.015em}
+html[lang="ar"] .sentence{line-height:1.8}
+.nw{white-space:nowrap}
+.blank{position:relative;display:inline-block;max-width:100%;vertical-align:baseline}
+.blank select{appearance:none;-webkit-appearance:none;margin:0;border:0;border-radius:0;background:transparent;color:var(--lapis);font:inherit;font-weight:800;letter-spacing:inherit;line-height:1.15;padding:0;padding-inline-end:1.05em;border-bottom:3px solid currentColor;cursor:pointer;max-width:100%;transition:background .15s}
+html[lang="ar"] .blank select{line-height:1.5;font-weight:700}
+.blank select:hover{background:var(--lapis-wash)}
+.blank select option{color:var(--ink);background:var(--bg);font-weight:500}
+.blank::after{content:"";position:absolute;inset-inline-end:.24em;top:50%;width:.28em;height:.28em;border-right:3px solid var(--lapis);border-bottom:3px solid var(--lapis);transform:translateY(-78%) rotate(45deg);pointer-events:none}
+.hint{margin-top:8px;font-size:14px;color:var(--ink-3)}
+.fact{margin-top:18px;font-size:16px;color:var(--ink-2);line-height:1.5}
+.ctx{margin-top:4px;font-size:18px;font-weight:700;line-height:1.5}
+.swap{transition:opacity .16s ease}
+.swap.out{opacity:0}
+.first{display:flex;align-items:center;gap:16px;margin-top:20px;padding:18px 22px;border-radius:14px;background:var(--lapis);color:var(--on-lapis);text-decoration:none;transition:background .15s}
+.first:hover{background:var(--lapis-deep)}
+.first .l{flex:none;font-size:14px;font-weight:600;opacity:.85}
+.first .t{flex:1;font-family:var(--f-display);font-size:clamp(18px,2.4vw,22px);font-weight:800;line-height:1.3;letter-spacing:-.015em}
+html[lang="ar"] .first .t{line-height:1.6}
+.first svg{flex:none;transform:scaleX(var(--dir));transition:transform .15s}
+.first:hover svg{transform:translateX(calc(3px * var(--dir))) scaleX(var(--dir))}
+@media (max-width:520px){
+  .first{flex-wrap:wrap;gap:4px 12px}
+  .first .l{flex-basis:100%}
+}
+
+/* ── Sections ── */
+.sec{padding-block:clamp(48px,8vw,88px);border-top:1px solid var(--line)}
+h2{font-family:var(--f-display);font-weight:800;font-size:clamp(28px,4.4vw,40px);line-height:1.1;letter-spacing:-.025em}
+html[lang="ar"] h2{font-size:clamp(26px,4vw,36px);line-height:1.45}
+.sub{margin-top:10px;font-size:18px;color:var(--ink-2)}
+
+/* The eleven questions */
+.grp{margin-top:36px}
+.grp h3{font-size:14px;font-weight:700;color:var(--ink-3);padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.grp ol{list-style:none;margin:0;padding:0}
+.grp li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:0 10px;padding-block:18px;border-bottom:1px solid var(--line)}
+.grp .n{font-weight:800;font-size:17px;line-height:1.45;color:var(--lapis);font-variant-numeric:tabular-nums}
+html[lang="ar"] .grp .n{line-height:1.7}
+.grp .q{font-family:var(--f-display);font-weight:700;font-size:clamp(19px,2.4vw,22px);line-height:1.35;letter-spacing:-.012em;text-decoration:none}
+html[lang="ar"] .grp .q{line-height:1.7}
+.grp .q:hover{color:var(--lapis);text-decoration:underline;text-underline-offset:4px}
+.grp .q .arr{color:var(--ink-3);font-weight:500}
+.grp .q:hover .arr{color:var(--lapis);transform:translateX(calc(3px * var(--dir))) scaleX(var(--dir))}
+.grp .a{margin-top:4px;font-size:17px;color:var(--ink-2)}
+
+/* Objection form */
+.obj h2{font-size:clamp(26px,4vw,34px)}
+.obj form{display:grid;gap:16px;margin-top:24px}
+.obj label{display:block;margin-bottom:6px;font-size:14px;font-weight:600;color:var(--ink-2)}
+.obj input,.obj textarea{width:100%;font:400 17px/1.5 var(--f-sans);color:var(--ink);background:var(--bg);border:1px solid var(--field);border-radius:12px;padding:12px 14px;min-height:52px}
+.obj textarea{min-height:140px;resize:vertical}
+.obj input:focus,.obj textarea:focus{outline:2px solid var(--lapis);outline-offset:0;border-color:transparent}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:0;border-radius:12px;background:var(--lapis);color:var(--on-lapis);font:700 17px/1 var(--f-sans);text-decoration:none;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--lapis-deep)}
+.btn svg{transform:scaleX(var(--dir))}
+.obj .btn{justify-self:start}
+.sent{min-height:1.5em;font-size:15px;color:var(--ink-2)}
+.sent.err{color:var(--warn)}
+.obj .btn[disabled]{opacity:.6;cursor:progress}
+.done{margin-top:24px;padding:22px;border-radius:14px;background:var(--lapis-wash);font-weight:600}
+
+/* ── Question pages ── */
+.t-head{padding-block:clamp(16px,3vw,28px) clamp(28px,4vw,40px)}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--ink-2);font-weight:600;font-size:15px;text-decoration:none}
+.back:hover{color:var(--lapis)}
+.stepof{margin-top:12px;font-size:14px;font-weight:600;color:var(--ink-3)}
+.prog{margin-top:8px;height:3px;border-radius:2px;background:var(--line);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--lapis)}
+.t-title{margin-top:20px;font-family:var(--f-display);font-weight:800;font-size:clamp(34px,6vw,52px);line-height:1.08;letter-spacing:-.03em}
+html[lang="ar"] .t-title{font-size:clamp(28px,5vw,44px);line-height:1.45}
+.t-title .saw{font-size:.72em}
+.short{margin-top:24px;padding:20px 22px;border-radius:14px;background:var(--lapis-wash);border-inline-start:4px solid var(--lapis)}
+.short-l{font-size:13px;font-weight:700;color:var(--lapis)}
+.short-a{margin-top:4px;font-size:clamp(19px,2.4vw,22px);font-weight:700;line-height:1.45}
+html[lang="ar"] .short-a{line-height:1.75}
+.short-s{margin-top:10px;font-size:14px;color:var(--ink-2)}
+.short-s .cite{font-size:14px}
+
+.t-body{padding-bottom:clamp(48px,7vw,80px)}
+.t-sec{margin-top:clamp(32px,5vw,48px)}
+.t-h{font-size:clamp(22px,3vw,28px);line-height:1.2;letter-spacing:-.02em;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+html[lang="ar"] .t-h{line-height:1.5}
+.t-hs{margin-top:12px;color:var(--ink-2);font-size:16px}
+
+.step{display:grid;grid-template-columns:32px minmax(0,1fr);gap:0 10px;padding-block:24px;border-bottom:1px solid var(--line)}
+.step.solo{grid-template-columns:minmax(0,1fr)}
+.step-n{font-weight:800;font-size:17px;line-height:1.45;color:var(--lapis)}
+.step h3{font-family:var(--f-display);font-weight:700;font-size:clamp(19px,2.4vw,22px);line-height:1.35;letter-spacing:-.012em}
+html[lang="ar"] .step h3{line-height:1.7}
+.step-sub{margin-top:6px;font-size:17px;color:var(--ink-2)}
+
+.ev{margin-top:16px;background:var(--panel);border-radius:14px;padding:clamp(16px,3vw,24px)}
+.ev-t{font-weight:700;font-size:17px;margin-bottom:8px}
+.pt+.pt{margin-top:18px;padding-top:18px;border-top:1px solid var(--panel-line)}
+.pt p{font-size:17px}
+.pt p+p{margin-top:10px}
+.pt blockquote{margin-top:12px;padding-inline-start:16px;border-inline-start:3px solid var(--lapis)}
+.pt blockquote+p{margin-top:12px}
+.pt blockquote p{font:italic 400 19px/1.5 var(--f-serif)}
+.pt blockquote p.q-ar{font:400 24px/1.9 var(--f-ar)}
+html[lang="ar"] .pt blockquote p{font-style:normal}
+.pt cite{display:block;margin-top:6px;font-style:normal;font-size:14px;font-weight:600;color:var(--ink-3)}
+.pt figure{margin:14px 0 0}
+.pt img{display:block;max-width:100%;height:auto;border-radius:10px;background:var(--bg)}
+.pt figcaption{margin-top:6px;font-size:14px;color:var(--ink-3)}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.src-link{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:8px 14px;background:var(--bg);border:1px solid var(--panel-line);border-radius:10px;text-decoration:none;font-size:15px;font-weight:600;line-height:1.3;transition:border-color .15s}
+.src-link:hover{border-color:var(--lapis)}
+.src-link .k{font-size:12px;font-weight:700;color:var(--lapis)}
+.src-link .ext{display:inline-block;color:var(--ink-3);transform:scaleX(var(--dir))}
+details.more{margin-top:8px}
+details.more summary{display:inline-flex;align-items:center;gap:8px;min-height:44px;cursor:pointer;list-style:none;color:var(--lapis);font-weight:700;font-size:15px}
+details summary::-webkit-details-marker{display:none}
+details.more summary::after{content:"+";font-size:19px;font-weight:500;line-height:1}
+details.more[open] summary::after{content:"−"}
+details.more>p{color:var(--ink-2)}
+details.more>p+p{margin-top:10px}
+
+.ob{border-bottom:1px solid var(--line)}
+.ob summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 14px;align-items:center;padding-block:18px;cursor:pointer;list-style:none}
+.ob .ys{grid-column:1;font-size:13px;font-weight:600;color:var(--ink-3)}
+.ob .say{grid-column:1;font-family:var(--f-display);font-weight:700;font-size:clamp(18px,2.2vw,20px);line-height:1.35;letter-spacing:-.01em}
+html[lang="ar"] .ob .say{line-height:1.7}
+.ob summary:hover .say{color:var(--lapis)}
+.ob .pm{grid-column:2;grid-row:1/3;position:relative;width:34px;height:34px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--field)}
+.ob .pm::before,.ob .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;margin:-1px 0 0 -6px;border-radius:1px;background:var(--ink-2);transition:transform .2s}
+.ob .pm::after{transform:rotate(90deg)}
+.ob[open] .pm::after{transform:rotate(0)}
+.ob-body{padding-bottom:24px}
+.ans-l{font-size:13px;font-weight:700;color:var(--lapis)}
+.ans-h{margin-top:2px;font-weight:700;font-size:18px;line-height:1.4}
+
+.talk{margin-top:8px;padding:clamp(20px,3vw,28px);border-radius:14px;background:var(--panel)}
+.talk p{font-size:17px}
+.talk .btn{margin-top:16px;min-height:48px;font-size:16px}
+
+.go{list-style:none;margin:0;padding:0}
+.go a{display:flex;align-items:center;gap:14px;min-height:60px;padding-block:12px;border-bottom:1px solid var(--line);text-decoration:none;font-weight:600;font-size:17px}
+.go a:hover{color:var(--lapis)}
+.go .k{flex:none;min-width:56px;font-size:12px;font-weight:700;color:var(--lapis)}
+.go .ext{margin-inline-start:auto;color:var(--ink-3);display:inline-block;transform:scaleX(var(--dir))}
+
+.nextbar{display:flex;align-items:center;gap:6px 16px;flex-wrap:wrap;margin-top:clamp(36px,5vw,52px);padding:20px 22px;border-radius:14px;background:var(--lapis);color:var(--on-lapis);text-decoration:none;transition:background .15s}
+.nextbar:hover{background:var(--lapis-deep)}
+.nextbar .l{flex-basis:100%;font-size:14px;font-weight:600;opacity:.85}
+.nextbar .tt{flex:1;font-family:var(--f-display);font-weight:800;font-size:clamp(19px,2.6vw,24px);line-height:1.3;letter-spacing:-.015em}
+html[lang="ar"] .nextbar .tt{line-height:1.6}
+.nextbar svg{flex:none;transform:scaleX(var(--dir));transition:transform .15s}
+.nextbar:hover svg{transform:translateX(calc(3px * var(--dir))) scaleX(var(--dir))}
+.endcard{margin-top:clamp(36px,5vw,52px);padding:20px 22px;border-radius:14px;background:var(--panel)}
+.endcard p{font-weight:700}
+.endcard a{display:inline-block;margin-top:4px;color:var(--lapis);font-weight:700}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding-block:28px 48px;font-size:14px;color:var(--ink-3)}
+.foot{display:grid;gap:4px}
+.foot .fname{font-weight:800;color:var(--ink)}
+.foot .fname span{font:400 16px var(--f-ar);color:var(--ink-3)}
+html[lang="ar"] .foot .fname span{font:500 13px "Schibsted Grotesk",system-ui,sans-serif}
+.foot a{color:inherit;text-underline-offset:2px}
+
+@media (max-width:600px){
+  .two{grid-template-columns:minmax(0,1fr)}
+  .grp li,.step{grid-template-columns:28px minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}

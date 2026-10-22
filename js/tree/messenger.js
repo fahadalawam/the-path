@@ -97,12 +97,12 @@ export const messengerNodes = {
     "status": "live",
     "content": {
       "en": {
-        "question": "Muhammad ﷺ was known by his people as 'Al-Amin' — The Trustworthy — before any claim to prophethood.",
-        "subtitle": "His enemies never accused him of lying in 40 years before his prophethood."
+        "question": "Before he ever claimed to be a prophet, his own people knew Muhammad ﷺ for telling the truth.",
+        "subtitle": "Even an opponent, questioned by an emperor, said they had never accused him of lying."
       },
       "ar": {
-        "question": "كان محمد ﷺ معروفًا عند قومه بـ'الأمين' قبل أي ادعاء بالنبوة.",
-        "subtitle": "لم يتهمه أعداؤه بالكذب في أربعين عامًا قبل نبوته."
+        "question": "قبل أن يُعلن النبوة، عرف قومُه محمدًا ﷺ بالصدق.",
+        "subtitle": "حتى خصمه، حين سأله الإمبراطور، قال إنهم لم يتهموه بالكذب قط."
       }
     },
     "options": [
@@ -133,14 +133,52 @@ export const messengerNodes = {
             {
               "type": "text",
               "content": {
-                "en": "Muhammad ﷺ lived among his people for 40 years before claiming prophethood. Even his fiercest opponents never called him a liar about worldly matters — they rejected his message, not his character.",
-                "ar": "عاش محمد ﷺ بين قومه أربعين عامًا قبل أن يدّعي النبوة. حتى أشد أعدائه لم يسمّوه كاذبًا في شؤون الدنيا — رفضوا رسالته، لا شخصيته."
+                "en": "Muhammad ﷺ began receiving revelation at the age of forty. When he called the clans of his tribe together and asked whether they would believe him, they answered: “Yes, for we have not found you telling anything other than the truth.” Years later the emperor Heraclius questioned Abu Sufyan, who was still opposing him at the time:",
+                "ar": "بدأ نزول الوحي على محمد ﷺ وهو في الأربعين. ولمّا جمع بطون قومه وسألهم أيصدّقونه، قالوا: «نعم، ما جرّبنا عليك إلا صدقًا». وبعد سنوات سأل الإمبراطورُ هرقلُ أبا سفيان، وكان يومئذٍ لا يزال من خصومه:"
               }
+            },
+            {
+              "type": "quote",
+              "content": {
+                "en": "فَهَلْ كُنْتُمْ تَتَّهِمُونَهُ بِالْكَذِبِ قَبْلَ أَنْ يَقُولَ مَا قَالَ؟ قُلْتُ: لاَ\n\n“Have you ever accused him of telling lies before his claim (to be a Prophet)?” I replied, “No.”",
+                "ar": "فَهَلْ كُنْتُمْ تَتَّهِمُونَهُ بِالْكَذِبِ قَبْلَ أَنْ يَقُولَ مَا قَالَ؟ قُلْتُ: لاَ"
+              },
+              "source": {
+                "en": "Sahih al-Bukhari 7",
+                "ar": "صحيح البخاري 7"
+              }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Sahih al-Bukhari 3902",
+                "ar": "صحيح البخاري 3902"
+              },
+              "url": "https://sunnah.com/bukhari:3902",
+              "linkType": "source"
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Sahih al-Bukhari 4770",
+                "ar": "صحيح البخاري 4770"
+              },
+              "url": "https://sunnah.com/bukhari:4770",
+              "linkType": "source"
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Sahih al-Bukhari 7",
+                "ar": "صحيح البخاري 7"
+              },
+              "url": "https://sunnah.com/bukhari:7",
+              "linkType": "source"
             }
           ],
           "readMore": {
-            "en": "Abu Jahl, one of his greatest enemies, once said privately: 'I know you are not lying — but if I follow you, what will the nobles of Quraysh say?'",
-            "ar": "قال أبو جهل، أحد أشد أعدائه، في نجوى خاصة: 'أعلم أنك لا تكذب — لكن لو اتبعتك، ماذا سيقول أشراف قريش؟'"
+            "en": "",
+            "ar": ""
           }
         }
       ]
@@ -152,11 +190,11 @@ export const messengerNodes = {
     "status": "live",
     "content": {
       "en": {
-        "question": "The Quran — revealed to an illiterate man — contains knowledge not available in the 7th century.",
+        "question": "His miracle was the Quran, revealed to a man who could not read or write.",
         "subtitle": "Unlike other miracles, the Quran can be examined by anyone today."
       },
       "ar": {
-        "question": "القرآن — الذي نزل على رجل أمّي — يحوي معرفة لم تكن متاحة في القرن السابع الميلادي.",
+        "question": "معجزته القرآن، وقد نزل على رجل لا يقرأ ولا يكتب.",
         "subtitle": "خلافًا لسائر المعجزات، يمكن لأي شخص اليوم أن يفحص القرآن بنفسه."
       }
     },
@@ -191,16 +229,16 @@ export const messengerNodes = {
     "status": "live",
     "content": {
       "en": {
-        "question": "His illiteracy is historically documented."
+        "question": "The Quran itself says he could not read or write."
       },
       "ar": {
-        "question": "أميّته موثّقة تاريخيًا."
+        "question": "القرآن نفسه يقول إنه لم يكن يقرأ ولا يكتب."
       }
     },
     "evidence": {
       "title": {
-        "en": "What history records",
-        "ar": "ما يسجّله التاريخ"
+        "en": "What the Quran says",
+        "ar": "ما يقوله القرآن"
       },
       "points": [
         {
@@ -209,18 +247,45 @@ export const messengerNodes = {
             {
               "type": "text",
               "content": {
-                "en": "Muhammad ﷺ never attended school, never learned to read or write. This is confirmed by both Muslim and non-Muslim historical sources. The Quran refers to him as 'the unlettered prophet' (Al-Ummiy).",
-                "ar": "لم يلتحق محمد ﷺ بأي مدرسة، ولم يتعلم القراءة أو الكتابة قط. وهذا ما تؤكده المصادر التاريخية الإسلامية وغير الإسلامية على حدٍّ سواء. ويشير إليه القرآن بـ'النبي الأمّي'."
+                "en": "The Quran calls him “the unlettered Prophet” (7:157), and says to him:",
+                "ar": "يصفه القرآن بـ«النبي الأمّي» (الأعراف 157)، ويقول له:"
+              }
+            },
+            {
+              "type": "quote",
+              "content": {
+                "en": "وَمَا كُنتَ تَتْلُو مِن قَبْلِهِ مِن كِتَابٍ وَلَا تَخُطُّهُ بِيَمِينِكَ\n\n“You ˹O Prophet˺ could not read any writing ˹even˺ before this ˹revelation˺, nor could you write at all.”",
+                "ar": "وَمَا كُنتَ تَتْلُو مِن قَبْلِهِ مِن كِتَابٍ وَلَا تَخُطُّهُ بِيَمِينِكَ"
+              },
+              "source": {
+                "en": "Quran 29:48",
+                "ar": "سورة العنكبوت 48"
+              }
+            },
+            {
+              "type": "text",
+              "content": {
+                "en": "He recited these verses to people who had known him all his life. If he could read and write, they would have known.",
+                "ar": "وقد تلا هذه الآيات على أناس عرفوه طوال حياته، ولو كان يقرأ ويكتب لعرفوا ذلك."
               }
             },
             {
               "type": "link",
               "label": {
-                "en": "The Unlettered Prophet",
-                "ar": "النبي الأمّي"
+                "en": "Quran 7:157",
+                "ar": "سورة الأعراف 157"
               },
-              "url": "https://www.islamreligion.com/articles/395/",
-              "linkType": "article"
+              "url": "https://quran.com/7/157",
+              "linkType": "source"
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Quran 29:48",
+                "ar": "سورة العنكبوت 48"
+              },
+              "url": "https://quran.com/29/48",
+              "linkType": "source"
             }
           ],
           "readMore": {
@@ -285,11 +350,11 @@ export const messengerNodes = {
     "status": "live",
     "content": {
       "en": {
-        "question": "Muhammad ﷺ lived in 7th-century Arabia — a time of no scientific advancement. Yet the Quran contains statements that align with modern science.",
+        "question": "Muhammad ﷺ lived in 7th-century Arabia. Does the Quran he brought say things no one then could have known?",
         "subtitle": "We're not asking you to accept it — just to examine it honestly."
       },
       "ar": {
-        "question": "عاش محمد ﷺ في جزيرة العرب في القرن السابع الميلادي — حقبة لم يكن فيها أي تقدم علمي. ومع ذلك، يحوي القرآن تصريحات تتوافق مع العلم الحديث.",
+        "question": "عاش محمد ﷺ في جزيرة العرب في القرن السابع الميلادي. فهل في القرآن الذي جاء به ما لم يكن أحد يعرفه آنذاك؟",
         "subtitle": "لا نطلب منك أن تقبل ذلك — بل ندعوك فقط إلى فحصه بأمانة."
       }
     },

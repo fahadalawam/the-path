@@ -115,8 +115,8 @@ export const agnosticNodes = {
             {
               "type": "text",
               "content": {
-                "en": "The \"logical\" problem of evil — the claim that God and evil cannot coexist — was largely resolved in philosophy by Alvin Plantinga's Free Will Defense (1974). Even atheist philosopher J.L. Mackie later conceded the logical version of the argument fails.",
-                "ar": "\"مشكلة الشر المنطقية\" — الادعاء بأن الله والشر لا يمكن أن يتعايشا — حُسمت إلى حدٍّ بعيد في الفلسفة من خلال دفاع ألفين بلانتينغا عن الإرادة الحرة (1974). بل إن الفيلسوف الإلحادي ج.ل. ماكي اعترف لاحقًا بفشل الحجة المنطقية."
+                "en": "The “logical” problem of evil says God and evil cannot both exist. J. L. Mackie stated it in 1955. A famous answer is Alvin Plantinga’s Free Will Defense (1974). The Internet Encyclopedia of Philosophy concludes that “Mackie was wrong to think that it is logically impossible” for “God is omnipotent, omniscient, and perfectly good” and “Evil exists” to both be true.",
+                "ar": "تقول «مشكلة الشر المنطقية» إن وجود الله ووجود الشر لا يجتمعان، وقد صاغها الفيلسوف ج. ل. ماكي عام 1955. ومن أشهر الردود عليها «دفاع الإرادة الحرة» الذي قدّمه ألفين بلانتينغا (1974). وتخلص موسوعة الإنترنت للفلسفة إلى أن ماكي «كان مخطئًا حين ظن أن من المستحيل منطقيًا» أن تصدق العبارتان «الله قادر على كل شيء، عليم بكل شيء، كامل الخير» و«الشر موجود» معًا."
               }
             },
             {
@@ -125,6 +125,15 @@ export const agnosticNodes = {
                 "en": "A world where genuine moral choice is possible must be a world where evil is possible. A God who overrides every bad choice or natural consequence would not have created free beings — he would have created puppets.",
                 "ar": "عالمٌ تكون فيه الحرية الأخلاقية الحقيقية ممكنةً، لا بدّ أن يكون عالمًا يكون فيه الشر ممكنًا. إله يتدخل لمنع كل قرار سيئ أو نتيجة طبيعية لن يكون قد خلق كائنات حرة — بل كان سيخلق دُمى."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Internet Encyclopedia of Philosophy: The Evidential Problem of Evil",
+                "ar": "موسوعة الإنترنت للفلسفة: مشكلة الشر الاستدلالية"
+              },
+              "url": "https://iep.utm.edu/evil-evi/",
+              "linkType": "article"
             }
           ],
           "readMore": {
@@ -175,32 +184,50 @@ export const agnosticNodes = {
             {
               "type": "text",
               "content": {
-                "en": "Islam teaches that this life is not the complete picture. It is a brief, temporary test — and the suffering endured here is not the final word. The Quran states:",
-                "ar": "يُعلّم الإسلام أن هذه الحياة ليست الصورة الكاملة. إنها اختبار قصير مؤقت — والمعاناة التي يتحملها الإنسان هنا ليست الكلمة الأخيرة. يقول القرآن الكريم:"
+                "en": "Islam teaches that this life is a test, and that suffering here is not the end of the story. The Quran says:",
+                "ar": "يُعلّم الإسلام أن هذه الحياة اختبار، وأن المعاناة فيها ليست نهاية القصة. يقول القرآن الكريم:"
               }
             },
             {
               "type": "quote",
               "content": {
-                "en": "وَلَنَبْلُوَنَّكُم بِشَيْءٍ مِّنَ الْخَوْفِ وَالْجُوعِ وَنَقْصٍ مِّنَ الْأَمْوَالِ وَالْأَنفُسِ وَالثَّمَرَاتِ ۗ وَبَشِّرِ الصَّابِرِينَ\n\n\"We will certainly test you with some fear and hunger, and some loss of possessions and lives and crops. But give good news to the steadfast.\"",
+                "en": "وَلَنَبْلُوَنَّكُم بِشَيْءٍ مِّنَ الْخَوْفِ وَالْجُوعِ وَنَقْصٍ مِّنَ الْأَمْوَالِ وَالْأَنفُسِ وَالثَّمَرَاتِ ۗ وَبَشِّرِ الصَّابِرِينَ\n\n“We will certainly test you with a touch of fear and famine and loss of property, life, and crops. Give good news to those who patiently endure…”",
                 "ar": "وَلَنَبْلُوَنَّكُم بِشَيْءٍ مِّنَ الْخَوْفِ وَالْجُوعِ وَنَقْصٍ مِّنَ الْأَمْوَالِ وَالْأَنفُسِ وَالثَّمَرَاتِ ۗ وَبَشِّرِ الصَّابِرِينَ"
               },
               "source": {
                 "en": "Quran 2:155",
-                "ar": "القرآن الكريم ٢:١٥٥"
+                "ar": "سورة البقرة 155"
               }
             },
             {
               "type": "text",
               "content": {
-                "en": "The Prophet Muhammad ﷺ said: \"No fatigue, illness, anxiety, sorrow, harm, or distress befalls a Muslim — even the prick of a thorn — except that Allah expiates some of his sins by it.\" Suffering in this life is not pointless — it is purification, elevation, and the condition for a justice that will be fully realised in the next life.",
-                "ar": "قال النبي محمد ﷺ: «ما يصيب المسلم من نَصَبٍ ولا وَصَبٍ ولا هَمٍّ ولا حُزْنٍ ولا أذى ولا غَمٍّ، حتى الشوكة يُشاكها، إلا كَفَّر الله بها من خطاياه». المعاناة في هذه الحياة ليست عبثًا — إنها تطهير، ورفعة، وشرط لعدالة ستتحقق كاملةً في الحياة الآخرة."
+                "en": "And the Prophet Muhammad ﷺ said: “No fatigue, nor disease, nor sorrow, nor sadness, nor hurt, nor distress befalls a Muslim, even if it were the prick he receives from a thorn, but that Allah expiates some of his sins for that.” Suffering in this life is not pointless: it is a test, and it wipes away sins.",
+                "ar": "وقال النبي محمد ﷺ: «ما يصيب المسلم من نَصَبٍ ولا وَصَبٍ ولا هَمٍّ ولا حُزْنٍ ولا أذى ولا غَمٍّ، حتى الشوكة يُشاكها، إلا كفّر الله بها من خطاياه». فالمعاناة في هذه الحياة ليست عبثًا: إنها اختبار، وتكفّر الخطايا."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Quran 2:155",
+                "ar": "سورة البقرة 155"
+              },
+              "url": "https://quran.com/2/155",
+              "linkType": "source"
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Sahih al-Bukhari 5641",
+                "ar": "صحيح البخاري 5641"
+              },
+              "url": "https://sunnah.com/bukhari:5641",
+              "linkType": "source"
             }
           ],
           "readMore": {
-            "en": "The child who suffers and dies without cause in this world — Islam's answer is that such a soul goes directly to Paradise. The suffering was real, but so is the justice that follows. A God who sees only this life and ends the story here would be unjust. The God of Islam sees the full picture: this life is the opening paragraph, not the whole book.",
-            "ar": "الطفل الذي يعاني ويموت بلا سبب في هذه الدنيا — إجابة الإسلام أن هذه الروح تذهب مباشرة إلى الجنة. كانت المعاناة حقيقية، لكن العدل الذي يليها حقيقي أيضًا. إله يرى هذه الحياة فحسب وينهي القصة هنا سيكون ظالمًا. أما الله في الإسلام فيرى الصورة كاملة: هذه الحياة هي الفقرة الافتتاحية، لا الكتاب كله."
+            "en": "",
+            "ar": ""
           }
         }
       ]
@@ -260,16 +287,34 @@ export const agnosticNodes = {
             {
               "type": "text",
               "content": {
-                "en": "The philosopher John Hick called this \"soul-making\": the idea that the purpose of this world is not comfort, but growth. We are not placed here as tourists in a hotel. We are here to become something — and that process requires resistance.",
-                "ar": "أسمى الفيلسوف جون هيك هذا «صناعة الروح»: فكرة أن الغرض من هذا العالم ليس الراحة، بل النمو. لم نُوضَع هنا كسياح في فندق. نحن هنا لنصير شيئًا — وهذه العملية تستلزم المقاومة."
+                "en": "The philosopher John Hick called this “soul-making,” most fully in his 1966 book Evil and the God of Love: this world is not built for comfort but for growth. We are not here as tourists in a hotel. We are here to become something, and that takes resistance.",
+                "ar": "سمّى الفيلسوف جون هيك هذا «صناعة الروح»، وفصّله في كتابه «الشر وإله المحبة» (1966): هذا العالم لم يُبنَ للراحة بل للنمو. لسنا هنا سيّاحًا في فندق، بل لنصير شيئًا، وهذا يستلزم المقاومة."
               }
             },
             {
               "type": "text",
               "content": {
-                "en": "Islam frames this explicitly. The Quran says: \"Do people think they will be left alone because they say 'We believe,' and they will not be tested?\" (29:2). The test is not an oversight in the design — it is the design.",
-                "ar": "يُصرِّح الإسلام بهذا صراحةً. يقول القرآن: «أَحَسِبَ النَّاسُ أَن يُتْرَكُوا أَن يَقُولُوا آمَنَّا وَهُمْ لَا يُفْتَنُونَ؟» (٢٩:٢). الاختبار ليس إغفالًا في التصميم — بل هو التصميم ذاته."
+                "en": "Islam says this directly. The Quran asks: “Do people think once they say, ‘We believe,’ that they will be left without being put to the test?” (29:2). The test is not a flaw in the design. It is the design.",
+                "ar": "يقول الإسلام هذا صراحةً. يقول القرآن: «أَحَسِبَ النَّاسُ أَن يُتْرَكُوا أَن يَقُولُوا آمَنَّا وَهُمْ لَا يُفْتَنُونَ» (العنكبوت 2). فالاختبار ليس خللًا في التصميم، بل هو التصميم ذاته."
               }
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Internet Encyclopedia of Philosophy: The Evidential Problem of Evil",
+                "ar": "موسوعة الإنترنت للفلسفة: مشكلة الشر الاستدلالية"
+              },
+              "url": "https://iep.utm.edu/evil-evi/",
+              "linkType": "article"
+            },
+            {
+              "type": "link",
+              "label": {
+                "en": "Quran 29:2",
+                "ar": "سورة العنكبوت 2"
+              },
+              "url": "https://quran.com/29/2",
+              "linkType": "source"
             }
           ],
           "readMore": {
