@@ -133,9 +133,10 @@ const UI = {
   },
 };
 
-// Home page copy. The line under the sentence changes with the reader's
-// choices (js/site.js); its figures come from PEW_URL.
-const PEW_URL = "https://www.pewresearch.org/religion/2025/03/26/religious-switching-into-and-out-of-christianity/";
+// Home page copy. Under the sentence: Pew's finding, quoted from PEW_URL
+// (section "Religious 'switching'"), then a reply that changes with the
+// reader's choices (js/site.js).
+const PEW_URL = "https://www.pewresearch.org/religion/2025/06/09/how-the-global-religious-landscape-changed-from-2010-to-2020/";
 const HOME = {
   en: {
     h1Html: "Islam is the truth. <span>Check it yourself.</span>",
@@ -145,7 +146,8 @@ const HOME = {
     raised: [["christian", "Christian"], ["muslim", "Muslim"], ["jewish", "Jewish"], ["hindu", "Hindu"], ["buddhist", "Buddhist"], ["other", "in another faith"], ["none", "with no religion"]],
     today: [["keep", "still believe it"], ["doubt", "have doubts"], ["nogod", "believe in no God"], ["unsure", "am not sure"]],
     hint: "Change the blue words until the sentence is true for you.",
-    ctx: "About 83 in 100 people raised Christian still are. Did you choose it, or inherit it?",
+    fact: "“Most people around the world still identify with the religion in which they were raised.”",
+    ctx: "Did you choose yours, or inherit it?",
     pew: "Pew Research Center, 2025",
     firstL: "Start here",
     qH: (n) => `The ${n} questions`,
@@ -159,7 +161,8 @@ const HOME = {
     raised: [["christian", "مسيحيًا"], ["muslim", "مسلمًا"], ["jewish", "يهوديًا"], ["hindu", "هندوسيًا"], ["buddhist", "بوذيًا"], ["other", "على دين آخر"], ["none", "بلا دين"]],
     today: [["keep", "ما زلتُ مؤمنًا به"], ["doubt", "تساورني شكوك"], ["nogod", "لا أؤمن بوجود إله"], ["unsure", "لستُ متأكدًا"]],
     hint: "غيّر الكلمات الزرقاء حتى تصبح الجملة صادقة عنك.",
-    ctx: "نحو 83 من كل 100 ممن نشؤوا مسيحيين ما زالوا كذلك. فهل اخترته، أم ورثته؟",
+    fact: "«ما زال معظم الناس حول العالم ينتمون إلى الدين الذي نشؤوا عليه».",
+    ctx: "فهل اخترت دينك، أم ورثته؟",
     pew: "مركز بيو للأبحاث، 2025",
     firstL: "ابدأ من هنا",
     qH: (n) => `الأسئلة الـ${n}`,
@@ -407,7 +410,8 @@ function homePage(lang) {
       <div class="start">
         <p class="sentence"><span>${esc(h.s1)}</span> <span class="nw"><span class="blank"><select id="raised" aria-label="${esc(h.raisedL)}">${h.raised.map((o, i) => option(o, i === 0)).join("")}</select></span><span>${esc(h.comma)}</span></span> <span>${esc(h.s2)}</span> <span class="nw"><span class="blank"><select id="today" aria-label="${esc(h.todayL)}">${h.today.map((o, i) => option(o, i === 0)).join("")}</select></span>.</span></p>
         <p class="hint">${esc(h.hint)}</p>
-        <p class="ctx" aria-live="polite"><span class="swap" id="ctx">${esc(h.ctx)}</span> <a class="cite" href="${PEW_URL}" target="_blank" rel="noopener noreferrer">${esc(h.pew)}<span class="sr"> ${esc(u.newTab)}</span></a></p>
+        <p class="fact">${esc(h.fact)} <a class="cite" href="${PEW_URL}" target="_blank" rel="noopener noreferrer">${esc(h.pew)}<span class="sr"> ${esc(u.newTab)}</span></a></p>
+        <p class="ctx swap" id="ctx" aria-live="polite">${esc(h.ctx)}</p>
         <a class="first" id="firstq" href="${pageHref(root, lang, first)}"><span class="l">${esc(h.firstL)}</span><span class="t swap" id="firstq-t">${fmt(topicTitle(first))}</span>${svgArrow}</a>
       </div>
     </div>

@@ -102,7 +102,8 @@ html[lang="ar"] .blank select{line-height:1.5;font-weight:700}
 .blank select option{color:var(--ink);background:var(--bg);font-weight:500}
 .blank::after{content:"";position:absolute;inset-inline-end:.24em;top:50%;width:.28em;height:.28em;border-right:3px solid var(--lapis);border-bottom:3px solid var(--lapis);transform:translateY(-78%) rotate(45deg);pointer-events:none}
 .hint{margin-top:8px;font-size:14px;color:var(--ink-3)}
-.ctx{margin-top:18px;font-size:17px;font-weight:600;line-height:1.5}
+.fact{margin-top:18px;font-size:16px;color:var(--ink-2);line-height:1.5}
+.ctx{margin-top:4px;font-size:18px;font-weight:700;line-height:1.5}
 .swap{transition:opacity .16s ease}
 .swap.out{opacity:0}
 .first{display:flex;align-items:center;gap:16px;margin-top:20px;padding:18px 22px;border-radius:14px;background:var(--lapis);color:var(--on-lapis);text-decoration:none;transition:background .15s}

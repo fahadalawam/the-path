@@ -75,29 +75,6 @@
   if (!raised || !today) return;
   const QMAP = JSON.parse($("qmap").textContent);
 
-  // How many people raised in each group still belong to it, from the Pew
-  // Research Center report linked under the sentence (PEW_URL in the build).
-  const STAY = {
-    en: {
-      christian: "About 83 in 100 people raised Christian still are.",
-      muslim: "About 99 in 100 people raised Muslim still are.",
-      jewish: "Most people keep the religion they were raised in.",
-      hindu: "About 99 in 100 people raised Hindu still are.",
-      buddhist: "About 78 in 100 people raised Buddhist still are.",
-      other: "Most people keep the religion they were raised in.",
-      none: "More than 9 in 10 people raised with no religion still have none.",
-    },
-    ar: {
-      christian: "نحو 83 من كل 100 ممن نشؤوا مسيحيين ما زالوا كذلك.",
-      muslim: "نحو 99 من كل 100 ممن نشؤوا مسلمين ما زالوا كذلك.",
-      jewish: "معظم الناس يبقون على الدين الذي نشؤوا عليه.",
-      hindu: "نحو 99 من كل 100 ممن نشؤوا هندوسًا ما زالوا كذلك.",
-      buddhist: "نحو 78 من كل 100 ممن نشؤوا بوذيين ما زالوا كذلك.",
-      other: "معظم الناس يبقون على الدين الذي نشؤوا عليه.",
-      none: "أكثر من 9 من كل 10 ممن نشؤوا بلا دين ما زالوا بلا دين.",
-    },
-  }[lang];
-  const LEFT = { christian: 17, muslim: 1, hindu: 1, buddhist: 22 };
   const TODAY = {
     en: {
       rel: [["keep", "still believe it"], ["doubt", "have doubts"], ["nogod", "believe in no God"], ["unsure", "am not sure"]],
@@ -117,20 +94,21 @@
     if (r === "none") return t === "god" ? "revelation" : "beginning";
     return FIRST[r];
   }
+  // A reply to the sentence, under Pew's finding that most people keep the
+  // religion they were raised in.
   function ctxLine(r, t) {
-    const stay = STAY[r], left = LEFT[r];
     if (lang === "ar") {
-      if (t === "keep") return stay + (r === "muslim" ? " لكن أن تولد على الحق لا يعني أن تعرف لماذا هو حق." : r === "none" ? " فهل اخترت ذلك، أم ورثته؟" : " فهل اخترته، أم ورثته؟");
-      if (t === "doubt") return stay + " وأنت بدأت تسأل. هذا جيد، فاستمر.";
-      if (t === "nogod") return (left ? (left === 1 ? "لا يتركه إلا نحو واحد من كل 100، وأنت منهم. " : "نحو " + left + " من كل 100 تركوه، وأنت منهم. ") : stay + " وأنت تركته. ") + "فاطرح السؤال التالي.";
-      if (t === "god") return stay + " وأنت بدأت تبحث أبعد من ذلك.";
-      return stay + " وألّا تكون متأكدًا بداية صادقة.";
+      if (t === "keep") return r === "muslim" ? "لكن أن تولد على الحق لا يعني أن تعرف لماذا هو حق." : r === "none" ? "فهل اخترت ذلك، أم ورثته؟" : "فهل اخترت دينك، أم ورثته؟";
+      if (t === "doubt") return "وأنت بدأت تسأل. هذا جيد، فاستمر.";
+      if (t === "nogod") return "أما أنت فلم تبقَ عليه. تطلّب ذلك سؤالًا حقيقيًا، فاطرح السؤال التالي.";
+      if (t === "god") return "أما أنت فبدأت تبحث أبعد من ذلك.";
+      return "وألّا تكون متأكدًا بداية صادقة.";
     }
-    if (t === "keep") return stay + (r === "muslim" ? " But being born into the truth isn’t the same as knowing why it’s true." : r === "none" ? " Did you choose that, or inherit it?" : " Did you choose it, or inherit it?");
-    if (t === "doubt") return stay + " You’re asking questions. Good. Keep going.";
-    if (t === "nogod") return (left ? (left === 1 ? "Only about 1 in 100 leave, and you did. " : "About " + left + " in 100 leave, and you did. ") : stay + " You left. ") + "Now ask the next question.";
-    if (t === "god") return stay + " You’ve already started looking further.";
-    return stay + " Not being sure is an honest place to start.";
+    if (t === "keep") return r === "muslim" ? "But being born into the truth isn’t the same as knowing why it’s true." : r === "none" ? "Did you choose that, or inherit it?" : "Did you choose yours, or inherit it?";
+    if (t === "doubt") return "You’re asking questions. Good. Keep going.";
+    if (t === "nogod") return "You didn’t stay. That took a real question. Now ask the next one.";
+    if (t === "god") return "You’ve already started looking further.";
+    return "Not being sure is an honest place to start.";
   }
 
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
