@@ -10,14 +10,15 @@ The site is NOT preachy. It does NOT lecture. It asks questions, presents concre
 
 ## Site Layout (Question Library)
 
-The public site is a **question library**. `index.html` is a data story: the "I was raised ___, and today I ___" sentence, a field of 1,000 dots (Pew Research Center 2025 figures), then four facts and every question. Each topic has its own page at `q/<slug>/`, and the Arabic site mirrors it under `ar/`. Each page shows the case, then the strongest objections with answers, then a contact form. The original step-by-step flow lives on at `journey.html`.
+The public site is a **question library**, kept plain and to the point. `index.html` states the claim, then the "I was raised ___, and today I ___" sentence picks the reader's first question, then lists all 11 questions in order, each with a one-line answer and its sources. Each topic has its own page at `q/<slug>/` (Arabic mirror under `ar/`): short answer, evidence, objections, next question, contact form. The original step-by-step flow lives on at `journey.html`.
 
-- Topic pages are **generated**: edit `js/topics.js` (which nodes belong to which topic) or `js/tree/*.js`, then run `node scripts/build-library.mjs`. Never edit `index.html`, `ar/` or `q/` by hand.
-- Home page copy (both languages), the Pew figures and the first-question choices live in `scripts/build-library.mjs` (`HOME`, `UI`, `FIRST_TOPICS`, `FACT_TOPICS`). The sentence-to-first-question mapping and the dot field live in `js/site.js`.
+- **Authenticity is the backbone: no claim without a source.** Every factual claim links to the research or text it comes from (`target="_blank" rel="noopener noreferrer"`). A claim that can't be sourced is rewritten or cut. Before adding a source, open it and check that it says what we claim.
+- Topic pages are **generated**: edit `js/topics.js` (each topic's `answer`, its `sources`, and which tree nodes it shows) or `js/tree/*.js`, then run `node scripts/build-library.mjs`. Never edit `index.html`, `ar/` or `q/` by hand.
+- Home page copy (both languages) and the Pew link live in `scripts/build-library.mjs` (`HOME`, `UI`, `PEW_URL`). The sentence's figures and the sentence-to-first-question mapping live in `js/site.js`.
 - Generated pages use `css/site.css` and `js/site.js`. `journey.html` and `admin.html` keep using `css/style.css`.
-- The pages work without JavaScript. `js/site.js` only adds the dot field, the sentence, the dark-mode toggle and sending the contact form to Formspree.
-- The build also validates the tree and fails on broken links; the deploy workflow runs it before publishing.
-- Every number on the home page must cite its source in the footer list. Never depict the Prophet ﷺ or any person.
+- The pages work without JavaScript. `js/site.js` only adds the sentence, the dark-mode toggle and sending the contact form to Formspree.
+- The build validates the tree and fails on broken links, a topic without an answer, or a source without an https link; the deploy workflow runs it before publishing.
+- Never depict the Prophet ﷺ or any person.
 
 ---
 

@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>الدين الحق</title>
-<meta name="description" content="معظم الناس لم يختاروا دينهم، بل ورثوه. نقول إن الإسلام هو الدين الحق: تحقّق من الأدلة سؤالًا تلو الآخر، وحاول أن تثبت أننا مخطئون.">
+<meta name="description" content="الإسلام هو الحق. تحقّق بنفسك: أحد عشر سؤالًا بالترتيب، لكل منها جواب مختصر والدليل عليه.">
 <link rel="alternate" hreflang="en" href="../">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&family=Amiri:wght@400;700&family=Reem+Kufi:wght@500..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@500..800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&family=Amiri:wght@400;700&family=Reem+Kufi:wght@600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@600..800&display=swap">
 <link rel="stylesheet" href="../css/site.css">
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}</script>
 </head>
@@ -21,9 +21,7 @@
       <span class="wm">الدين الحق<small lang="en">The Only True Religion</small></span>
     </a>
     <nav aria-label="القائمة الرئيسية">
-      <a class="nav-wide" href="#facts">الأدلة</a>
       <a class="nav-wide" href="#questions">كل الأسئلة</a>
-      <a class="nav-wide" href="../journey.html?lang=ar">الرحلة الموجَّهة</a>
       <a class="langbtn" href="../" hreflang="en" lang="en" aria-label="Read this page in English">English</a>
       <button class="themebtn" id="dark-btn" type="button" aria-label="تبديل الوضع الليلي"></button>
     </nav>
@@ -33,162 +31,119 @@
 <main id="top">
 <section class="hero" aria-labelledby="h1">
     <div class="wrap">
-      <h1 id="h1">أنت لم تختر ما تؤمن به. <span>بل ورثته.</span></h1>
-      <p class="lead">ليست هذه إهانة، بل هي ما تقوله الأرقام. فقد وجد الباحثون أن <q>معظم الناس حول العالم ما زالوا ينتمون إلى الدين الذي نشؤوا عليه</q> <cite>مركز بيو للأبحاث، 2025</cite>. وقبل أن تحكم بأننا مخطئون، انظر أين تقف أنت.</p>
+      <h1 id="h1">الإسلام هو الحق. <span>تحقّق بنفسك.</span></h1>
+      <p class="lead">11 سؤالًا بالترتيب، لكل منها جواب مختصر والدليل عليه.</p>
 
-      <div class="inst">
-        <div class="inst-top">
-          <div>
-            <p class="sentence"><span>نشأتُ</span> <span class="nw"><span class="blank"><select id="raised" aria-label="كيف نشأت"><option value="christian" selected>مسيحيًا</option><option value="muslim">مسلمًا</option><option value="jewish">يهوديًا</option><option value="hindu">هندوسيًا</option><option value="buddhist">بوذيًا</option><option value="other">على دين آخر</option><option value="none">بلا دين</option></select></span><span>،</span></span> <span>واليوم</span> <span class="nw"><span class="blank"><select id="today" aria-label="بماذا تؤمن اليوم"><option value="keep" selected>ما زلتُ مؤمنًا به</option><option value="doubt">تساورني شكوك</option><option value="nogod">لا أؤمن بوجود إله</option><option value="unsure">لستُ متأكدًا</option></select></span>.</span></p>
-            <p class="hint">غيّر الكلمات الزرقاء حتى تصبح الجملة صادقة عنك.</p>
-          </div>
-          <div class="readout" aria-live="polite">
-            <p class="fig swap" id="fig">2.3 مليار</p>
-            <p class="cap swap" id="cap">مسيحي حول العالم.</p>
-            <p class="stat swap" id="stat">نحو 83 من كل 100 ممن نشؤوا مسيحيين ما زالوا كذلك.</p>
-            <p class="ctx swap" id="ctx">مثلك تمامًا. فهل اخترته، أم ورثته؟</p>
-          </div>
-        </div>
-
-        <div class="field">
-          <canvas id="field" role="img" aria-label="ألف نقطة، كل نقطة نحو 8 ملايين شخص. منها 288 مميّزة: 2.3 مليار مسيحي حول العالم."></canvas>
-          <div class="tip" id="tip" hidden></div>
-        </div>
-        <div class="legend">
-          <span><i class="k-hi"></i><span id="k-label">المسيحيون</span></span>
-          <span><i class="k-rest"></i>بقية الناس</span>
-          <span><i class="k-you"></i>أنت</span>
-          <span class="src">ألف نقطة، كل نقطة نحو 8 ملايين شخص · مركز بيو للأبحاث، 2025 (نسب البقاء للبالغين من 18 إلى 54 عامًا)</span>
-        </div>
-
-        <div class="next">
-          <div>
-            <p class="next-l">سؤالك الأول</p>
-            <p class="next-q"><a class="swap" id="firstq" href="../ar/q/muhammad/">من هو محمد <span class="saw">ﷺ</span>؟</a></p>
-          </div>
-          <a class="btn" id="firstbtn" href="../ar/q/muhammad/"><span>أثبت أننا مخطئون</span> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
+      <div class="start">
+        <p class="sentence"><span>نشأتُ</span> <span class="nw"><span class="blank"><select id="raised" aria-label="كيف نشأت"><option value="christian" selected>مسيحيًا</option><option value="muslim">مسلمًا</option><option value="jewish">يهوديًا</option><option value="hindu">هندوسيًا</option><option value="buddhist">بوذيًا</option><option value="other">على دين آخر</option><option value="none">بلا دين</option></select></span><span>،</span></span> <span>واليوم</span> <span class="nw"><span class="blank"><select id="today" aria-label="بماذا تؤمن اليوم"><option value="keep" selected>ما زلتُ مؤمنًا به</option><option value="doubt">تساورني شكوك</option><option value="nogod">لا أؤمن بوجود إله</option><option value="unsure">لستُ متأكدًا</option></select></span>.</span></p>
+        <p class="hint">غيّر الكلمات الزرقاء حتى تصبح الجملة صادقة عنك.</p>
+        <p class="ctx" aria-live="polite"><span class="swap" id="ctx">نحو 83 من كل 100 ممن نشؤوا مسيحيين ما زالوا كذلك. فهل اخترته، أم ورثته؟</span> <a class="cite" href="https://www.pewresearch.org/religion/2025/03/26/religious-switching-into-and-out-of-christianity/" target="_blank" rel="noopener noreferrer">مركز بيو للأبحاث، 2025<span class="sr"> (يفتح في نافذة جديدة)</span></a></p>
+        <a class="first" id="firstq" href="../ar/q/muhammad/"><span class="l">ابدأ من هنا</span><span class="t swap" id="firstq-t">من هو محمد <span class="saw">ﷺ</span>؟</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <p class="promise">بلا تسجيل، وبلا تتبّع. وفي كل صفحة نضع أقوى الاعتراضات إلى جانب ردودنا.</p>
     </div>
   </section>
   <script type="application/json" id="qmap">{"reality":{"t":"هل يمكننا أن نعرف أن شيئًا ما حقيقي؟","h":"../ar/q/reality/"},"beginning":{"t":"هل كان للكون بداية؟","h":"../ar/q/beginning/"},"cause":{"t":"هل يحتاج الكون إلى سبب؟","h":"../ar/q/cause/"},"one-god":{"t":"خالق واحد أم خالقون متعددون؟","h":"../ar/q/one-god/"},"suffering":{"t":"إن كان الله موجودًا، فلماذا يوجد الألم والمعاناة؟","h":"../ar/q/suffering/"},"revelation":{"t":"هل يتواصل الخالق معنا؟","h":"../ar/q/revelation/"},"muhammad":{"t":"من هو محمد ﷺ؟","h":"../ar/q/muhammad/"},"quran-preserved":{"t":"هل القرآن محفوظ؟","h":"../ar/q/quran-preserved/"},"quran-science":{"t":"هل يحتوي القرآن على معارف سبقت عصرها؟","h":"../ar/q/quran-science/"},"quran-literary":{"t":"التحدي البلاغي للقرآن","h":"../ar/q/quran-literary/"},"purpose":{"t":"ما الغاية من الحياة؟","h":"../ar/q/purpose/"}}</script>
 
-  <section class="sec" aria-labelledby="c-h">
-    <div class="wrap">
-      <h2 id="c-h">لا يمكن أن يكونوا جميعًا على حق.</h2>
-      <p class="sub">اسأل كل من تمثّلهم هذه النقاط الألف سؤالًا واحدًا: <b>كم إلهًا هناك؟</b></p>
-      <div class="bars" role="table" aria-label="كم إلهًا هناك؟ جواب كل جماعة، مع عدد أفرادها في 2020">
-        <div class="row head" role="row"><span role="columnheader">الجماعة</span><span role="columnheader">عددهم في 2020</span><span role="columnheader">جوابهم</span></div>
-        <div class="row" role="row"><span class="who" role="rowheader">المسيحيون</span><span class="track" role="cell"><span class="bar" style="--w:100%"></span><span class="val">2.3 مليار</span></span><span class="ans" role="cell">إله واحد في ثلاثة أقانيم</span></div>
-        <div class="row claim" role="row"><span class="who" role="rowheader">المسلمون</span><span class="track" role="cell"><span class="bar" style="--w:87%"></span><span class="val">2.0 مليار</span></span><span class="ans" role="cell">إله واحد لا شريك له ولا مثيل <span class="tag">دعوانا</span></span></div>
-        <div class="row" role="row"><span class="who" role="rowheader">بلا دين</span><span class="track" role="cell"><span class="bar" style="--w:82.6%"></span><span class="val">1.9 مليار</span></span><span class="ans" role="cell">لا جواب محدد</span></div>
-        <div class="row" role="row"><span class="who" role="rowheader">الهندوس</span><span class="track" role="cell"><span class="bar" style="--w:52.2%"></span><span class="val">1.2 مليار</span></span><span class="ans" role="cell">آلهة كثيرة، أو إله واحد في صور كثيرة</span></div>
-        <div class="row" role="row"><span class="who" role="rowheader">البوذيون</span><span class="track" role="cell"><span class="bar" style="--w:14.1%"></span><span class="val">324 مليون</span></span><span class="ans" role="cell">لا إله خالق</span></div>
-        <div class="row" role="row"><span class="who" role="rowheader">أديان أخرى</span><span class="track" role="cell"><span class="bar" style="--w:7.5%"></span><span class="val">172 مليون</span></span><span class="ans" role="cell">يختلف باختلاف التقليد</span></div>
-        <div class="row" role="row"><span class="who" role="rowheader">اليهود</span><span class="track" role="cell"><span class="bar" style="--w:0.64%"></span><span class="val">14.8 مليون</span></span><span class="ans" role="cell">إله واحد</span></div>
-      </div>
-      <div class="conclude">
-        <p class="big">سبعة أجوبة، وجواب واحد منها على الأكثر هو الصحيح.</p>
-        <p class="small"><b>ونحن نقول إنه جواب الإسلام.</b> وكل ما في هذا الموقع موجود لتتحقق من ذلك بنفسك، خطوةً خطوة، من حيث أنت.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" aria-labelledby="b-h">
-    <svg class="geo" aria-hidden="true" focusable="false">
-      <defs>
-        <pattern id="star8" width="72" height="72" patternUnits="userSpaceOnUse">
-          <g fill="none" stroke="currentColor" stroke-width="1">
-            <rect x="10.54" y="10.54" width="50.92" height="50.92"/>
-            <path d="M36 0L72 36L36 72L0 36Z"/>
-          </g>
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#star8)"/>
-    </svg>
-    <div class="wrap">
-      <h2 id="b-h">والإسلام نفسه لا يريد أن يُورَث.</h2>
-      <p class="intro">قبل أربعة عشر قرنًا من أي استطلاع، وصف النبي <span class="saw">ﷺ</span> ما تُظهره هذه النقاط.</p>
-      <figure class="bil">
-        <p class="ar" lang="ar" dir="rtl">كُلُّ مَوْلُودٍ يُولَدُ عَلَى الْفِطْرَةِ، فَأَبَوَاهُ يُهَوِّدَانِهِ أَوْ يُنَصِّرَانِهِ أَوْ يُمَجِّسَانِهِ</p>
-        <div class="en">
-          
-          
-          <p class="cite">النبي محمد <span class="saw">ﷺ</span> · صحيح البخاري 1385</p>
-        </div>
-      </figure>
-      <p class="intro">والقرآن يذمّ من يتمسّك بمعتقدٍ لمجرد أن آباءه كانوا عليه.</p>
-      <figure class="bil sm">
-        <p class="ar" lang="ar" dir="rtl">وَإِذَا قِيلَ لَهُمُ اتَّبِعُوا مَا أَنزَلَ اللَّهُ قَالُوا بَلْ نَتَّبِعُ مَا أَلْفَيْنَا عَلَيْهِ آبَاءَنَا ۗ أَوَلَوْ كَانَ آبَاؤُهُمْ لَا يَعْقِلُونَ شَيْئًا وَلَا يَهْتَدُونَ</p>
-        <div class="en">
-          
-          <p class="cite">سورة البقرة، الآية 170</p>
-        </div>
-      </figure>
-      <p class="end">وهذا يشمل المسلمين أيضًا. فالإسلام لا يطلب أن يُورَث، بل أن يُتحقَّق منه.</p>
-    </div>
-  </section>
-
-  <section class="sec" id="facts" aria-labelledby="f-h">
-    <div class="wrap">
-      <h2 id="f-h">فتحقّق بنفسك. ابدأ بأربع حقائق.</h2>
-      <p class="sub">كل حقيقة منها تفتح صفحة كاملة: الأدلة، وأقوى الاعتراضات عليها، وردودنا.</p>
-      <ol class="facts">
-        <li>
-          <p class="n">13.8</p>
-          <p class="u">مليار سنة منذ بدأ الكون</p>
-          <p class="t">للكون بداية، وكل ما له بداية فلا بد له من سبب. فما الذي سبّبه؟</p>
-          <a href="../ar/q/cause/">هل يحتاج الكون إلى سبب؟ <span class="arr" aria-hidden="true">→</span></a>
-        </li>
-        <li>
-          <p class="n">40</p>
-          <p class="u">سنة قبل أن يعلن النبوة</p>
-          <p class="t">كان محمد <span class="saw">ﷺ</span> في الأربعين حين قال أول مرة إن الله أوحى إليه. وقبل ذلك بزمن طويل، كان أهل مكة يسمّونه «الأمين».</p>
-          <a href="../ar/q/muhammad/">من هو محمد <span class="saw">ﷺ</span>؟ <span class="arr" aria-hidden="true">→</span></a>
-        </li>
-        <li>
-          <p class="n" dir="ltr">568–645</p>
-          <p class="u">ميلاديًا: تأريخ رَقّ مصحف مبكر بالكربون المشع</p>
-          <p class="t">هذا هو المدى الزمني الذي حدّده التأريخ بالكربون المشع لرَقّ مخطوطة برمنغهام القرآنية. وقد عاش النبي <span class="saw">ﷺ</span> من نحو 570 إلى 632م.</p>
-          <a href="../ar/q/quran-preserved/">هل القرآن محفوظ؟ <span class="arr" aria-hidden="true">→</span></a>
-        </li>
-        <li>
-          <p class="n">10</p>
-          <p class="u">كلمات في أقصر سورة في القرآن</p>
-          <p class="t">يتحدّى القرآن كل من يشكّ فيه أن يأتي بسورة من مثله (البقرة: 23). وأقصر سوره عشر كلمات.</p>
-          <a href="../ar/q/quran-literary/">التحدي البلاغي للقرآن <span class="arr" aria-hidden="true">→</span></a>
-        </li>
-      </ol>
-    </div>
-  </section>
-
   <section class="sec" id="questions" aria-labelledby="q-h">
-    <div class="wrap qs">
-      <div>
-        <h2 id="q-h">أو اختر أي سؤال.</h2>
-        <p class="sub">11 صفحة حتى الآن، مرتّبة بحسب تسلسل الحجة.</p>
+    <div class="wrap">
+      <h2 id="q-h">الأسئلة الـ11</h2>
+      <p class="sub">اقرأها بالترتيب، فكل سؤال يبني على ما قبله.</p>
+      <div class="grp">
+        <h3>هل للكون خالق؟</h3>
+        <ol start="1">
+          <li>
+            <span class="n" aria-hidden="true">1</span>
+            <div>
+              <a class="q" href="../ar/q/reality/">هل يمكننا أن نعرف أن شيئًا ما حقيقي؟ <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">نعم. فالشكّ نفسه دليل على أن شيئًا ما موجود، ولا أحد يعيش كأن لا شيء حقيقي. </p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">2</span>
+            <div>
+              <a class="q" href="../ar/q/beginning/">هل كان للكون بداية؟ <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">نعم. تُقدّر قياسات مرصد بلانك عمره بنحو 13.8 مليار سنة. <a class="cite" href="https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_reveals_an_almost_perfect_Universe" target="_blank" rel="noopener noreferrer">وكالة الفضاء الأوروبية، بلانك 2013<span class="sr"> (يفتح في نافذة جديدة)</span></a></p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">3</span>
+            <div>
+              <a class="q" href="../ar/q/cause/">هل يحتاج الكون إلى سبب؟ <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">نعم. لا شيء يبدأ بلا سبب، فلا بد أن سببه شيء خارج المكان والزمان. </p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">4</span>
+            <div>
+              <a class="q" href="../ar/q/one-god/">خالق واحد أم خالقون متعددون؟ <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">خالق واحد. فالقوانين نفسها تسري في كل مكان، وهذا يدل على إرادة واحدة لا على آلهة متنازعة. <a class="cite" href="https://quran.com/21/22" target="_blank" rel="noopener noreferrer">سورة الأنبياء 22<span class="sr"> (يفتح في نافذة جديدة)</span></a></p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">5</span>
+            <div>
+              <a class="q" href="../ar/q/suffering/">إن كان الله موجودًا، فلماذا يوجد الألم والمعاناة؟ <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">الألم لا ينفي وجود الله. والقرآن يقول إن هذه الحياة اختبار. <a class="cite" href="https://quran.com/67/2" target="_blank" rel="noopener noreferrer">سورة الملك 2<span class="sr"> (يفتح في نافذة جديدة)</span></a></p>
+            </div>
+          </li>
+        </ol>
       </div>
-      <div class="parts">
-        <div class="part"><h3>هل للكون خالق؟</h3><ul>
-          <li><a href="../ar/q/reality/"><span>هل يمكننا أن نعرف أن شيئًا ما حقيقي؟</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="../ar/q/beginning/"><span>هل كان للكون بداية؟</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="../ar/q/cause/"><span>هل يحتاج الكون إلى سبب؟</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="../ar/q/one-god/"><span>خالق واحد أم خالقون متعددون؟</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="../ar/q/suffering/"><span>إن كان الله موجودًا، فلماذا يوجد الألم والمعاناة؟</span> <span class="arr" aria-hidden="true">→</span></a></li>
-        </ul></div>
-        <div class="part"><h3>الوحي والنبي <span class="saw">ﷺ</span></h3><ul>
-          <li><a href="../ar/q/revelation/"><span>هل يتواصل الخالق معنا؟</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="../ar/q/muhammad/"><span>من هو محمد <span class="saw">ﷺ</span>؟</span> <span class="arr" aria-hidden="true">→</span></a></li>
-        </ul></div>
-        <div class="part"><h3>القرآن الكريم</h3><ul>
-          <li><a href="../ar/q/quran-preserved/"><span>هل القرآن محفوظ؟</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="../ar/q/quran-science/"><span>هل يحتوي القرآن على معارف سبقت عصرها؟</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="../ar/q/quran-literary/"><span>التحدي البلاغي للقرآن</span> <span class="arr" aria-hidden="true">→</span></a></li>
-        </ul></div>
-        <div class="part"><h3>المعنى</h3><ul>
-          <li><a href="../ar/q/purpose/"><span>ما الغاية من الحياة؟</span> <span class="arr" aria-hidden="true">→</span></a></li>
-        </ul></div>
+      <div class="grp">
+        <h3>الوحي والنبي <span class="saw">ﷺ</span></h3>
+        <ol start="6">
+          <li>
+            <span class="n" aria-hidden="true">6</span>
+            <div>
+              <a class="q" href="../ar/q/revelation/">هل يتواصل الخالق معنا؟ <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">نعم. فالخالق الذي منحنا العقل والضمير لا يتركنا بلا هداية. </p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">7</span>
+            <div>
+              <a class="q" href="../ar/q/muhammad/">من هو محمد <span class="saw">ﷺ</span>؟ <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">رجل قال عنه قومه: «ما جرّبنا عليك إلا صدقًا». وبدأ الوحي ينزل عليه في الأربعين. <a class="cite" href="https://sunnah.com/bukhari:4770" target="_blank" rel="noopener noreferrer">صحيح البخاري 4770<span class="sr"> (يفتح في نافذة جديدة)</span></a> <a class="cite" href="https://sunnah.com/bukhari:3902" target="_blank" rel="noopener noreferrer">صحيح البخاري 3902<span class="sr"> (يفتح في نافذة جديدة)</span></a></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="grp">
+        <h3>القرآن الكريم</h3>
+        <ol start="8">
+          <li>
+            <span class="n" aria-hidden="true">8</span>
+            <div>
+              <a class="q" href="../ar/q/quran-preserved/">هل القرآن محفوظ؟ <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">نعم. صفحات أُرّخت بالكربون المشع بين 568 و645م، قريبًا من زمن النبي <span class="saw">ﷺ</span>، «قريبة جدًا من صورة القرآن الذي يُقرأ اليوم». <a class="cite" href="https://www.birmingham.ac.uk/news/2015/birmingham-quran-manuscript-dated-among-the-oldest-in-the-world" target="_blank" rel="noopener noreferrer">جامعة برمنغهام، 2015<span class="sr"> (يفتح في نافذة جديدة)</span></a></p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">9</span>
+            <div>
+              <a class="q" href="../ar/q/quran-science/">هل يحتوي القرآن على معارف سبقت عصرها؟ <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">نزل في القرن السابع، ويصف نموّ الجنين على مراحل، وتوسّع الكون. <a class="cite" href="https://quran.com/23/12-14" target="_blank" rel="noopener noreferrer">سورة المؤمنون 12–14<span class="sr"> (يفتح في نافذة جديدة)</span></a> <a class="cite" href="https://quran.com/51/47" target="_blank" rel="noopener noreferrer">سورة الذاريات 47<span class="sr"> (يفتح في نافذة جديدة)</span></a></p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">10</span>
+            <div>
+              <a class="q" href="../ar/q/quran-literary/">التحدي البلاغي للقرآن <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">يتحدّى كل من يشكّ فيه أن يأتي بسورة من مثله، وما زال التحدي قائمًا. <a class="cite" href="https://quran.com/2/23" target="_blank" rel="noopener noreferrer">سورة البقرة 23<span class="sr"> (يفتح في نافذة جديدة)</span></a></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="grp">
+        <h3>المعنى</h3>
+        <ol start="11">
+          <li>
+            <span class="n" aria-hidden="true">11</span>
+            <div>
+              <a class="q" href="../ar/q/purpose/">ما الغاية من الحياة؟ <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">أن نعرف الله ونعبده، ونعيش بهدايته. <a class="cite" href="https://quran.com/51/56" target="_blank" rel="noopener noreferrer">سورة الذاريات 56<span class="sr"> (يفتح في نافذة جديدة)</span></a></p>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
@@ -220,17 +175,9 @@
 
 <footer>
   <div class="wrap foot">
-    <div>
-      <p class="fname">الدين الحق <span lang="en">· The Only True Religion</span></p>
-      <p class="fnote">لا حساب، ولا تتبّع. نرحّب دائمًا بالتصويبات.</p>
-    </div>
-    <div><p class="fh">المصادر</p>
-      <ol>
-        <li><a href="https://www.pewresearch.org/religion/2025/06/09/how-the-global-religious-landscape-changed-from-2010-to-2020/" target="_blank" rel="noopener noreferrer" lang="en" dir="ltr">Pew Research Center (2025)</a>: كيف تغيّر المشهد الديني العالمي بين 2010 و2020. أعداد عام 2020، ونسب التحوّل للبالغين من 18 إلى 54 عامًا.</li>
-        <li><a href="https://arxiv.org/abs/1807.06209" target="_blank" rel="noopener noreferrer" lang="en" dir="ltr">Planck Collaboration (2018)</a>: نتائج بلانك 2018 للمعاملات الكونية. عمر الكون.</li>
-        <li>جامعة برمنغهام (2015): التأريخ بالكربون المشع لمخطوطة برمنغهام القرآنية.</li>
-        <li><a href="https://sunnah.com/bukhari:1385" target="_blank" rel="noopener noreferrer">صحيح البخاري 1385</a> · <a href="https://quran.com/2/170" target="_blank" rel="noopener noreferrer">البقرة 170</a> · <a href="https://quran.com/2/23" target="_blank" rel="noopener noreferrer">البقرة 23</a> · <a href="https://quran.com/108" target="_blank" rel="noopener noreferrer">سورة الكوثر</a></li>
-      </ol></div>
+    <p class="fname">الدين الحق <span lang="en">· The Only True Religion</span></p>
+    <p class="fnote">لا حساب، ولا تتبّع. نرحّب دائمًا بالتصويبات.</p>
+    <p class="fnote"><a href="../journey.html?lang=ar">الرحلة الموجَّهة</a></p>
   </div>
 </footer>
 <script src="../js/site.js"></script>

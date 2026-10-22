@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Only True Religion</title>
-<meta name="description" content="Most people never chose their religion. They inherited it. We say Islam is the only true religion: check the evidence one question at a time, and try to prove us wrong.">
+<meta name="description" content="Islam is the truth. Check it yourself: eleven questions in order, each with a short answer and the evidence behind it.">
 <link rel="alternate" hreflang="ar" href="ar/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&family=Amiri:wght@400;700&family=Reem+Kufi:wght@500..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&family=Amiri:wght@400;700&family=Reem+Kufi:wght@600&display=swap">
 <link rel="stylesheet" href="css/site.css">
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}</script>
 </head>
@@ -21,9 +21,7 @@
       <span class="wm">The Only True Religion<small lang="ar">الدين الحق</small></span>
     </a>
     <nav aria-label="Main">
-      <a class="nav-wide" href="#facts">The evidence</a>
       <a class="nav-wide" href="#questions">All questions</a>
-      <a class="nav-wide" href="journey.html">Guided journey</a>
       <a class="langbtn" href="ar/" hreflang="ar" lang="ar" aria-label="اقرأ هذه الصفحة بالعربية">العربية</a>
       <button class="themebtn" id="dark-btn" type="button" aria-label="Toggle dark mode"></button>
     </nav>
@@ -33,162 +31,119 @@
 <main id="top">
 <section class="hero" aria-labelledby="h1">
     <div class="wrap">
-      <h1 id="h1">You didn’t choose what you believe. <span>You inherited it.</span></h1>
-      <p class="lead">That’s not an insult. It’s data. Researchers found that <q>most people around the world still identify with the religion in which they were raised.</q> <cite>Pew Research Center, 2025</cite> Before you decide we’re wrong, see where you stand.</p>
+      <h1 id="h1">Islam is the truth. <span>Check it yourself.</span></h1>
+      <p class="lead">11 questions, in order. Each one has a short answer and the evidence behind it.</p>
 
-      <div class="inst">
-        <div class="inst-top">
-          <div>
-            <p class="sentence"><span>I was raised</span> <span class="nw"><span class="blank"><select id="raised" aria-label="How you were raised"><option value="christian" selected>Christian</option><option value="muslim">Muslim</option><option value="jewish">Jewish</option><option value="hindu">Hindu</option><option value="buddhist">Buddhist</option><option value="other">in another faith</option><option value="none">with no religion</option></select></span><span>,</span></span> <span>and today I</span> <span class="nw"><span class="blank"><select id="today" aria-label="What you believe today"><option value="keep" selected>still believe it</option><option value="doubt">have doubts</option><option value="nogod">believe in no God</option><option value="unsure">am not sure</option></select></span>.</span></p>
-            <p class="hint">Change the blue words until the sentence is true for you.</p>
-          </div>
-          <div class="readout" aria-live="polite">
-            <p class="fig swap" id="fig">2.3 billion</p>
-            <p class="cap swap" id="cap">people are Christian.</p>
-            <p class="stat swap" id="stat">About 83 in 100 people raised Christian still are.</p>
-            <p class="ctx swap" id="ctx">Like you. Did you choose it, or inherit it?</p>
-          </div>
-        </div>
-
-        <div class="field">
-          <canvas id="field" role="img" aria-label="1,000 dots, one for every 8 million people. 288 are highlighted: 2.3 billion people are Christian."></canvas>
-          <div class="tip" id="tip" hidden></div>
-        </div>
-        <div class="legend">
-          <span><i class="k-hi"></i><span id="k-label">Christian</span></span>
-          <span><i class="k-rest"></i>Everyone else</span>
-          <span><i class="k-you"></i>You</span>
-          <span class="src">1,000 dots, each about 8 million people · Pew Research Center, 2025 (staying rates are for adults 18 to 54)</span>
-        </div>
-
-        <div class="next">
-          <div>
-            <p class="next-l">Your first question</p>
-            <p class="next-q"><a class="swap" id="firstq" href="q/muhammad/">Who was Muhammad <span class="saw">ﷺ</span>?</a></p>
-          </div>
-          <a class="btn" id="firstbtn" href="q/muhammad/"><span>Prove us wrong</span> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
+      <div class="start">
+        <p class="sentence"><span>I was raised</span> <span class="nw"><span class="blank"><select id="raised" aria-label="How you were raised"><option value="christian" selected>Christian</option><option value="muslim">Muslim</option><option value="jewish">Jewish</option><option value="hindu">Hindu</option><option value="buddhist">Buddhist</option><option value="other">in another faith</option><option value="none">with no religion</option></select></span><span>,</span></span> <span>and today I</span> <span class="nw"><span class="blank"><select id="today" aria-label="What you believe today"><option value="keep" selected>still believe it</option><option value="doubt">have doubts</option><option value="nogod">believe in no God</option><option value="unsure">am not sure</option></select></span>.</span></p>
+        <p class="hint">Change the blue words until the sentence is true for you.</p>
+        <p class="ctx" aria-live="polite"><span class="swap" id="ctx">About 83 in 100 people raised Christian still are. Did you choose it, or inherit it?</span> <a class="cite" href="https://www.pewresearch.org/religion/2025/03/26/religious-switching-into-and-out-of-christianity/" target="_blank" rel="noopener noreferrer">Pew Research Center, 2025<span class="sr"> (opens in a new tab)</span></a></p>
+        <a class="first" id="firstq" href="q/muhammad/"><span class="l">Start here</span><span class="t swap" id="firstq-t">Who was Muhammad <span class="saw">ﷺ</span>?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <p class="promise">No sign-up. No tracking. Every page puts the strongest objections next to our answers.</p>
     </div>
   </section>
   <script type="application/json" id="qmap">{"reality":{"t":"Can we know that anything is real?","h":"q/reality/"},"beginning":{"t":"Did the universe have a beginning?","h":"q/beginning/"},"cause":{"t":"Does the universe need a cause?","h":"q/cause/"},"one-god":{"t":"One Creator or many?","h":"q/one-god/"},"suffering":{"t":"If God exists, why is there suffering?","h":"q/suffering/"},"revelation":{"t":"Would the Creator communicate with us?","h":"q/revelation/"},"muhammad":{"t":"Who was Muhammad ﷺ?","h":"q/muhammad/"},"quran-preserved":{"t":"Is the Quran preserved?","h":"q/quran-preserved/"},"quran-science":{"t":"Does the Quran contain knowledge ahead of its time?","h":"q/quran-science/"},"quran-literary":{"t":"The Quran's literary challenge","h":"q/quran-literary/"},"purpose":{"t":"What is the purpose of life?","h":"q/purpose/"}}</script>
 
-  <section class="sec" aria-labelledby="c-h">
-    <div class="wrap">
-      <h2 id="c-h">They can’t all be right.</h2>
-      <p class="sub">Ask everyone in those 1,000 dots one question: <b>how many gods are there?</b></p>
-      <div class="bars" role="table" aria-label="How many gods are there? Each group’s answer, with its population in 2020">
-        <div class="row head" role="row"><span role="columnheader">Group</span><span role="columnheader">People, 2020</span><span role="columnheader">Their answer</span></div>
-        <div class="row" role="row"><span class="who" role="rowheader">Christians</span><span class="track" role="cell"><span class="bar" style="--w:100%"></span><span class="val">2.3 billion</span></span><span class="ans" role="cell">One God, in three persons</span></div>
-        <div class="row claim" role="row"><span class="who" role="rowheader">Muslims</span><span class="track" role="cell"><span class="bar" style="--w:87%"></span><span class="val">2.0 billion</span></span><span class="ans" role="cell">One God, with no partner and no equal <span class="tag">Our claim</span></span></div>
-        <div class="row" role="row"><span class="who" role="rowheader">No religion</span><span class="track" role="cell"><span class="bar" style="--w:82.6%"></span><span class="val">1.9 billion</span></span><span class="ans" role="cell">No set answer</span></div>
-        <div class="row" role="row"><span class="who" role="rowheader">Hindus</span><span class="track" role="cell"><span class="bar" style="--w:52.2%"></span><span class="val">1.2 billion</span></span><span class="ans" role="cell">Many, or one God in many forms</span></div>
-        <div class="row" role="row"><span class="who" role="rowheader">Buddhists</span><span class="track" role="cell"><span class="bar" style="--w:14.1%"></span><span class="val">324 million</span></span><span class="ans" role="cell">No creator God</span></div>
-        <div class="row" role="row"><span class="who" role="rowheader">Other religions</span><span class="track" role="cell"><span class="bar" style="--w:7.5%"></span><span class="val">172 million</span></span><span class="ans" role="cell">Depends on the tradition</span></div>
-        <div class="row" role="row"><span class="who" role="rowheader">Jews</span><span class="track" role="cell"><span class="bar" style="--w:0.64%"></span><span class="val">14.8 million</span></span><span class="ans" role="cell">One God</span></div>
-      </div>
-      <div class="conclude">
-        <p class="big">Seven answers. At most one of them is true.</p>
-        <p class="small"><b>We say it’s Islam’s.</b> Everything on this site exists so you can check that claim yourself, one step at a time, starting wherever you are.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" aria-labelledby="b-h">
-    <svg class="geo" aria-hidden="true" focusable="false">
-      <defs>
-        <pattern id="star8" width="72" height="72" patternUnits="userSpaceOnUse">
-          <g fill="none" stroke="currentColor" stroke-width="1">
-            <rect x="10.54" y="10.54" width="50.92" height="50.92"/>
-            <path d="M36 0L72 36L36 72L0 36Z"/>
-          </g>
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#star8)"/>
-    </svg>
-    <div class="wrap">
-      <h2 id="b-h">Islam doesn’t want to be inherited either.</h2>
-      <p class="intro">Fourteen centuries before anyone surveyed it, the Prophet <span class="saw">ﷺ</span> described what those dots show.</p>
-      <figure class="bil">
-        <p class="ar" lang="ar" dir="rtl">كُلُّ مَوْلُودٍ يُولَدُ عَلَى الْفِطْرَةِ، فَأَبَوَاهُ يُهَوِّدَانِهِ أَوْ يُنَصِّرَانِهِ أَوْ يُمَجِّسَانِهِ</p>
-        <div class="en">
-          <blockquote>“Every child is born upon the <i>fitrah</i>. Then his parents make him a Jew, a Christian or a Magian.”</blockquote>
-          <p class="gloss"><i>Fitrah</i>: the natural disposition to recognize God.</p>
-          <p class="cite">The Prophet Muhammad <span class="saw">ﷺ</span> · Sahih al-Bukhari 1385</p>
-        </div>
-      </figure>
-      <p class="intro">And the Quran criticizes anyone who keeps a belief only because their parents held it.</p>
-      <figure class="bil sm">
-        <p class="ar" lang="ar" dir="rtl">وَإِذَا قِيلَ لَهُمُ اتَّبِعُوا مَا أَنزَلَ اللَّهُ قَالُوا بَلْ نَتَّبِعُ مَا أَلْفَيْنَا عَلَيْهِ آبَاءَنَا ۗ أَوَلَوْ كَانَ آبَاؤُهُمْ لَا يَعْقِلُونَ شَيْئًا وَلَا يَهْتَدُونَ</p>
-        <div class="en">
-          <blockquote>“And when it is said to them, ‘Follow what Allah has revealed,’ they say, ‘Rather, we will follow that upon which we found our fathers.’ Even though their fathers understood nothing, nor were they guided?”</blockquote>
-          <p class="cite">Al-Baqarah 2:170</p>
-        </div>
-      </figure>
-      <p class="end">That includes Muslims. Islam doesn’t ask to be inherited. It asks to be checked.</p>
-    </div>
-  </section>
-
-  <section class="sec" id="facts" aria-labelledby="f-h">
-    <div class="wrap">
-      <h2 id="f-h">So check it. Start with four facts.</h2>
-      <p class="sub">Each one opens a full page: the evidence, the strongest objections against it, and our answers.</p>
-      <ol class="facts">
-        <li>
-          <p class="n">13.8</p>
-          <p class="u">billion years since the universe began</p>
-          <p class="t">The universe had a beginning. Whatever begins to exist has a cause. So what caused it?</p>
-          <a href="q/cause/">Does the universe need a cause? <span class="arr" aria-hidden="true">→</span></a>
-        </li>
-        <li>
-          <p class="n">40</p>
-          <p class="u">years before he claimed prophethood</p>
-          <p class="t">Muhammad <span class="saw">ﷺ</span> was 40 when he first said God had spoken to him. Long before that, Mecca called him al-Amin: the trustworthy.</p>
-          <a href="q/muhammad/">Who was Muhammad <span class="saw">ﷺ</span>? <span class="arr" aria-hidden="true">→</span></a>
-        </li>
-        <li>
-          <p class="n" dir="ltr">568–645</p>
-          <p class="u">CE, the radiocarbon date of an early Quran</p>
-          <p class="t">That’s the date range for the parchment of the Birmingham Quran manuscript. The Prophet <span class="saw">ﷺ</span> lived from about 570 to 632.</p>
-          <a href="q/quran-preserved/">Is the Quran preserved? <span class="arr" aria-hidden="true">→</span></a>
-        </li>
-        <li>
-          <p class="n">10</p>
-          <p class="u">words in the Quran’s shortest chapter</p>
-          <p class="t">The Quran challenges anyone who doubts it to produce one chapter like it (2:23). The shortest is ten words long.</p>
-          <a href="q/quran-literary/">The Quran's literary challenge <span class="arr" aria-hidden="true">→</span></a>
-        </li>
-      </ol>
-    </div>
-  </section>
-
   <section class="sec" id="questions" aria-labelledby="q-h">
-    <div class="wrap qs">
-      <div>
-        <h2 id="q-h">Or pick any question.</h2>
-        <p class="sub">11 pages so far, in the order the argument runs.</p>
+    <div class="wrap">
+      <h2 id="q-h">The 11 questions</h2>
+      <p class="sub">Read them in order. Each one builds on the one before.</p>
+      <div class="grp">
+        <h3>Is there a Creator?</h3>
+        <ol start="1">
+          <li>
+            <span class="n" aria-hidden="true">1</span>
+            <div>
+              <a class="q" href="q/reality/">Can we know that anything is real? <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">Yes. Even doubting proves that something is real, and no one lives as if nothing is. </p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">2</span>
+            <div>
+              <a class="q" href="q/beginning/">Did the universe have a beginning? <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">Yes. Planck’s measurements put its age at about 13.8 billion years. <a class="cite" href="https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_reveals_an_almost_perfect_Universe" target="_blank" rel="noopener noreferrer">ESA, Planck 2013<span class="sr"> (opens in a new tab)</span></a></p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">3</span>
+            <div>
+              <a class="q" href="q/cause/">Does the universe need a cause? <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">Yes. Nothing begins without a cause, so something outside space and time caused it. </p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">4</span>
+            <div>
+              <a class="q" href="q/one-god/">One Creator or many? <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">One. The same laws hold everywhere, which points to one will, not rival gods. <a class="cite" href="https://quran.com/21/22" target="_blank" rel="noopener noreferrer">Quran 21:22<span class="sr"> (opens in a new tab)</span></a></p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">5</span>
+            <div>
+              <a class="q" href="q/suffering/">If God exists, why is there suffering? <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">Suffering doesn’t disprove God. The Quran says this life is a test. <a class="cite" href="https://quran.com/67/2" target="_blank" rel="noopener noreferrer">Quran 67:2<span class="sr"> (opens in a new tab)</span></a></p>
+            </div>
+          </li>
+        </ol>
       </div>
-      <div class="parts">
-        <div class="part"><h3>Is there a Creator?</h3><ul>
-          <li><a href="q/reality/"><span>Can we know that anything is real?</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="q/beginning/"><span>Did the universe have a beginning?</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="q/cause/"><span>Does the universe need a cause?</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="q/one-god/"><span>One Creator or many?</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="q/suffering/"><span>If God exists, why is there suffering?</span> <span class="arr" aria-hidden="true">→</span></a></li>
-        </ul></div>
-        <div class="part"><h3>Revelation and the Prophet <span class="saw">ﷺ</span></h3><ul>
-          <li><a href="q/revelation/"><span>Would the Creator communicate with us?</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="q/muhammad/"><span>Who was Muhammad <span class="saw">ﷺ</span>?</span> <span class="arr" aria-hidden="true">→</span></a></li>
-        </ul></div>
-        <div class="part"><h3>The Quran</h3><ul>
-          <li><a href="q/quran-preserved/"><span>Is the Quran preserved?</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="q/quran-science/"><span>Does the Quran contain knowledge ahead of its time?</span> <span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a href="q/quran-literary/"><span>The Quran's literary challenge</span> <span class="arr" aria-hidden="true">→</span></a></li>
-        </ul></div>
-        <div class="part"><h3>Meaning</h3><ul>
-          <li><a href="q/purpose/"><span>What is the purpose of life?</span> <span class="arr" aria-hidden="true">→</span></a></li>
-        </ul></div>
+      <div class="grp">
+        <h3>Revelation and the Prophet <span class="saw">ﷺ</span></h3>
+        <ol start="6">
+          <li>
+            <span class="n" aria-hidden="true">6</span>
+            <div>
+              <a class="q" href="q/revelation/">Would the Creator communicate with us? <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">Yes. A Creator who gave us reason and a conscience would not leave us without guidance. </p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">7</span>
+            <div>
+              <a class="q" href="q/muhammad/">Who was Muhammad <span class="saw">ﷺ</span>? <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">A man his own people said they had never found telling anything but the truth. He began receiving revelation at forty. <a class="cite" href="https://sunnah.com/bukhari:4770" target="_blank" rel="noopener noreferrer">Sahih al-Bukhari 4770<span class="sr"> (opens in a new tab)</span></a> <a class="cite" href="https://sunnah.com/bukhari:3902" target="_blank" rel="noopener noreferrer">Sahih al-Bukhari 3902<span class="sr"> (opens in a new tab)</span></a></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="grp">
+        <h3>The Quran</h3>
+        <ol start="8">
+          <li>
+            <span class="n" aria-hidden="true">8</span>
+            <div>
+              <a class="q" href="q/quran-preserved/">Is the Quran preserved? <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">Yes. Pages radiocarbon-dated to 568–645, close to the Prophet’s <span class="saw">ﷺ</span> lifetime, are “very close to the form of the Qur’an read today.” <a class="cite" href="https://www.birmingham.ac.uk/news/2015/birmingham-quran-manuscript-dated-among-the-oldest-in-the-world" target="_blank" rel="noopener noreferrer">University of Birmingham, 2015<span class="sr"> (opens in a new tab)</span></a></p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">9</span>
+            <div>
+              <a class="q" href="q/quran-science/">Does the Quran contain knowledge ahead of its time? <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">Revealed in the 7th century, it describes the embryo growing in stages and the universe expanding. <a class="cite" href="https://quran.com/23/12-14" target="_blank" rel="noopener noreferrer">Quran 23:12–14<span class="sr"> (opens in a new tab)</span></a> <a class="cite" href="https://quran.com/51/47" target="_blank" rel="noopener noreferrer">Quran 51:47<span class="sr"> (opens in a new tab)</span></a></p>
+            </div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">10</span>
+            <div>
+              <a class="q" href="q/quran-literary/">The Quran's literary challenge <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">It challenges anyone who doubts it to produce one chapter like it. The challenge still stands. <a class="cite" href="https://quran.com/2/23" target="_blank" rel="noopener noreferrer">Quran 2:23<span class="sr"> (opens in a new tab)</span></a></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="grp">
+        <h3>Meaning</h3>
+        <ol start="11">
+          <li>
+            <span class="n" aria-hidden="true">11</span>
+            <div>
+              <a class="q" href="q/purpose/">What is the purpose of life? <span class="arr" aria-hidden="true">→</span></a>
+              <p class="a">To know and worship God, and to live by His guidance. <a class="cite" href="https://quran.com/51/56" target="_blank" rel="noopener noreferrer">Quran 51:56<span class="sr"> (opens in a new tab)</span></a></p>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
@@ -220,17 +175,9 @@
 
 <footer>
   <div class="wrap foot">
-    <div>
-      <p class="fname">The Only True Religion <span lang="ar">· الدين الحق</span></p>
-      <p class="fnote">No account, no tracking. Corrections are always welcome.</p>
-    </div>
-    <div><p class="fh">Sources</p>
-      <ol>
-        <li><a href="https://www.pewresearch.org/religion/2025/06/09/how-the-global-religious-landscape-changed-from-2010-to-2020/" target="_blank" rel="noopener noreferrer">Pew Research Center (2025), How the Global Religious Landscape Changed From 2010 to 2020</a>. Populations for 2020; switching rates for adults 18 to 54.</li>
-        <li><a href="https://arxiv.org/abs/1807.06209" target="_blank" rel="noopener noreferrer">Planck Collaboration (2018), Planck 2018 results VI: Cosmological parameters</a>. Age of the universe.</li>
-        <li>University of Birmingham (2015), radiocarbon dating of the Birmingham Quran manuscript.</li>
-        <li><a href="https://sunnah.com/bukhari:1385" target="_blank" rel="noopener noreferrer">Sahih al-Bukhari 1385</a> · <a href="https://quran.com/2/170" target="_blank" rel="noopener noreferrer">Quran 2:170</a> · <a href="https://quran.com/2/23" target="_blank" rel="noopener noreferrer">Quran 2:23</a> · <a href="https://quran.com/108" target="_blank" rel="noopener noreferrer">Quran 108</a></li>
-      </ol></div>
+    <p class="fname">The Only True Religion <span lang="ar">· الدين الحق</span></p>
+    <p class="fnote">No account, no tracking. Corrections are always welcome.</p>
+    <p class="fnote"><a href="journey.html">Guided journey</a></p>
   </div>
 </footer>
 <script src="js/site.js"></script>
